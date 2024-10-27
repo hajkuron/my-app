@@ -1,0 +1,402 @@
+import { CalendarEvent } from './types';
+import calendarEventsData from './data/calendarEvents.json';
+
+// Assert the type of the imported data
+const calendarEvents: CalendarEvent[] = calendarEventsData as CalendarEvent[];
+
+export function calculateAverageWakeUpTime(): string {
+  const wakeUpEvents = calendarEvents.filter(event => 
+    event.calendar_name === "jonkuhar11@gmail.com" &&
+    event.summary.toLowerCase() === "wake up" &&
+    !event.deleted
+  );
+
+  if (wakeUpEvents.length === 0) {
+    return "0:00"; // Return "0:00" if no wake-up events found
+  }
+
+  const totalMinutes = wakeUpEvents.reduce((sum, event) => {
+    const startTime = new Date(event.start);
+    return sum + startTime.getHours() * 60 + startTime.getMinutes();
+  }, 0);
+
+  const averageMinutes = totalMinutes / wakeUpEvents.length;
+  const hours = Math.floor(averageMinutes / 60);
+  const minutes = Math.round(averageMinutes % 60);
+
+  return `${hours}:${minutes.toString().padStart(2, '0')}`;
+}
+
+export interface MissedCommitment {
+  id: number;
+  activity: string;
+  time: string;
+  day: string;
+  pattern: string;
+  reflection: string;
+  impact: "low" | "medium" | "high";
+}
+
+export function processMissedCommitments(): MissedCommitment[] {
+  const oneWeekAgo = new Date();
+  oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
+
+  const missedEvents = calendarEvents.filter(event => 
+    event.status === "deleted" &&
+    new Date(event.date) >= oneWeekAgo
+  );
+
+  return missedEvents.map((event, index) => {
+    const startTime = new Date(event.start);
+    const endTime = new Date(event.end);
+    const dayOfWeek = startTime.toLocaleDateString('en-US', { weekday: 'long' });
+
+    return {
+      id: index + 1,
+      activity: event.summary,
+      time: `${formatTime(startTime)} - ${formatTime(endTime)}`,
+      day: dayOfWeek,
+      pattern: determinePattern(event, missedEvents),
+      reflection: generateReflection(event),
+      impact: determineImpact(event)
+    };
+  });
+}
+
+function formatTime(date: Date): string {
+  return date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false });
+}
+
+function determinePattern(event: CalendarEvent, allMissedEvents: CalendarEvent[]): string {
+  const similarEvents = allMissedEvents.filter(e => e.summary === event.summary);
+  if (similarEvents.length > 2) {
+    return `${ordinal(similarEvents.length)} time this month`;
+  } else if (similarEvents.length === 2) {
+    return "2nd time this week";
+  } else {
+    return "First occurrence";
+  }
+}
+
+function generateReflection(event: CalendarEvent): string {
+  const startHour = new Date(event.start).getHours();
+  if (startHour < 9) {
+    return "Planned too early, consistently struggling with morning focus";
+  } else if (startHour >= 19) {
+    return "Too tired for focused activity this late";
+  } else {
+    return "Need to investigate reasons for missing this commitment";
+  }
+}
+
+function determineImpact(event: CalendarEvent): "low" | "medium" | "high" {
+  const duration = event.duration;
+  if (duration > 120) return "high";
+  if (duration > 60) return "medium";
+  return "low";
+}
+
+function ordinal(n: number): string {
+  const s = ["th", "st", "nd", "rd"];
+  const v = n % 100;
+  return n + (s[(v - 20) % 10] || s[v] || s[0]);
+}
+
+export function processWakeUpData(): { day: string; planned: number; actual: number }[] {
+  const oneWeekAgo = new Date();
+  oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
+
+  const wakeUpEvents = calendarEvents.filter(event => 
+    event.calendar_name === "jonkuhar11@gmail.com" &&
+    event.summary.toLowerCase() === "wake up" &&
+    new Date(event.date) >= oneWeekAgo
+  );
+
+  const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  const wakeUpData = weekDays.map(day => ({
+    day,
+    planned: 0,
+    actual: 0
+  }));
+
+  wakeUpEvents.forEach(event => {
+    const plannedDate = new Date(event.start);
+    const actualDate = new Date(event.new_start || event.start);
+    const dayIndex = plannedDate.getDay();
+
+    wakeUpData[dayIndex].planned = plannedDate.getHours() + plannedDate.getMinutes() / 60;
+    wakeUpData[dayIndex].actual = actualDate.getHours() + actualDate.getMinutes() / 60;
+  });
+
+  // Reorder the array to start from the current day
+  const today = new Date().getDay();
+  return [...wakeUpData.slice(today), ...wakeUpData.slice(0, today)];
+}
+
+export function processTaskDistribution(): { name: string; planned: number; actual: number }[] {
+  const oneWeekAgo = new Date();
+  oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
+
+  const relevantEvents = calendarEvents.filter(event => 
+    (event.calendar_name === "Fitness" || event.calendar_name === "Projects") &&
+    new Date(event.date) >= oneWeekAgo
+  );
+
+  const taskDistribution = {
+    Fitness: { planned: 0, actual: 0 },
+    Projects: { planned: 0, actual: 0 }
+  };
+
+  relevantEvents.forEach(event => {
+    const plannedDuration = (new Date(event.end).getTime() - new Date(event.start).getTime()) / (1000 * 60 * 60);
+
+    if (event.status === "deleted") {
+      // For deleted events, only add to planned duration
+      taskDistribution[event.calendar_name as keyof typeof taskDistribution].planned += plannedDuration;
+    } else {
+      // For non-deleted events, calculate both planned and actual durations
+      const actualDuration = (new Date(event.new_end).getTime() - new Date(event.new_start).getTime()) / (1000 * 60 * 60);
+
+      taskDistribution[event.calendar_name as keyof typeof taskDistribution].planned += plannedDuration;
+      taskDistribution[event.calendar_name as keyof typeof taskDistribution].actual += actualDuration;
+    }
+  });
+
+  return [
+    { name: 'Fitness', planned: taskDistribution.Fitness.planned, actual: taskDistribution.Fitness.actual },
+    { name: 'Projects', planned: taskDistribution.Projects.planned, actual: taskDistribution.Projects.actual }
+  ];
+}
+
+interface DailyConsistency {
+  day: number;
+  completion: number;
+  sevenDayAvg: number;
+  thirtyDayAvg: number;
+}
+
+export function processConsistencyData(): DailyConsistency[] {
+  const thirtyDaysAgo = new Date();
+  thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+  
+  // Group events by date
+  const eventsByDate = new Map<string, CalendarEvent[]>();
+  
+  calendarEvents.forEach(event => {
+    const dateKey = event.date.split('T')[0];
+    if (!eventsByDate.has(dateKey)) {
+      eventsByDate.set(dateKey, []);
+    }
+    eventsByDate.get(dateKey)?.push(event);
+  });
+
+  // Calculate daily consistency scores
+  const dailyScores: { date: string; score: number }[] = [];
+
+  eventsByDate.forEach((events, date) => {
+    const totalPlannedMinutes = events.reduce((sum, event) => {
+      const duration = (new Date(event.end).getTime() - new Date(event.start).getTime()) / (1000 * 60);
+      return sum + duration;
+    }, 0);
+
+    let consistencyScore = 100; // Start with perfect score
+
+    events.forEach(event => {
+      if (event.status === "deleted") {
+        // Calculate impact of deleted event
+        const deletedDuration = (new Date(event.end).getTime() - new Date(event.start).getTime()) / (1000 * 60);
+        const impactPercentage = (deletedDuration / totalPlannedMinutes) * 100;
+        consistencyScore -= impactPercentage;
+      } else if (event.status === "modified") {
+        // Calculate impact of modified event
+        const plannedDuration = (new Date(event.end).getTime() - new Date(event.start).getTime()) / (1000 * 60);
+        const actualDuration = (new Date(event.new_end).getTime() - new Date(event.new_start).getTime()) / (1000 * 60);
+        const durationDifference = Math.abs(plannedDuration - actualDuration);
+        const impactPercentage = (durationDifference / totalPlannedMinutes) * 25; // Less penalty for modifications
+        consistencyScore -= impactPercentage;
+      }
+    });
+
+    dailyScores.push({
+      date,
+      score: Math.max(0, Math.min(100, consistencyScore)) // Clamp between 0 and 100
+    });
+  });
+
+  // Sort by date
+  dailyScores.sort((a, b) => a.date.localeCompare(b.date));
+
+  // Calculate rolling averages and format final data
+  return dailyScores.map((dayScore, index) => {
+    const previous7Days = dailyScores.slice(Math.max(0, index - 6), index + 1);
+    const previous30Days = dailyScores.slice(Math.max(0, index - 29), index + 1);
+
+    const sevenDayAvg = previous7Days.reduce((sum, day) => sum + day.score, 0) / previous7Days.length;
+    const thirtyDayAvg = previous30Days.reduce((sum, day) => sum + day.score, 0) / previous30Days.length;
+
+    return {
+      day: index + 1,
+      completion: dayScore.score,
+      sevenDayAvg: sevenDayAvg,
+      thirtyDayAvg: thirtyDayAvg
+    };
+  });
+}
+
+export function calculateWeeklyStats() {
+  const oneWeekAgo = new Date();
+  oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
+
+  const weekEvents = calendarEvents.filter(event => 
+    new Date(event.date) >= oneWeekAgo
+  );
+
+  let totalPlannedMinutes = 0;
+  let totalActualMinutes = 0;
+  let deletedEvents = 0;
+  let totalEvents = weekEvents.length;
+  let perfectDays = 0;
+
+  // Group events by date to calculate perfect days
+  const eventsByDate = new Map<string, CalendarEvent[]>();
+  weekEvents.forEach(event => {
+    const dateKey = event.date.split('T')[0];
+    if (!eventsByDate.has(dateKey)) {
+      eventsByDate.set(dateKey, []);
+    }
+    eventsByDate.get(dateKey)?.push(event);
+  });
+
+  // Calculate perfect days and overall completion
+  eventsByDate.forEach((dayEvents, date) => {
+    let isDayPerfect = true;
+    
+    dayEvents.forEach(event => {
+      const plannedDuration = (new Date(event.end).getTime() - new Date(event.start).getTime());
+      totalPlannedMinutes += plannedDuration / (1000 * 60);
+
+      if (event.status === "deleted") {
+        isDayPerfect = false;
+        deletedEvents++;
+        // Don't add to actual minutes for deleted events
+      } else {
+        const actualDuration = (new Date(event.new_end).getTime() - new Date(event.new_start).getTime());
+        totalActualMinutes += actualDuration / (1000 * 60);
+
+        // Check if the event was modified significantly (more than 20% difference)
+        if (event.status === "modified") {
+          const durationDifference = Math.abs(plannedDuration - actualDuration);
+          if (durationDifference / plannedDuration > 0.2) { // 20% threshold
+            isDayPerfect = false;
+          }
+        }
+      }
+    });
+
+    if (isDayPerfect && dayEvents.length > 0) {
+      perfectDays++;
+    }
+  });
+
+  const weeklyCompletion = totalPlannedMinutes > 0 
+    ? Math.round((totalActualMinutes / totalPlannedMinutes) * 100)
+    : 100;
+
+  const canceledPercentage = totalEvents > 0
+    ? Math.round((deletedEvents / totalEvents) * 100)
+    : 0;
+
+  return {
+    weeklyCompletion: Math.min(100, weeklyCompletion), // Cap at 100%
+    perfectDays,
+    canceledPercentage
+  };
+}
+
+interface ActionItem {
+  title: string;
+  description: string;
+  priority: 'high' | 'medium' | 'low';
+  category: string;
+}
+
+export function processActionItems(): ActionItem[] {
+  const missedEvents = calendarEvents.filter(event => 
+    event.status === "deleted" &&
+    new Date(event.date) >= new Date(Date.now() - 30 * 24 * 60 * 60 * 1000) // Last 30 days
+  );
+
+  // Group events by activity summary only
+  const patterns = new Map<string, CalendarEvent[]>();
+  missedEvents.forEach(event => {
+    const key = event.calendar_name.toLowerCase(); // Use only the summary as key
+    if (!patterns.has(key)) {
+      patterns.set(key, []);
+    }
+    patterns.get(key)?.push(event);
+  });
+
+  const actionItems: ActionItem[] = [];
+
+  // Analyze patterns by time of day (keep this part)
+  const morningMisses = missedEvents.filter(e => new Date(e.start).getHours() < 10);
+  const eveningMisses = missedEvents.filter(e => new Date(e.start).getHours() >= 18);
+
+  if (morningMisses.length >= 3) {
+    actionItems.push({
+      title: "Morning Commitment Struggles",
+      description: `${morningMisses.length} early commitments missed in the last month. Consider adjusting morning schedule.`,
+      priority: "high",
+      category: "schedule"
+    });
+  }
+
+  if (eveningMisses.length >= 3) {
+    actionItems.push({
+      title: "Evening Activity Challenges",
+      description: `${eveningMisses.length} evening activities missed. Consider rescheduling to earlier times.`,
+      priority: "medium",
+      category: "schedule"
+    });
+  }
+
+  // Analyze patterns by activity type
+  patterns.forEach((events, activity) => {
+    if (events.length >= 3) {
+      // Determine the most common calendar for this activity
+      const calendarCounts = events.reduce((acc, event) => {
+        acc[event.calendar_name] = (acc[event.calendar_name] || 0) + 1;
+        return acc;
+      }, {} as Record<string, number>);
+
+      const mostCommonCalendar = Object.entries(calendarCounts)
+        .sort((a, b) => b[1] - a[1])[0][0];
+
+      actionItems.push({
+        title: `Recurring "${activity}" Challenges`,
+        description: `${events.length} ${activity} sessions missed across calendars. Review scheduling and commitment approach.`,
+        priority: events.length >= 5 ? "high" : "medium",
+        category: mostCommonCalendar.toLowerCase()
+      });
+    }
+  });
+
+  // Add duration-based patterns
+  const longDurationMisses = missedEvents.filter(e => {
+    const duration = (new Date(e.end).getTime() - new Date(e.start).getTime()) / (1000 * 60);
+    return duration >= 90;
+  });
+
+  if (longDurationMisses.length >= 5) {
+    actionItems.push({
+      title: "Long Duration Activity Issues",
+      description: "Multiple long sessions missed. Consider breaking into shorter segments.",
+      priority: "high",
+      category: "schedule"
+    });
+  }
+
+  return actionItems.sort((a, b) => 
+    a.priority === 'high' ? -1 : b.priority === 'high' ? 1 : 0
+  );
+}
