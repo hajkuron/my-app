@@ -27,7 +27,8 @@ jobs:
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
         run: node utils/fetchAndSaveData.js
 
-       - name: Commit and push if changed
+      - name: Commit and push if changes exist
+        if: success()
         run: |
           git config --global user.name 'GitHub Action'
           git config --global user.email 'action@github.com'
