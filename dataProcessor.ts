@@ -104,7 +104,7 @@ function ordinal(n: number): string {
 
 export function processWakeUpData(): { day: string; planned: number; actual: number }[] {
   const oneWeekAgo = new Date();
-  oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
+  oneWeekAgo.setDate(oneWeekAgo.getDate() - 8);
 
   const wakeUpEvents = calendarEvents.filter(event => 
     event.calendar_name === "jonkuhar11@gmail.com" &&
@@ -133,18 +133,21 @@ export function processWakeUpData(): { day: string; planned: number; actual: num
   return [...wakeUpData.slice(today), ...wakeUpData.slice(0, today)];
 }
 
-export function processTaskDistribution(): { name: string; planned: number; actual: number }[] {
-  const oneWeekAgo = new Date();
-  oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
+export function processTaskDistribution(timeframe: 'weekly' | 'monthly' = 'weekly'): { name: string; planned: number; actual: number }[] {
+  const startDate = new Date();
+  startDate.setDate(startDate.getDate() - (timeframe === 'weekly' ? 7 : 30));
 
   const relevantEvents = calendarEvents.filter(event => 
-    (event.calendar_name === "Fitness" || event.calendar_name === "Projects") &&
-    new Date(event.date) >= oneWeekAgo
+    (event.calendar_name === "Fitness" || 
+     event.calendar_name === "Projects" || 
+     event.calendar_name === "Learning") &&
+    new Date(event.date) >= startDate
   );
 
   const taskDistribution = {
     Fitness: { planned: 0, actual: 0 },
-    Projects: { planned: 0, actual: 0 }
+    Projects: { planned: 0, actual: 0 },
+    Learning: { planned: 0, actual: 0 }
   };
 
   relevantEvents.forEach(event => {
@@ -164,7 +167,8 @@ export function processTaskDistribution(): { name: string; planned: number; actu
 
   return [
     { name: 'Fitness', planned: taskDistribution.Fitness.planned, actual: taskDistribution.Fitness.actual },
-    { name: 'Projects', planned: taskDistribution.Projects.planned, actual: taskDistribution.Projects.actual }
+    { name: 'Projects', planned: taskDistribution.Projects.planned, actual: taskDistribution.Projects.actual },
+    { name: 'Learning', planned: taskDistribution.Learning.planned, actual: taskDistribution.Learning.actual }
   ];
 }
 
@@ -212,7 +216,7 @@ export function processConsistencyData(): DailyConsistency[] {
         const plannedDuration = (new Date(event.end).getTime() - new Date(event.start).getTime()) / (1000 * 60);
         const actualDuration = (new Date(event.new_end).getTime() - new Date(event.new_start).getTime()) / (1000 * 60);
         const durationDifference = Math.abs(plannedDuration - actualDuration);
-        const impactPercentage = (durationDifference / totalPlannedMinutes) * 25; // Less penalty for modifications
+        const impactPercentage = (durationDifference / totalPlannedMinutes) * 50; // Less penalty for modifications
         consistencyScore -= impactPercentage;
       }
     });
@@ -399,4 +403,198 @@ export function processActionItems(): ActionItem[] {
   return actionItems.sort((a, b) => 
     a.priority === 'high' ? -1 : b.priority === 'high' ? 1 : 0
   );
+}
+
+export function processHeatmapData() {
+  // Process your calendar events into intensity levels
+  const lowIntensity: Date[] = [];
+  const mediumIntensity: Date[] = [];
+  const highIntensity: Date[] = [];
+
+  calendarEvents.forEach(event => {
+    const date = new Date(event.date);
+    
+    // Categorize based on duration or other metrics
+    if (event.duration > 240) { // More than 4 hours
+      highIntensity.push(date);
+    } else if (event.duration > 120) { // More than 2 hours
+      mediumIntensity.push(date);
+    } else {
+      lowIntensity.push(date);
+    }
+  });
+
+  return {
+    datesPerVariant: [lowIntensity, mediumIntensity, highIntensity]
+  };
+}
+
+export interface TrendData {
+  label: string;
+  percentage: number;
+  comparison: string;
+  timeframe: 'weekly' | 'monthly';
+}
+
+export function calculateTrends(): TrendData[] {
+  const today = new Date();
+  
+  // Weekly date ranges
+  const oneWeekAgo = new Date(today.getTime() - 7 * 24 * 60 * 60 * 1000);
+  const twoWeeksAgo = new Date(today.getTime() - 14 * 24 * 60 * 60 * 1000);
+
+  // Monthly date ranges
+  const oneMonthAgo = new Date(today.getTime() - 30 * 24 * 60 * 60 * 1000);
+  const twoMonthsAgo = new Date(today.getTime() - 60 * 24 * 60 * 60 * 1000);
+
+  // Weekly calculations
+  const currentWeekEvents = calendarEvents.filter(event => 
+    new Date(event.date) >= oneWeekAgo && new Date(event.date) <= today
+  );
+  const previousWeekEvents = calendarEvents.filter(event => 
+    new Date(event.date) >= twoWeeksAgo && new Date(event.date) < oneWeekAgo
+  );
+
+  // Monthly calculations
+  const currentMonthEvents = calendarEvents.filter(event => 
+    new Date(event.date) >= oneMonthAgo && new Date(event.date) <= today
+  );
+  const previousMonthEvents = calendarEvents.filter(event => 
+    new Date(event.date) >= twoMonthsAgo && new Date(event.date) < oneMonthAgo
+  );
+
+  const weeklyTrend = calculateTrendData(
+    currentWeekEvents,
+    previousWeekEvents,
+    "Weekly Progress",
+    'weekly'
+  );
+
+  const monthlyTrend = calculateTrendData(
+    currentMonthEvents,
+    previousMonthEvents,
+    "Monthly Progress",
+    'monthly'
+  );
+
+  return [weeklyTrend, monthlyTrend];
+}
+
+function calculateTrendData(
+  currentEvents: CalendarEvent[],
+  previousEvents: CalendarEvent[],
+  label: string,
+  timeframe: 'weekly' | 'monthly'
+): TrendData {
+  const currentCompletion = calculateCompletionRate(currentEvents);
+  const previousCompletion = calculateCompletionRate(previousEvents);
+
+  const percentageChange = previousCompletion === 0 
+    ? currentCompletion 
+    : ((currentCompletion - previousCompletion) / previousCompletion) * 100;
+
+  return {
+    label,
+    percentage: Math.round(percentageChange),
+    comparison: `vs last ${timeframe === 'weekly' ? 'week' : 'month'} (${Math.round(previousCompletion)}%)`,
+    timeframe
+  };
+}
+
+function calculateCompletionRate(events: CalendarEvent[]): number {
+  if (events.length === 0) return 0;
+
+  const completedEvents = events.filter(event => event.status !== "deleted").length;
+  return (completedEvents / events.length) * 100;
+}
+
+export interface PerfectDayData {
+  date: string;
+  isPerfect: boolean;
+  dayNumber: number;
+}
+
+export function processPerfectDays(): PerfectDayData[] {
+  const thirtyDaysAgo = new Date();
+  thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 28); // Get last 28 days
+  
+  const perfectDays: PerfectDayData[] = [];
+  const currentDate = new Date();
+
+  // Group events by date
+  const eventsByDate = new Map<string, CalendarEvent[]>();
+  
+  calendarEvents.forEach(event => {
+    const eventDate = new Date(event.date);
+    if (eventDate >= thirtyDaysAgo && eventDate <= currentDate) {
+      const dateKey = event.date.split('T')[0];
+      if (!eventsByDate.has(dateKey)) {
+        eventsByDate.set(dateKey, []);
+      }
+      eventsByDate.get(dateKey)?.push(event);
+    }
+  });
+
+  // Iterate through the last 28 days
+  for (let i = 0; i < 28; i++) {
+    const date = new Date(thirtyDaysAgo);
+    date.setDate(date.getDate() + i);
+    const dateKey = date.toISOString().split('T')[0];
+    const dayEvents = eventsByDate.get(dateKey) || [];
+    
+    let isPerfect = true;
+    
+    if (dayEvents.length > 0) {
+      dayEvents.forEach(event => {
+        if (event.status === "deleted") {
+          isPerfect = false;
+        } else if (event.status === "modified") {
+          // Check if modification was significant (>20% time difference)
+          const plannedDuration = new Date(event.end).getTime() - new Date(event.start).getTime();
+          const actualDuration = new Date(event.new_end).getTime() - new Date(event.new_start).getTime();
+          const durationDifference = Math.abs(plannedDuration - actualDuration);
+          if (durationDifference / plannedDuration > 0.2) {
+            isPerfect = false;
+          }
+        }
+      });
+    } else {
+      // If no events on this day, consider it not perfect
+      isPerfect = false;
+    }
+
+    perfectDays.push({
+      date: dateKey,
+      isPerfect,
+      dayNumber: i + 1
+    });
+  }
+
+  return perfectDays;
+}
+
+interface CompoundedConsistencyData {
+  day: number;
+  compoundedActual: number;
+  perfectCompound: number;
+}
+
+export function processCompoundConsistencyData(): CompoundedConsistencyData[] {
+  const consistencyData = processConsistencyData();
+  let runningSum = 0;
+  let perfectSum = 0;
+  
+  return consistencyData.map((dayData, index) => {
+    // Add today's actual consistency to running sum
+    runningSum += dayData.completion;
+    
+    // Add 100 to perfect running sum
+    perfectSum += 100;
+
+    return {
+      day: dayData.day,
+      compoundedActual: Number((runningSum / 10).toFixed(2)),
+      perfectCompound: perfectSum / 10
+    };
+  });
 }

@@ -1,12 +1,13 @@
 'use client';
 
 import React from 'react';
-import { Card, CardContent, 
-
- CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Star } from 'lucide-react';
+import { processPerfectDays } from '../dataProcessor';
 
 export function PerfectDays() {
+  const perfectDays = processPerfectDays();
+
   return (
     <Card>
       <CardHeader>
@@ -17,13 +18,15 @@ export function PerfectDays() {
       </CardHeader>
       <CardContent>
         <div className="grid grid-cols-7 gap-1">
-          {Array(28).fill(0).map((_, i) => (
+          {perfectDays.map((day) => (
             <div 
-              key={i} 
+              key={day.date} 
               className={`aspect-square rounded-md flex items-center justify-center text-sm
-                ${Math.random() > 0.8 ? 'bg-yellow-100 text-yellow-800' : 'bg-gray-100 text-gray-600'}`}
+                ${day.isPerfect ? 'bg-yellow-100 text-yellow-800' : 'bg-gray-100 text-gray-600'}
+                hover:bg-opacity-80 transition-colors cursor-default`}
+              title={`${day.date}${day.isPerfect ? ' - Perfect Day!' : ''}`}
             >
-              {i + 1}
+              {day.dayNumber}
             </div>
           ))}
         </div>
