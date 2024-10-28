@@ -22,7 +22,9 @@ async function fetchAndSaveData() {
     const { data, error } = await supabase
       .from('calendar_events')
       .select('*')
-      .gte('date', '2024-10-28'); // Add date filter
+      .gte('date', '2024-10-29')
+      .not('calendar', 'eq', 'jonkuhar11@gmail.com')  // Filter out jonkuhar11@gmail.com calendar
+      .not('summary', 'eq', 'hanc');  // Filter out events with summary 'hanc'
 
     if (error) {
       throw error;
@@ -35,7 +37,7 @@ async function fetchAndSaveData() {
     const filePath = path.join(process.cwd(), 'data', 'calendarEvents.json');
     await fs.writeFile(filePath, jsonData, 'utf-8');
 
-    console.log(`Data fetched and saved successfully (events from 28.10.2024)`);
+    console.log(`Data fetched and saved successfully (filtered events from 28.10.2024)`);
   } catch (error) {
     console.error('Error fetching or saving data:', error);
   }
