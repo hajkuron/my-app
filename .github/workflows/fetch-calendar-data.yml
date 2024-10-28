@@ -27,11 +27,11 @@ jobs:
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
         run: node utils/fetchAndSaveData.js
 
-      - name: Commit and push if changes exist
-        env:
-          GITHUB_TOKEN: ${{ secrets.PAT }}
+       - name: Commit and push if changed
         run: |
           git config --global user.name 'GitHub Action'
           git config --global user.email 'action@github.com'
-          git add data/calendarEvents.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Update calendar events data" && git push) 
+          git add -A
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update chart data" && git push)
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT }}
