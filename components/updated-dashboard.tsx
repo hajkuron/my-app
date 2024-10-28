@@ -2,8 +2,8 @@
 
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { LineChart, Line, BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Tooltip, Legend, PieChart, Pie, Cell } from 'recharts';
-import { AlertTriangle, TrendingUp, Clock, Calendar, Timer, Star } from 'lucide-react';
+import { LineChart, Line, ResponsiveContainer, Tooltip, Legend, PieChart, Pie, Cell } from 'recharts';
+import { AlertTriangle, TrendingUp, Clock, Timer, Star } from 'lucide-react';
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
 
 export default function Component() {
@@ -83,8 +83,6 @@ export default function Component() {
     { name: 'Social', value: 10 },
     { name: 'Other', value: 20 },
   ];
-
-  const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884d8'];
 
   return (
     <div className="p-6 max-w-7xl mx-auto bg-gray-50">

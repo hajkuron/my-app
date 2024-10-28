@@ -3,7 +3,7 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Tooltip, Legend } from 'recharts';
-import { AlertTriangle, TrendingUp, Clock, Calendar, Timer, Star, ArrowUpRight } from 'lucide-react';
+import { AlertTriangle, TrendingUp, Clock, Timer, Star, ArrowUpRight } from 'lucide-react';
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
 
 export function UpdatedDashboardWithTrend() {
