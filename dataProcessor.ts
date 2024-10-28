@@ -183,6 +183,37 @@ export function processConsistencyData(): DailyConsistency[] {
   const thirtyDaysAgo = new Date();
   thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
   
+  // Get weekly goals data
+  const weeklyGoals = new Map<string, number>();
+  calendarEvents.forEach(event => {
+    if (event.calendar_name === "Goals") {
+      // Get the start of the week for this goal entry
+      const weekStart = new Date(event.date);
+      weekStart.setDate(weekStart.getDate() - weekStart.getDay());
+      const weekKey = weekStart.toISOString().split('T')[0];
+      
+      // Convert summary to number and calculate adjustment
+      const goalsAchieved = Number(event.summary);
+      let goalAdjustment;
+      
+      if (goalsAchieved === 5) {
+        goalAdjustment = 15; // +15% bonus for perfect goals
+      } else if (goalsAchieved === 4) {
+        goalAdjustment = -5;  // -5% penalty
+      } else if (goalsAchieved === 3) {
+        goalAdjustment = -10; // -10% penalty
+      } else if (goalsAchieved === 2) {
+        goalAdjustment = -15; // -15% penalty
+      } else if (goalsAchieved === 1) {
+        goalAdjustment = -20; // -20% penalty
+      } else {
+        goalAdjustment = -30; // -30% penalty for zero goals
+      }
+      
+      weeklyGoals.set(weekKey, goalAdjustment);
+    }
+  });
+
   // Group events by date
   const eventsByDate = new Map<string, CalendarEvent[]>();
   
@@ -194,36 +225,42 @@ export function processConsistencyData(): DailyConsistency[] {
     eventsByDate.get(dateKey)?.push(event);
   });
 
-  // Calculate daily consistency scores
+  // Calculate daily consistency scores with goal penalties
   const dailyScores: { date: string; score: number }[] = [];
 
   eventsByDate.forEach((events, date) => {
+    // Existing consistency calculation
     const totalPlannedMinutes = events.reduce((sum, event) => {
       const duration = (new Date(event.end).getTime() - new Date(event.start).getTime()) / (1000 * 60);
       return sum + duration;
     }, 0);
 
-    let consistencyScore = 100; // Start with perfect score
+    let consistencyScore = 100;
 
     events.forEach(event => {
       if (event.status === "deleted") {
-        // Calculate impact of deleted event
         const deletedDuration = (new Date(event.end).getTime() - new Date(event.start).getTime()) / (1000 * 60);
         const impactPercentage = (deletedDuration / totalPlannedMinutes) * 100;
         consistencyScore -= impactPercentage;
       } else if (event.status === "modified") {
-        // Calculate impact of modified event
         const plannedDuration = (new Date(event.end).getTime() - new Date(event.start).getTime()) / (1000 * 60);
         const actualDuration = (new Date(event.new_end).getTime() - new Date(event.new_start).getTime()) / (1000 * 60);
         const durationDifference = Math.abs(plannedDuration - actualDuration);
-        const impactPercentage = (durationDifference / totalPlannedMinutes) * 50; // Less penalty for modifications
+        const impactPercentage = (durationDifference / totalPlannedMinutes) * 50;
         consistencyScore -= impactPercentage;
       }
     });
 
+    // Apply weekly goals adjustment if exists
+    const weekStart = new Date(date);
+    weekStart.setDate(weekStart.getDate() - weekStart.getDay());
+    const weekKey = weekStart.toISOString().split('T')[0];
+    const goalAdjustment = weeklyGoals.get(weekKey) || 0;
+    consistencyScore = Math.max(0, Math.min(100, consistencyScore + goalAdjustment));
+
     dailyScores.push({
       date,
-      score: Math.max(0, Math.min(100, consistencyScore)) // Clamp between 0 and 100
+      score: Math.max(0, Math.min(100, consistencyScore))
     });
   });
 
