@@ -11,22 +11,47 @@ jobs:
     steps:
     - uses: actions/checkout@v4
       with:
-        token: ${{ secrets.PAT }}  # This was missing and is crucial
+        token: ${{ secrets.PAT }}
     
-    - name: Set up Python
-      uses: actions/setup-python@v5
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
       with:
-        python-version: '3.9'
+        node-version: '18'
     
     - name: Install dependencies
       run: |
-        python -m pip install --upgrade pip
-        pip install requests python-dotenv
+        npm install @supabase/supabase-js dotenv
 
     - name: Run script
-      run: python fetch_calendar_data.py
+      id: fetch_data
+      run: |
+        node utils/fetchAndSaveData.js 2>&1 | tee output.log
+      continue-on-error: true
       env:
-        GITHUB_TOKEN: ${{ secrets.PAT }}
+        NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+        SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+
+    - name: Check for errors
+      id: check_errors
+      run: |
+        if grep -q "Error" output.log; then
+          echo "Error occurred in script execution:"
+          cat output.log
+          echo "Node version:"
+          node --version
+          echo "Installed packages:"
+          npm list
+          exit 1
+        else
+          echo "fetchAndSaveData.js executed successfully"
+          cat output.log
+        fi
+
+    - name: List directory contents
+      if: failure()
+      run: |
+        echo "Contents of the current directory:"
+        ls -la
 
     - name: Commit and push if changed
       if: success()
