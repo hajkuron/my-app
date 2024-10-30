@@ -22,7 +22,7 @@ async function fetchAndSaveData() {
     const { data, error } = await supabase
       .from('calendar_events')
       .select('*')
-      .gte('date', '2024-10-31')
+      .gte('date', '2024-09-10')
       .not('calendar_name', 'eq', 'jonkuhar11@gmail.com')  // Filter out jonkuhar11@gmail.com calendar
       .not('summary', 'eq', 'hanc');  // Filter out events with summary 'hanc'
 

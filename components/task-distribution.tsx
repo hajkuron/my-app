@@ -5,24 +5,37 @@ import { Card } from '@/components/ui/card';
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer } from 'recharts';
 import { Clock } from 'lucide-react';
 import { processTaskDistribution } from '@/dataProcessor';
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 
 export function TaskDistribution() {
-  // Replace static data with processed data
-  const data = processTaskDistribution();
+  const [timeframe, setTimeframe] = React.useState<'weekly' | 'monthly'>('weekly');
+  const data = processTaskDistribution(timeframe);
+
+  // Calculate max value for ticks based on timeframe
+  const maxValue = Math.max(...data.map(item => Math.max(item.planned, item.actual)));
+  const ticks = timeframe === 'weekly' 
+    ? [0, 4, 8, 13.5]  // Weekly ticks
+    : [0, 10, 20, 30, 40, 50].filter(tick => tick <= maxValue + 5); // Monthly ticks
 
   return (
     <Card className="p-6">
       <div className="space-y-6">
         {/* Header */}
         <div className="space-y-1">
-          <div className="flex items-start space-x-4">
-            <div className="p-4 bg-blue-50 rounded-full">
-              <Clock className="w-6 h-6 text-blue-500" />
+          <div className="flex items-start justify-between">
+            <div className="flex items-start space-x-4">
+              <div className="p-4 bg-blue-50 rounded-full">
+                <Clock className="w-6 h-6 text-blue-500" />
+              </div>
+              <div>
+                <h2 className="text-xl font-semibold tracking-tight">Task Distribution</h2>
+                <p className="text-sm text-muted-foreground">Hours allocated vs actual spent</p>
+              </div>
             </div>
-            <div>
-              <h2 className="text-xl font-semibold tracking-tight">Task Distribution</h2>
-              <p className="text-sm text-muted-foreground">Hours allocated vs actual spent</p>
-            </div>
+            <ToggleGroup type="single" value={timeframe} onValueChange={(value) => value && setTimeframe(value as 'weekly' | 'monthly')}>
+              <ToggleGroupItem value="weekly">Weekly</ToggleGroupItem>
+              <ToggleGroupItem value="monthly">Monthly</ToggleGroupItem>
+            </ToggleGroup>
           </div>
 
           {/* Legend */}
@@ -51,7 +64,7 @@ export function TaskDistribution() {
                 type="number"
                 tickLine={false}
                 axisLine={false}
-                ticks={[0, 4, 8, 13.5]}
+                ticks={ticks}
                 tickFormatter={(value) => `${value}h`}
                 style={{ fontSize: '12px' }}
               />
