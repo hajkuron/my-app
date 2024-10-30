@@ -1,0 +1,19 @@
+[
+  {
+    "id": "36cae9406e28eeb617f1141aed5dc2aaec4a39d5385bde6609d4593a88ae0ec7",
+    "version_id": "29405b9a1ab1401e6f8fe5a218044e4fa5fd8be7ccfda390c7bea0ea22fc911c",
+    "date": "2024-10-30T00:00:00+00:00",
+    "start": "2024-10-30T07:00:00+00:00",
+    "end": "2024-10-30T09:00:00+00:00",
+    "value": 1,
+    "summary": "project",
+    "description": "(No description)",
+    "calendar_name": "Projects",
+    "new_date": "2024-10-30T00:00:00+00:00",
+    "new_start": "2024-10-30T07:00:00+00:00",
+    "new_end": "2024-10-30T09:00:00+00:00",
+    "status": "new",
+    "duration": 120,
+    "deleted": false
+  }
+]
