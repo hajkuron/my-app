@@ -23,7 +23,6 @@ async function fetchAndSaveData() {
       .from('calendar_events')
       .select('*')
       .gte('date', '2024-10-31')
-      .not('calendar_name', 'eq', 'jonkuhar11@gmail.com')  // Filter out jonkuhar11@gmail.com calendar
       .not('summary', 'eq', 'hanc');  // Filter out events with summary 'hanc'
 
     if (error) {
