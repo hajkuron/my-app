@@ -37,12 +37,24 @@ export interface MissedCommitment {
   impact: "low" | "medium" | "high";
 }
 
+// Helper function to check if an event was significantly modified
+function isSignificantlyModified(event: CalendarEvent, threshold: number = 0.25): boolean {
+  if (event.status !== "modified") return false;
+  
+  const plannedDuration = new Date(event.end).getTime() - new Date(event.start).getTime();
+  const actualDuration = new Date(event.new_end).getTime() - new Date(event.new_start).getTime();
+  const durationDifference = plannedDuration - actualDuration;
+  
+  // Return true if actual duration was significantly shorter (by threshold %)
+  return durationDifference / plannedDuration > threshold;
+}
+
 export function processMissedCommitments(): MissedCommitment[] {
   const oneWeekAgo = new Date();
   oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
 
   const missedEvents = calendarEvents.filter(event => 
-    event.status === "deleted" &&
+    (event.status === "deleted" || isSignificantlyModified(event)) &&
     new Date(event.date) >= oneWeekAgo
   );
 
@@ -51,16 +63,29 @@ export function processMissedCommitments(): MissedCommitment[] {
     const endTime = new Date(event.end);
     const dayOfWeek = startTime.toLocaleDateString('en-US', { weekday: 'long' });
 
+    // Add more context for modified events
+    const reflection = event.status === "deleted" 
+      ? generateReflection(event)
+      : `Significantly shortened: ${formatDuration(event.start, event.end)} planned vs ${formatDuration(event.new_start, event.new_end)} actual`;
+
     return {
       id: index + 1,
       activity: event.summary,
       time: `${formatTime(startTime)} - ${formatTime(endTime)}`,
       day: dayOfWeek,
       pattern: determinePattern(event, missedEvents),
-      reflection: generateReflection(event),
+      reflection,
       impact: determineImpact(event)
     };
   });
+}
+
+// Helper function to format duration
+function formatDuration(start: string, end: string): string {
+  const duration = (new Date(end).getTime() - new Date(start).getTime()) / (1000 * 60);
+  const hours = Math.floor(duration / 60);
+  const minutes = Math.round(duration % 60);
+  return hours > 0 ? `${hours}h ${minutes}m` : `${minutes}m`;
 }
 
 function formatTime(date: Date): string {
@@ -187,32 +212,44 @@ export function processConsistencyData(): DailyConsistency[] {
   const weeklyGoals = new Map<string, number>();
   calendarEvents.forEach(event => {
     if (event.calendar_name === "Goals") {
-      // Get the start of the week for this goal entry
-      const weekStart = new Date(event.date);
-      weekStart.setDate(weekStart.getDate() - weekStart.getDay());
-      const weekKey = weekStart.toISOString().split('T')[0];
+      // Get the Monday of the week being evaluated (6 days before the Sunday goal entry)
+      const goalDate = new Date(event.date); // This is a Sunday
+      const weekStart = new Date(goalDate);
+      weekStart.setDate(goalDate.getDate() - 6); // Go back 6 days to get to Monday
       
-      // Convert summary to number and calculate adjustment
+      // Convert summary to number outside the loop since it's the same for all days
       const goalsAchieved = Number(event.summary);
-      let goalAdjustment;
+      console.log(`Found goal entry: ${goalsAchieved} goals achieved for week starting ${weekStart.toISOString().split('T')[0]} (Mon) through ${goalDate.toISOString().split('T')[0]} (Sun)`);
       
-      if (goalsAchieved === 5) {
-        goalAdjustment = 15; // +15% bonus for perfect goals
-      } else if (goalsAchieved === 4) {
-        goalAdjustment = -5;  // -5% penalty
-      } else if (goalsAchieved === 3) {
-        goalAdjustment = -10; // -10% penalty
-      } else if (goalsAchieved === 2) {
-        goalAdjustment = -15; // -15% penalty
-      } else if (goalsAchieved === 1) {
-        goalAdjustment = -20; // -20% penalty
-      } else {
-        goalAdjustment = -30; // -30% penalty for zero goals
+      // Generate all dates for that week (Monday through Sunday)
+      for (let i = 0; i < 7; i++) {
+        const currentDate = new Date(weekStart);
+        currentDate.setDate(currentDate.getDate() + i);
+        const dateKey = currentDate.toISOString().split('T')[0];
+        
+        let goalAdjustment;
+        if (goalsAchieved === 5) {
+          goalAdjustment = 15;
+        } else if (goalsAchieved === 4) {
+          goalAdjustment = -5;
+        } else if (goalsAchieved === 3) {
+          goalAdjustment = -10;
+        } else if (goalsAchieved === 2) {
+          goalAdjustment = -15;
+        } else if (goalsAchieved === 1) {
+          goalAdjustment = -20;
+        } else {
+          goalAdjustment = -30;
+        }
+        
+        console.log(`Mapping goal adjustment of ${goalAdjustment}% to date ${dateKey}`);
+        weeklyGoals.set(dateKey, goalAdjustment);
       }
-      
-      weeklyGoals.set(weekKey, goalAdjustment);
     }
   });
+
+  // Log the complete goals map
+  console.log('Weekly Goals Map:', Object.fromEntries(weeklyGoals));
 
   // Group events by date
   const eventsByDate = new Map<string, CalendarEvent[]>();
@@ -252,17 +289,22 @@ export function processConsistencyData(): DailyConsistency[] {
     });
 
     // Apply weekly goals adjustment if exists
-    const weekStart = new Date(date);
-    weekStart.setDate(weekStart.getDate() - weekStart.getDay());
-    const weekKey = weekStart.toISOString().split('T')[0];
-    const goalAdjustment = weeklyGoals.get(weekKey) || 0;
+    const goalAdjustment = weeklyGoals.get(date) || 0;
+    
+    console.log(`Date ${date}: Base consistency score: ${consistencyScore}`);
+    console.log(`Applying goal adjustment of ${goalAdjustment} directly for date ${date}`);
+    
     consistencyScore = Math.max(0, Math.min(100, consistencyScore + goalAdjustment));
+    console.log(`Final adjusted score: ${consistencyScore}`);
 
     dailyScores.push({
       date,
       score: Math.max(0, Math.min(100, consistencyScore))
     });
   });
+
+  // Log final daily scores array
+  console.log('Final Daily Scores:', dailyScores);
 
   // Sort by date
   dailyScores.sort((a, b) => a.date.localeCompare(b.date));
@@ -362,15 +404,17 @@ interface ActionItem {
 }
 
 export function processActionItems(): ActionItem[] {
-  const missedEvents = calendarEvents.filter(event => 
-    event.status === "deleted" &&
-    new Date(event.date) >= new Date(Date.now() - 30 * 24 * 60 * 60 * 1000) // Last 30 days
+  const thirtyDaysAgo = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000);
+  
+  const problematicEvents = calendarEvents.filter(event => 
+    (event.status === "deleted" || isSignificantlyModified(event)) &&
+    new Date(event.date) >= thirtyDaysAgo
   );
 
-  // Group events by activity summary only
+  // Group events by activity summary
   const patterns = new Map<string, CalendarEvent[]>();
-  missedEvents.forEach(event => {
-    const key = event.calendar_name.toLowerCase(); // Use only the summary as key
+  problematicEvents.forEach(event => {
+    const key = event.calendar_name.toLowerCase();
     if (!patterns.has(key)) {
       patterns.set(key, []);
     }
@@ -379,25 +423,27 @@ export function processActionItems(): ActionItem[] {
 
   const actionItems: ActionItem[] = [];
 
-  // Analyze patterns by time of day (keep this part)
-  const morningMisses = missedEvents.filter(e => new Date(e.start).getHours() < 10);
-  const eveningMisses = missedEvents.filter(e => new Date(e.start).getHours() >= 18);
+  // Analyze patterns by time of day
+  const morningIssues = problematicEvents.filter(e => new Date(e.start).getHours() < 10);
+  const eveningIssues = problematicEvents.filter(e => new Date(e.start).getHours() >= 18);
 
-  if (morningMisses.length >= 3) {
+  if (morningIssues.length >= 3) {
     actionItems.push({
       title: "Morning Commitment Struggles",
-      description: `${morningMisses.length} early commitments missed in the last month. Consider adjusting morning schedule.`,
+      description: `${morningIssues.length} early commitments missed or significantly shortened. Consider adjusting morning schedule.`,
       priority: "high",
       category: "schedule"
     });
   }
 
-  if (eveningMisses.length >= 3) {
+  // Add specific action item for modified events
+  const significantlyModified = problematicEvents.filter(e => isSignificantlyModified(e));
+  if (significantlyModified.length >= 3) {
     actionItems.push({
-      title: "Evening Activity Challenges",
-      description: `${eveningMisses.length} evening activities missed. Consider rescheduling to earlier times.`,
-      priority: "medium",
-      category: "schedule"
+      title: "Duration Planning Issues",
+      description: `${significantlyModified.length} activities significantly shortened. Consider more realistic duration planning.`,
+      priority: significantlyModified.length >= 5 ? "high" : "medium",
+      category: "planning"
     });
   }
 
@@ -423,7 +469,7 @@ export function processActionItems(): ActionItem[] {
   });
 
   // Add duration-based patterns
-  const longDurationMisses = missedEvents.filter(e => {
+  const longDurationMisses = problematicEvents.filter(e => {
     const duration = (new Date(e.end).getTime() - new Date(e.start).getTime()) / (1000 * 60);
     return duration >= 90;
   });
