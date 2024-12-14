@@ -22,7 +22,7 @@ async function fetchAndSaveData() {
     const { data, error } = await supabase
       .from('calendar_events')
       .select('*')
-      .gte('date', '2024-10-31')
+      .gte('date', '2025-01-01')
       .not('summary', 'eq', 'hanc');  // Filter out events with summary 'hanc'
 
     if (error) {
