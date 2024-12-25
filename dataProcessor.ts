@@ -681,3 +681,36 @@ export function processCompoundConsistencyData(): CompoundedConsistencyData[] {
     };
   });
 }
+
+export interface WeeklyGoalData {
+  week: string;
+  achieved: number;
+  total: number;
+}
+
+export function processWeeklyGoalsData(): WeeklyGoalData[] {
+  console.log('All calendar events:', calendarEvents);
+  
+  const goals = calendarEvents.filter(event => {
+    const isGoal = event.calendar_name === "Goals";
+    console.log('Checking event:', {
+      isGoal,
+      calendar: event.calendar_name
+    });
+    return isGoal;
+  });
+
+  console.log('Filtered goals:', goals);
+
+  const result = goals.map(event => {
+    const date = new Date(event.date);
+    return {
+      week: date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }),
+      achieved: Number(event.summary),
+      total: 5
+    };
+  }).slice(-4); // Keep only last 4 entries
+
+  console.log('Processed weekly goals:', result);
+  return result;
+}
