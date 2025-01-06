@@ -1,5 +1,22 @@
 [
   {
+    "id": "081e9e992c60e60695234066977835c8c57611110bfbb93a5d94fba3af48d726",
+    "version_id": "fdc1d29ffa2350ce0f40d99b3173f81a09567d8ee5f3f877df833ac8526c9840",
+    "date": "2025-01-06T00:00:00+00:00",
+    "start": "2025-01-06T08:00:00+00:00",
+    "end": "2025-01-06T16:00:00+00:00",
+    "value": 1,
+    "summary": "Venture Challenge",
+    "description": "",
+    "calendar_name": "University of Amsterdam - Personal timetable: 13597698@uva.nl",
+    "new_date": "2025-01-06T00:00:00+00:00",
+    "new_start": "2025-01-06T08:00:00+00:00",
+    "new_end": "2025-01-06T16:00:00+00:00",
+    "status": "new",
+    "duration": 480,
+    "deleted": false
+  },
+  {
     "id": "b6bfb1ff1a06112b1f55e2e22ea2d347c8a874be521c539e734aa778051976e6",
     "version_id": "a979d63566b51b4cfabf84c510cd447c9f688d1b33b04e6e595d540028011cdf",
     "date": "2025-01-05T00:00:00+00:00",
@@ -12,7 +29,7 @@
     "new_date": "2025-01-05T00:00:00+00:00",
     "new_start": "2025-01-05T12:00:00+00:00",
     "new_end": "2025-01-05T14:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 120,
     "deleted": false
   }
