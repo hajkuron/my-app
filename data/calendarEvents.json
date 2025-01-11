@@ -153,6 +153,40 @@
     "deleted": false
   },
   {
+    "id": "2a5cee8b5475b348987ed5cf2eefe1871a8e2f9fbe70587de80447273e133857",
+    "version_id": "b96269d65e3b6955151247b645e64f03d78655a4c799091a0612372d4f336b18",
+    "date": "2025-01-06T00:00:00+00:00",
+    "start": "2025-01-06T08:00:00+00:00",
+    "end": "2025-01-06T16:00:00+00:00",
+    "value": 1,
+    "summary": "Venture Challenge",
+    "description": "",
+    "calendar_name": "University of Amsterdam - Personal timetable: 13597698@uva.nl",
+    "new_date": "2025-01-06T00:00:00+00:00",
+    "new_start": "2025-01-06T08:00:00+00:00",
+    "new_end": "2025-01-06T16:00:00+00:00",
+    "status": "new",
+    "duration": 480,
+    "deleted": false
+  },
+  {
+    "id": "8398e636ff046ba97892b3c015b88c7f2262b3ce8a86f0aab437264eeed46ba1",
+    "version_id": "8ef9703f951faa64db5a3c67a5ce647ba2a57ebd3aaa7471774c5f5830868a77",
+    "date": "2025-01-07T00:00:00+00:00",
+    "start": "2025-01-07T08:00:00+00:00",
+    "end": "2025-01-07T16:00:00+00:00",
+    "value": 1,
+    "summary": "Venture Challenge",
+    "description": "",
+    "calendar_name": "University of Amsterdam - Personal timetable: 13597698@uva.nl",
+    "new_date": "2025-01-07T00:00:00+00:00",
+    "new_start": "2025-01-07T08:00:00+00:00",
+    "new_end": "2025-01-07T16:00:00+00:00",
+    "status": "new",
+    "duration": 480,
+    "deleted": false
+  },
+  {
     "id": "afcfacfc7ab4ee56b749075f5a39fb29fcec12a88d76df27cdd98c7e380bf001",
     "version_id": "e5f60566b3ff1bc8393c21fcfeaedb547b1465fb43b51f1ad5f199c5af69e060",
     "date": "2025-01-09T00:00:00+00:00",
@@ -182,7 +216,7 @@
     "new_date": "2025-01-10T00:00:00+00:00",
     "new_start": "2025-01-10T07:00:00+00:00",
     "new_end": "2025-01-10T15:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 480,
     "deleted": false
   },
@@ -250,7 +284,7 @@
     "new_date": "2025-01-10T00:00:00+00:00",
     "new_start": "2025-01-10T16:00:00+00:00",
     "new_end": "2025-01-10T17:55:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 115,
     "deleted": false
   },
@@ -301,8 +335,25 @@
     "new_date": "2025-01-10T00:00:00+00:00",
     "new_start": "2025-01-10T18:00:00+00:00",
     "new_end": "2025-01-10T19:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 60,
+    "deleted": false
+  },
+  {
+    "id": "c1564abf69f2dbf70e3b6f2af68878943290b484a467681376495338a7e11160",
+    "version_id": "a09adb9e101d0e423501d326f9abe52915df47137ec6868924ab28da0fc2f089",
+    "date": "2025-01-11T00:00:00+00:00",
+    "start": "2025-01-11T07:00:00+00:00",
+    "end": "2025-01-11T17:00:00+00:00",
+    "value": 1,
+    "summary": "whole day work",
+    "description": "(No description)",
+    "calendar_name": "Projects",
+    "new_date": "2025-01-11T00:00:00+00:00",
+    "new_start": "2025-01-11T07:00:00+00:00",
+    "new_end": "2025-01-11T17:00:00+00:00",
+    "status": "new",
+    "duration": 600,
     "deleted": false
   }
 ]
