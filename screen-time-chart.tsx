@@ -155,8 +155,8 @@ export default function ScreenTimeChart() {
   }, {});
 
   return (
-    <Card className="w-full p-4">
-      <div className="flex items-center justify-between mb-2">
+    <Card className="w-full p-2">
+      <div className="flex items-center justify-between mb-1">
         <h2 className="text-2xl font-bold">Screen Time</h2>
         <div className="flex items-center gap-4">
           <div className="flex items-center min-w-[200px]">
@@ -196,7 +196,7 @@ export default function ScreenTimeChart() {
               return (
                 <div key={category} className="border-b border-border/5 last:border-none">
                   <div
-                    className="flex items-center gap-2 cursor-pointer h-10"
+                    className="flex items-center gap-2 cursor-pointer h-8"
                     onMouseEnter={() => !isExpanded && setActiveIndex(index)}
                     onClick={() => toggleCategory(category)}
                   >
@@ -243,7 +243,7 @@ export default function ScreenTimeChart() {
 
           {/* Pie Chart */}
           <div className="w-1/2 pl-4">
-            <div className="w-full h-full min-h-[400px] flex items-center justify-center">
+            <div className="w-full h-full min-h-[300px] flex items-center justify-center">
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
                   <Pie

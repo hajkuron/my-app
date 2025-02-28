@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { format, parseISO } from "date-fns"
 import { ChevronLeft, ChevronRight, ChevronDown, ChevronRight as ChevronRightIcon } from "lucide-react"
 import { processActivityLogsForGantt, GanttChartData } from "../activityLogsProcessor"
@@ -113,15 +113,54 @@ interface ScreenTimeData {
   category: string
 }
 
-interface GanttChartVisualizationProps {
+interface _GanttChartVisualizationProps {
   data: ScreenTimeData[]
 }
 
 export default function GanttChartVisualization() {
-  // Use a Date object for better date manipulation
-  const [selectedDate, setSelectedDate] = useState(new Date());
-  const [days] = useState(1); // Keep this for potential future use with weekly view
+  // Set default date to yesterday
+  const [selectedDate, _setDate] = useState(() => {
+    const yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1);
+    return yesterday;
+  });
+  const [days, _setDays] = useState(1); // Keep this for potential future use with weekly view
   const [expandedCategories, setExpandedCategories] = useState<Set<string>>(new Set());
+
+  // Add zoom state
+  const [zoomLevel, setZoomLevel] = useState(1); // 1 = normal, > 1 = zoomed in
+  const maxZoom = 4; // Maximum zoom level
+  const minZoom = 0.5; // Minimum zoom level
+
+  // Add drag state
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragStart, setDragStart] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+  const timelineRef = useRef<HTMLDivElement>(null);
+
+  // Handle drag events
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (!timelineRef.current || zoomLevel <= 1) return;
+    setIsDragging(true);
+    setDragStart(e.pageX - timelineRef.current.offsetLeft);
+    setScrollLeft(timelineRef.current.scrollLeft);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging || !timelineRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - timelineRef.current.offsetLeft;
+    const walk = (x - dragStart) * 1.5;
+    timelineRef.current.scrollLeft = scrollLeft - walk;
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseLeave = () => {
+    setIsDragging(false);
+  };
 
   // Format the date for display
   const formattedDate = format(selectedDate, "MMM d, yyyy");
@@ -134,13 +173,26 @@ export default function GanttChartVisualization() {
   const handlePreviousDay = () => {
     const newDate = new Date(selectedDate);
     newDate.setDate(newDate.getDate() - 1);
-    setSelectedDate(newDate);
+    _setDate(newDate);
   };
 
   const handleNextDay = () => {
     const newDate = new Date(selectedDate);
     newDate.setDate(newDate.getDate() + 1);
-    setSelectedDate(newDate);
+    _setDate(newDate);
+  };
+
+  // Handle zoom controls
+  const handleZoomIn = () => {
+    setZoomLevel(prev => Math.min(prev + 0.5, maxZoom));
+  };
+
+  const handleZoomOut = () => {
+    setZoomLevel(prev => Math.max(prev - 0.5, minZoom));
+  };
+
+  const handleResetZoom = () => {
+    setZoomLevel(1);
   };
 
   // Get unique categories and their apps
@@ -171,23 +223,92 @@ export default function GanttChartVisualization() {
   }, {});
 
   // Calculate day start and end times (for the timeline)
-  const dayStart = 5 // 5 AM
-  const dayEnd = 29 // 5 AM next day
-  const totalHours = dayEnd - dayStart
+  const calculateTimeRange = (data: any[]) => {
+    if (data.length === 0) {
+      // Default range from 6 AM to 1 AM next day
+      return { dayStart: 6, dayEnd: 25 };
+    }
+
+    // Find earliest start and latest end, handling day wrapping
+    const timePoints = data.map(item => ({
+      hour: item.startHour,
+      // If hour is less than 6, it's after midnight
+      adjustedHour: item.startHour < 6 ? item.startHour + 24 : item.startHour
+    })).concat(data.map(item => ({
+      hour: item.endHour,
+      // If hour is less than 6, it's after midnight
+      adjustedHour: item.endHour < 6 ? item.endHour + 24 : item.endHour
+    })));
+
+    // Sort by adjusted hours to find true earliest and latest
+    timePoints.sort((a, b) => a.adjustedHour - b.adjustedHour);
+    
+    // Get the earliest and latest actual hours
+    let earliestHour = timePoints[0].hour;
+    let latestHour = timePoints[timePoints.length - 1].hour;
+
+    // If earliest hour is after 6 AM, we can add the buffer
+    earliestHour = earliestHour >= 6 ? Math.max(6, Math.floor(earliestHour) - 1) : 6;
+    
+    // If latest hour is before 6 AM, it's actually late night
+    if (latestHour < 6) {
+      latestHour += 24;
+    }
+    // Cap the end time at 1 AM (25 hours)
+    latestHour = Math.min(25, Math.ceil(latestHour) + 1);
+
+    return {
+      dayStart: earliestHour,
+      dayEnd: latestHour
+    };
+  };
+
+  const { dayStart, dayEnd } = calculateTimeRange(ganttData);
+  const totalHours = dayEnd - dayStart;
 
   return (
     <Card className="w-full">
       <CardHeader>
         <div className="flex items-center justify-between">
           <CardTitle>Screen Time Gantt Chart</CardTitle>
-          <div className="flex items-center space-x-2">
-            <Button variant="outline" size="icon" onClick={handlePreviousDay}>
-              <ChevronLeft className="h-4 w-4" />
-            </Button>
-            <span className="text-sm font-medium">{formattedDate}</span>
-            <Button variant="outline" size="icon" onClick={handleNextDay}>
-              <ChevronRight className="h-4 w-4" />
-            </Button>
+          <div className="flex items-center gap-4">
+            {/* Date controls */}
+            <div className="flex items-center space-x-2">
+              <Button variant="outline" size="icon" onClick={handlePreviousDay}>
+                <ChevronLeft className="h-4 w-4" />
+              </Button>
+              <span className="text-sm font-medium">{formattedDate}</span>
+              <Button variant="outline" size="icon" onClick={handleNextDay}>
+                <ChevronRight className="h-4 w-4" />
+              </Button>
+            </div>
+            {/* Zoom controls */}
+            <div className="flex items-center space-x-2">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={handleZoomOut}
+                disabled={zoomLevel <= minZoom}
+              >
+                -
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={handleResetZoom}
+                disabled={zoomLevel === 1}
+              >
+                Reset
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={handleZoomIn}
+                disabled={zoomLevel >= maxZoom}
+              >
+                +
+              </Button>
+            </div>
           </div>
         </div>
         <CardDescription>Visualizing app usage by category throughout the day</CardDescription>
@@ -232,10 +353,18 @@ export default function GanttChartVisualization() {
             ))}
           </div>
 
-          {/* Right column - Timeline */}
-          <div className="p-4 overflow-x-auto h-full" style={{ display: 'flex', flexDirection: 'column' }}>
+          {/* Right column - Timeline with zoom */}
+          <div 
+            ref={timelineRef}
+            className="p-4 overflow-x-auto h-full cursor-grab active:cursor-grabbing" 
+            style={{ display: 'flex', flexDirection: 'column' }}
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseLeave}
+          >
             {/* Time axis */}
-            <div className="flex border-b pb-1 flex-shrink-0">
+            <div className="flex border-b pb-1 flex-shrink-0" style={{ width: `${100 * zoomLevel}%`, minWidth: '100%' }}>
               {Array.from({ length: totalHours + 1 }).map((_, i) => {
                 const hour = (dayStart + i) % 24
                 return (
@@ -247,7 +376,7 @@ export default function GanttChartVisualization() {
             </div>
 
             {/* Timeline grid */}
-            <div className="relative mt-2 flex-grow">
+            <div className="relative mt-2 flex-grow" style={{ width: `${100 * zoomLevel}%`, minWidth: '100%' }}>
               {/* Vertical hour lines */}
               {Array.from({ length: totalHours + 1 }).map((_, i) => (
                 <div
@@ -258,7 +387,7 @@ export default function GanttChartVisualization() {
               ))}
 
               {/* Category rows */}
-              {categories.map((category, categoryIndex) => {
+              {categories.map((category, _categoryIndex) => {
                 const categoryData = ganttData.filter(item => item.category === category);
                 const rowHeight = 100 / categories.length;
                 
