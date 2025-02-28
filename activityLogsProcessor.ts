@@ -22,6 +22,7 @@ interface ProcessedActivityData {
 
 // Define app categories
 const appCategories: { [key: string]: string } = {
+  // Productivity
   'Cursor': 'Productivity',
   'Terminal': 'Productivity',
   'Visual Studio Code': 'Productivity',
@@ -59,6 +60,7 @@ const appCategories: { [key: string]: string } = {
 
   // Brain Rot
   'youtube_brain_rot': 'Brain Rot',
+  'tiktok.com': 'Brain Rot',
 
   // Shopping
   'amazon.com': 'Shopping',
@@ -84,8 +86,24 @@ const appCategories: { [key: string]: string } = {
 // Default category for unknown apps
 const DEFAULT_CATEGORY = 'Other';
 
-// Helper function to get date range
-function getDateRange(days: number): { startDate: Date, endDate: Date } {
+// Helper function to get date range for a specific date
+function getDateRangeForDate(targetDate: Date): { startDate: Date, endDate: Date } {
+  const startDate = new Date(targetDate);
+  startDate.setHours(0, 0, 0, 0); // Start of the target day
+  
+  const endDate = new Date(targetDate);
+  endDate.setHours(23, 59, 59, 999); // End of the target day
+  
+  return { startDate, endDate };
+}
+
+// Update the existing getDateRange function to handle both days and specific dates
+function getDateRange(daysOrDate: number | Date): { startDate: Date, endDate: Date } {
+  if (daysOrDate instanceof Date) {
+    return getDateRangeForDate(daysOrDate);
+  }
+
+  const days = daysOrDate;
   const endDate = new Date();
   endDate.setHours(23, 59, 59, 999); // End of current day
   
@@ -104,12 +122,12 @@ function getDateRange(days: number): { startDate: Date, endDate: Date } {
   return { startDate, endDate };
 }
 
-export function processActivityData(days: number = 1): ProcessedActivityData[] {
+export function processActivityData(daysOrDate: number | Date = 1): ProcessedActivityData[] {
   // Cast the imported data to the correct type
   const activityLogs: ActivityLog[] = activityLogsData as ActivityLog[];
 
   // Get date range
-  const { startDate, endDate } = getDateRange(days);
+  const { startDate, endDate } = getDateRange(daysOrDate);
 
   // Filter logs for the date range
   const recentLogs = activityLogs.filter(log => {
@@ -187,43 +205,33 @@ export interface GanttChartData {
   category: string;
 }
 
-export function processActivityLogsForGantt(days: number = 1): GanttChartData[] {
+export function processActivityLogsForGantt(daysOrDate: number | Date = 1): GanttChartData[] {
   // Cast the imported data to the correct type
   const activityLogs: ActivityLog[] = activityLogsData as ActivityLog[];
-  console.log('Processing activity logs, total entries:', activityLogs.length);
 
   // Get date range
-  const { startDate, endDate } = getDateRange(days);
-  console.log('Date range:', { startDate, endDate });
+  const { startDate, endDate } = getDateRange(daysOrDate);
 
   // Filter logs for the date range
   const recentLogs = activityLogs.filter(log => {
     const logDate = new Date(log.date);
     return logDate >= startDate && logDate <= endDate;
   });
-  console.log('Filtered logs for date range:', recentLogs.length);
 
   // Process each log entry
   const ganttData: GanttChartData[] = [];
 
   recentLogs.forEach(log => {
     try {
-      // Log the raw timeline string for debugging
-      console.log(`Raw timeline for ${log.app}:`, log.timeline);
-
-      // First, clean up the string to remove array brackets
+      // Clean up the string to remove array brackets
       const cleanTimeline = log.timeline.slice(1, -1);
-      console.log(`Cleaned timeline for ${log.app}:`, cleanTimeline);
 
       // Extract timeline entries using regex - updated pattern to handle milliseconds
       const timelineRegex = /'timestamp': Timestamp\('([^']+\+\d{4})'(?:, tz='UTC')?\), 'duration': Timedelta\('(\d+) days (\d{2}):(\d{2}):(\d{2})(?:\.\d+)?'\)/g;
       let match;
-      let entriesCount = 0;
       
       while ((match = timelineRegex.exec(cleanTimeline)) !== null) {
-        entriesCount++;
         const [fullMatch, timestamp, days, hours, minutes, seconds] = match;
-        console.log(`Matched entry for ${log.app}:`, { timestamp, days, hours, minutes, seconds });
         
         // Skip very short sessions (less than 30 seconds)
         const totalSeconds = 
@@ -232,10 +240,7 @@ export function processActivityLogsForGantt(days: number = 1): GanttChartData[] 
           parseInt(minutes) * 60 + 
           parseInt(seconds);
         
-        if (totalSeconds < 30) {
-          console.log(`Skipping short session for ${log.app}: ${hours}h ${minutes}m ${seconds}s`);
-          continue;
-        }
+        if (totalSeconds < 30) continue;
 
         // Create start time
         const startTime = new Date(timestamp);
@@ -251,18 +256,10 @@ export function processActivityLogsForGantt(days: number = 1): GanttChartData[] 
           category: appCategories[log.app] || DEFAULT_CATEGORY
         });
       }
-      
-      if (entriesCount === 0) {
-        console.log(`No matches found in timeline for ${log.app}. Timeline string:`, cleanTimeline);
-      } else {
-        console.log(`Processing timeline for ${log.app}, entries:`, entriesCount);
-      }
     } catch (error) {
       console.error(`Error processing timeline for app ${log.app}:`, error);
-      console.error('Timeline string:', log.timeline);
     }
   });
 
-  console.log('Final Gantt data entries:', ganttData.length);
   return ganttData;
 } 

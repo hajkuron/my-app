@@ -8,7 +8,7 @@ import { WeeklyGoals } from './weekly-goals';
 import { TaskDistribution } from './task-distribution';
 import { PerfectDays } from './perfect-days';
 import ScreenTimeChart from '../screen-time-chart';
-import GanttChartVisualization, { ScreenTimeData } from './GanttChartVisualization';
+import GanttChartVisualization from './GanttChartVisualization';
 
 
 export default function Dashboard() {

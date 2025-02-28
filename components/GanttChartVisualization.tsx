@@ -24,41 +24,40 @@ import {
 const categoryPalettes: Record<string, { main: string; shades: string[] }> = {
   Productivity: {
     main: "#22c55e",
-    shades: ["#4ade80", "#22c55e", "#16a34a", "#15803d"]
+    shades: ["#4ade80", "#22c55e", "#16a34a", "#15803d", "#166534", "#14532d"]
   },
   Entertainment: {
     main: "#14b8a6",
-    shades: ["#2dd4bf", "#14b8a6", "#0d9488", "#0f766e"]
+    shades: ["#2dd4bf", "#14b8a6", "#0d9488", "#0f766e", "#115e59", "#134e4a"]
   },
   "Brain Rot": {
     main: "#ef4444",
-    shades: ["#f87171", "#ef4444", "#dc2626", "#b91c1c"]
+    shades: ["#f87171", "#ef4444", "#dc2626", "#b91c1c", "#991b1b", "#7f1d1d"]
   },
   Communication: {
     main: "#3b82f6",
-    shades: ["#60a5fa", "#3b82f6", "#2563eb", "#1d4ed8"]
+    shades: ["#60a5fa", "#3b82f6", "#2563eb", "#1d4ed8", "#1e40af", "#1e3a8a"]
   },
   Education: {
     main: "#a855f7",
-    shades: ["#c084fc", "#a855f7", "#9333ea", "#7e22ce"]
+    shades: ["#c084fc", "#a855f7", "#9333ea", "#7e22ce", "#6b21a8", "#581c87"]
   },
   Shopping: {
     main: "#f97316",
-    shades: ["#fb923c", "#f97316", "#ea580c", "#c2410c"]
+    shades: ["#fb923c", "#f97316", "#ea580c", "#c2410c", "#9a3412", "#7c2d12"]
   },
   System: {
     main: "#64748b",
-    shades: ["#94a3b8", "#64748b", "#475569", "#334155"]
+    shades: ["#94a3b8", "#64748b", "#475569", "#334155", "#1e293b", "#0f172a"]
   },
   Other: {
     main: "#78716c",
-    shades: ["#a8a29e", "#78716c", "#57534e", "#44403c"]
+    shades: ["#a8a29e", "#78716c", "#57534e", "#44403c", "#292524", "#1c1917"]
   },
 }
 
 // Process data for Gantt chart
 const processGanttData = (data: GanttChartData[]) => {
-  console.log('Processing Gantt data, input:', data);
   const processed = data.map((item) => {
     const startTime = parseISO(item.startTime)
     const endTime = parseISO(item.endTime)
@@ -76,7 +75,6 @@ const processGanttData = (data: GanttChartData[]) => {
       durationFormatted: `${Math.floor(duration)}h ${Math.round((duration % 1) * 60)}m`,
     }
   })
-  console.log('Processed Gantt data:', processed);
   return processed;
 }
 
@@ -107,7 +105,8 @@ const mergeTimeBlocks = (blocks: any[]) => {
   return merged;
 }
 
-export interface ScreenTimeData {
+// Update the interface to accept Date
+interface ScreenTimeData {
   app: string
   startTime: string
   endTime: string
@@ -119,18 +118,37 @@ interface GanttChartVisualizationProps {
 }
 
 export default function GanttChartVisualization() {
-  const [days, setDays] = useState(1)
-  const [date, setDate] = useState(format(new Date(), "MMM d, yyyy"))
-  const [expandedCategories, setExpandedCategories] = useState<Set<string>>(new Set())
-  const data = processActivityLogsForGantt(days)
-  const ganttData = processGanttData(data)
+  // Use a Date object for better date manipulation
+  const [selectedDate, setSelectedDate] = useState(new Date());
+  const [days] = useState(1); // Keep this for potential future use with weekly view
+  const [expandedCategories, setExpandedCategories] = useState<Set<string>>(new Set());
+
+  // Format the date for display
+  const formattedDate = format(selectedDate, "MMM d, yyyy");
+
+  // Process data for the selected date
+  const data = processActivityLogsForGantt(selectedDate);
+  const ganttData = processGanttData(data);
+
+  // Handle date navigation
+  const handlePreviousDay = () => {
+    const newDate = new Date(selectedDate);
+    newDate.setDate(newDate.getDate() - 1);
+    setSelectedDate(newDate);
+  };
+
+  const handleNextDay = () => {
+    const newDate = new Date(selectedDate);
+    newDate.setDate(newDate.getDate() + 1);
+    setSelectedDate(newDate);
+  };
 
   // Get unique categories and their apps
-  const categories = Array.from(new Set(data.map((item) => item.category)))
+  const categories = Array.from(new Set(data.map((item) => item.category)));
   const categoryApps = categories.reduce<Record<string, string[]>>((acc, category) => {
     acc[category] = Array.from(new Set(data.filter(item => item.category === category).map(item => item.app)))
     return acc
-  }, {})
+  }, {});
 
   // Toggle category expansion
   const toggleCategory = (category: string) => {
@@ -163,11 +181,11 @@ export default function GanttChartVisualization() {
         <div className="flex items-center justify-between">
           <CardTitle>Screen Time Gantt Chart</CardTitle>
           <div className="flex items-center space-x-2">
-            <Button variant="outline" size="icon">
+            <Button variant="outline" size="icon" onClick={handlePreviousDay}>
               <ChevronLeft className="h-4 w-4" />
             </Button>
-            <span className="text-sm font-medium">{date}</span>
-            <Button variant="outline" size="icon">
+            <span className="text-sm font-medium">{formattedDate}</span>
+            <Button variant="outline" size="icon" onClick={handleNextDay}>
               <ChevronRight className="h-4 w-4" />
             </Button>
           </div>
@@ -175,35 +193,37 @@ export default function GanttChartVisualization() {
         <CardDescription>Visualizing app usage by category throughout the day</CardDescription>
       </CardHeader>
       <CardContent className="p-0">
-        <div className="grid grid-cols-[200px_1fr] h-full" style={{ minHeight: '300px' }}>
+        <div className="grid grid-cols-[220px_1fr] h-full" style={{ minHeight: '300px' }}>
           {/* Left column - Categories and apps */}
-          <div className="border-r p-4 h-full">
+          <div className="border-r p-4 h-full overflow-y-auto">
             {categories.map((category) => (
               <div key={category} className="mb-4">
                 <button
                   onClick={() => toggleCategory(category)}
-                  className="flex items-center w-full text-left mb-1 hover:bg-gray-100 rounded px-2 py-1"
+                  className="flex items-center w-full text-left mb-1 hover:bg-gray-100 rounded px-2 py-1 pr-4"
                 >
-                  {expandedCategories.has(category) ? (
-                    <ChevronDown className="h-4 w-4 mr-2" />
-                  ) : (
-                    <ChevronRightIcon className="h-4 w-4 mr-2" />
-                  )}
+                  <div className="flex items-center justify-center w-6 h-6 mr-2">
+                    {expandedCategories.has(category) ? (
+                      <ChevronDown className="h-5 w-5" />
+                    ) : (
+                      <ChevronRightIcon className="h-5 w-5" />
+                    )}
+                  </div>
                   <div 
-                    className="w-3 h-3 rounded-full mr-2" 
+                    className="w-4 h-4 rounded-full mr-2 flex-shrink-0" 
                     style={{ backgroundColor: categoryPalettes[category]?.main || categoryPalettes.Other.main }}
                   />
                   <h3 className="text-base font-semibold">{category}</h3>
                 </button>
                 {expandedCategories.has(category) && (
-                  <div className="pl-9 text-sm text-gray-600">
+                  <div className="pl-12 pr-4 text-sm text-gray-600">
                     {categoryApps[category].map(app => (
-                      <div key={app} className="flex items-center mb-1">
+                      <div key={app} className="flex items-center mb-1 py-0.5">
                         <div 
-                          className="w-2 h-2 rounded-full mr-2" 
+                          className="w-3 h-3 rounded-full mr-2 flex-shrink-0" 
                           style={{ backgroundColor: appColors[app] }}
                         />
-                        <span>{app}</span>
+                        <span className="truncate pr-2">{app}</span>
                       </div>
                     ))}
                   </div>
