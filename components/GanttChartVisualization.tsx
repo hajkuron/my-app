@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { format, parseISO } from "date-fns"
 import { ChevronLeft, ChevronRight } from "lucide-react"
+import { processActivityLogsForGantt, GanttChartData } from "../activityLogsProcessor"
 
 import {
   Card,
@@ -19,16 +20,10 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip"
 
-// Category color palettes
-const categoryPalettes = {
-  Productivity: ["#4ade80", "#22c55e", "#16a34a", "#15803d"],
-  Entertainment: ["#2dd4bf", "#14b8a6", "#0d9488", "#0f766e"],
-  "Brain Rot": ["#f87171", "#ef4444", "#dc2626", "#b91c1c"],
-}
-
 // Process data for Gantt chart
-const processGanttData = (data: any[]) => {
-  return data.map((item) => {
+const processGanttData = (data: GanttChartData[]) => {
+  console.log('Processing Gantt data, input:', data);
+  const processed = data.map((item) => {
     const startTime = parseISO(item.startTime)
     const endTime = parseISO(item.endTime)
     const startHour = startTime.getHours() + startTime.getMinutes() / 60
@@ -45,6 +40,8 @@ const processGanttData = (data: any[]) => {
       durationFormatted: `${Math.floor(duration)}h ${Math.round((duration % 1) * 60)}m`,
     }
   })
+  console.log('Processed Gantt data:', processed);
+  return processed;
 }
 
 export interface ScreenTimeData {
@@ -58,17 +55,34 @@ interface GanttChartVisualizationProps {
   data: ScreenTimeData[]
 }
 
-export default function GanttChartVisualization({ data }: GanttChartVisualizationProps) {
-  const [date, setDate] = useState("May 1, 2023")
+export default function GanttChartVisualization() {
+  const [days, setDays] = useState(1)
+  const [date, setDate] = useState(format(new Date(), "MMM d, yyyy"))
+  const data = processActivityLogsForGantt(days)
+  console.log('Raw activity data:', data);
   const ganttData = processGanttData(data)
 
-  // Get unique apps
+  // Get unique apps and categories
   const uniqueApps = Array.from(new Set(data.map((item) => item.app)))
+  const categories = Array.from(new Set(data.map((item) => item.category)))
+  console.log('Categories found:', categories);
+
+  // Update categoryPalettes to include all categories from our activity processor
+  const categoryPalettes: Record<string, string[]> = {
+    Productivity: ["#4ade80", "#22c55e", "#16a34a", "#15803d"],
+    Entertainment: ["#2dd4bf", "#14b8a6", "#0d9488", "#0f766e"],
+    "Brain Rot": ["#f87171", "#ef4444", "#dc2626", "#b91c1c"],
+    Communication: ["#60a5fa", "#3b82f6", "#2563eb", "#1d4ed8"],
+    Education: ["#c084fc", "#a855f7", "#9333ea", "#7e22ce"],
+    Shopping: ["#fb923c", "#f97316", "#ea580c", "#c2410c"],
+    System: ["#94a3b8", "#64748b", "#475569", "#334155"],
+    Other: ["#a8a29e", "#78716c", "#57534e", "#44403c"],
+  }
 
   // Assign colors to apps within their category
   const appColors = uniqueApps.reduce<Record<string, string>>((acc, app) => {
     const category = data.find((item) => item.app === app)?.category || ""
-    const palette = categoryPalettes[category as keyof typeof categoryPalettes] || []
+    const palette = categoryPalettes[category] || categoryPalettes.Other
     acc[app] = palette[Math.floor(Math.random() * palette.length)]
     return acc
   }, {})
@@ -79,7 +93,6 @@ export default function GanttChartVisualization({ data }: GanttChartVisualizatio
   const totalHours = dayEnd - dayStart
 
   // Get unique categories and their apps
-  const categories = Array.from(new Set(data.map((item) => item.category)))
   const categoryApps = categories.reduce<Record<string, string[]>>((acc, category) => {
     acc[category] = Array.from(new Set(data.filter(item => item.category === category).map(item => item.app)))
     return acc

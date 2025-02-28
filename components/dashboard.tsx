@@ -10,18 +10,6 @@ import { PerfectDays } from './perfect-days';
 import ScreenTimeChart from '../screen-time-chart';
 import GanttChartVisualization, { ScreenTimeData } from './GanttChartVisualization';
 
-// Sample data for the Gantt chart
-const sampleScreenTimeData: ScreenTimeData[] = [
-  { app: "VS Code", startTime: "2023-05-01T09:00:00", endTime: "2023-05-01T11:30:00", category: "Productivity" },
-  { app: "Slack", startTime: "2023-05-01T11:45:00", endTime: "2023-05-01T12:15:00", category: "Productivity" },
-  { app: "Chrome (Work)", startTime: "2023-05-01T13:30:00", endTime: "2023-05-01T15:30:00", category: "Productivity" },
-  { app: "Figma", startTime: "2023-05-01T15:45:00", endTime: "2023-05-01T17:30:00", category: "Productivity" },
-  { app: "Netflix", startTime: "2023-05-01T20:00:00", endTime: "2023-05-01T22:00:00", category: "Entertainment" },
-  { app: "Spotify", startTime: "2023-05-01T22:15:00", endTime: "2023-05-01T23:30:00", category: "Entertainment" },
-  { app: "TikTok", startTime: "2023-05-01T07:00:00", endTime: "2023-05-01T07:45:00", category: "Brain Rot" },
-  { app: "Instagram", startTime: "2023-05-01T12:30:00", endTime: "2023-05-01T13:15:00", category: "Brain Rot" },
-  { app: "YouTube (non-educational)", startTime: "2023-05-01T18:00:00", endTime: "2023-05-01T19:30:00", category: "Brain Rot" },
-];
 
 export default function Dashboard() {
   return (
@@ -62,7 +50,7 @@ export default function Dashboard() {
       </div>
 
       <div className="mb-6">
-        <GanttChartVisualization data={sampleScreenTimeData} />
+        <GanttChartVisualization />
       </div>
       
       <div className="mb-6 rounded-lg overflow-hidden">
