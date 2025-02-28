@@ -20,7 +20,7 @@ jobs:
     
     - name: Install dependencies
       run: |
-        npm install @supabase/supabase-js dotenv
+        npm install
 
     - name: Run calendar script
       id: fetch_calendar
@@ -34,7 +34,7 @@ jobs:
     - name: Run activity logs script
       id: fetch_activity
       run: |
-        node utils/fetchActivityLogs.js 2>&1 | tee activity_output.log
+        npx tsx utils/fetchActivityLogs.ts 2>&1 | tee activity_output.log
       continue-on-error: true
       env:
         NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
