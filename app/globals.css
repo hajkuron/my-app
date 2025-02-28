@@ -100,3 +100,14 @@ body {
 }
 
 /* Add the rest of your calendar styles here */
+
+
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

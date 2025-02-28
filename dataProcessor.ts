@@ -212,16 +212,12 @@ export function processConsistencyData(): DailyConsistency[] {
   const weeklyGoals = new Map<string, number>();
   calendarEvents.forEach(event => {
     if (event.calendar_name === "Goals") {
-      // Get the Monday of the week being evaluated (6 days before the Sunday goal entry)
-      const goalDate = new Date(event.date); // This is a Sunday
+      const goalDate = new Date(event.date);
       const weekStart = new Date(goalDate);
-      weekStart.setDate(goalDate.getDate() - 6); // Go back 6 days to get to Monday
+      weekStart.setDate(goalDate.getDate() - 6);
       
-      // Convert summary to number outside the loop since it's the same for all days
       const goalsAchieved = Number(event.summary);
-      console.log(`Found goal entry: ${goalsAchieved} goals achieved for week starting ${weekStart.toISOString().split('T')[0]} (Mon) through ${goalDate.toISOString().split('T')[0]} (Sun)`);
       
-      // Generate all dates for that week (Monday through Sunday)
       for (let i = 0; i < 7; i++) {
         const currentDate = new Date(weekStart);
         currentDate.setDate(currentDate.getDate() + i);
@@ -242,14 +238,10 @@ export function processConsistencyData(): DailyConsistency[] {
           goalAdjustment = -30;
         }
         
-        console.log(`Mapping goal adjustment of ${goalAdjustment}% to date ${dateKey}`);
         weeklyGoals.set(dateKey, goalAdjustment);
       }
     }
   });
-
-  // Log the complete goals map
-  console.log('Weekly Goals Map:', Object.fromEntries(weeklyGoals));
 
   // Group events by date
   const eventsByDate = new Map<string, CalendarEvent[]>();
@@ -266,7 +258,6 @@ export function processConsistencyData(): DailyConsistency[] {
   const dailyScores: { date: string; score: number }[] = [];
 
   eventsByDate.forEach((events, date) => {
-    // Existing consistency calculation
     const totalPlannedMinutes = events.reduce((sum, event) => {
       const duration = (new Date(event.end).getTime() - new Date(event.start).getTime()) / (1000 * 60);
       return sum + duration;
@@ -288,23 +279,14 @@ export function processConsistencyData(): DailyConsistency[] {
       }
     });
 
-    // Apply weekly goals adjustment if exists
     const goalAdjustment = weeklyGoals.get(date) || 0;
-    
-    console.log(`Date ${date}: Base consistency score: ${consistencyScore}`);
-    console.log(`Applying goal adjustment of ${goalAdjustment} directly for date ${date}`);
-    
     consistencyScore = Math.max(0, Math.min(100, consistencyScore + goalAdjustment));
-    console.log(`Final adjusted score: ${consistencyScore}`);
 
     dailyScores.push({
       date,
       score: Math.max(0, Math.min(100, consistencyScore))
     });
   });
-
-  // Log final daily scores array
-  console.log('Final Daily Scores:', dailyScores);
 
   // Sort by date
   dailyScores.sort((a, b) => a.date.localeCompare(b.date));
@@ -689,28 +671,14 @@ export interface WeeklyGoalData {
 }
 
 export function processWeeklyGoalsData(): WeeklyGoalData[] {
-  console.log('All calendar events:', calendarEvents);
-  
-  const goals = calendarEvents.filter(event => {
-    const isGoal = event.calendar_name === "Goals";
-    console.log('Checking event:', {
-      isGoal,
-      calendar: event.calendar_name
-    });
-    return isGoal;
-  });
+  const goals = calendarEvents.filter(event => event.calendar_name === "Goals");
 
-  console.log('Filtered goals:', goals);
-
-  const result = goals.map(event => {
+  return goals.map(event => {
     const date = new Date(event.date);
     return {
       week: date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }),
       achieved: Number(event.summary),
       total: 5
     };
-  }).slice(-4); // Keep only last 4 entries
-
-  console.log('Processed weekly goals:', result);
-  return result;
+  }).slice(-4);
 }
