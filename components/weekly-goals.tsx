@@ -1,17 +1,17 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable react/no-unknown-property */
 'use client';
 
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Target } from 'lucide-react';
-import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Tooltip, ReferenceLine } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Tooltip, ReferenceLine, Cell } from 'recharts';
 import { processWeeklyGoalsData } from '../dataProcessor';
 
-interface CustomBarProps {
-  x: number;
-  y: number;
-  width: number;
-  height: number;
-  value: number;
+// Only keep the interfaces we actually use
+interface WeeklyGoalData {
+  week: string;
+  achieved: number;
 }
 
 export function WeeklyGoals() {
@@ -35,24 +35,6 @@ export function WeeklyGoals() {
     if (value >= 4) return '#22c55e'; // Green for excellent
     if (value >= 3) return '#eab308'; // Yellow for acceptable
     return '#ef4444'; // Red for below target
-  };
-
-  // Custom bar component to apply dynamic colors
-  const CustomBar = (props: CustomBarProps) => {
-    const { x, y, width, height, value } = props;
-    return (
-      <g>
-        <rect
-          x={x}
-          y={y}
-          width={width}
-          height={height}
-          fill={getBarColor(value)}
-          rx={4}
-          ry={4}
-        />
-      </g>
-    );
   };
 
   return (
@@ -116,9 +98,12 @@ export function WeeklyGoals() {
             />
             <Bar 
               dataKey="achieved" 
-              shape={<CustomBar />}
               radius={[4, 4, 0, 0]}
-            />
+            >
+              {sortedGoals.map((entry, index) => (
+                <Cell key={`cell-${index}`} fill={getBarColor(entry.achieved)} />
+              ))}
+            </Bar>
           </BarChart>
         </ResponsiveContainer>
       </CardContent>
