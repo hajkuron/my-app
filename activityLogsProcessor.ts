@@ -32,6 +32,35 @@ const appCategories: { [key: string]: string } = {
   'stackoverflow.com': 'Productivity',
   'youtube_productive': 'Productivity',
   'localhost:5600': 'Productivity',
+  'localhost:3000': 'Productivity',
+  'vercel.com': 'Productivity',
+  'v0.dev': 'Productivity',
+  'platform.openai.com': 'Productivity',
+  'supabase.com': 'Productivity',
+  'ui.shadcn.com': 'Productivity',
+  'chatgpt.com': 'Productivity',
+
+  // Travel
+  'myvanportugal.com': 'Travel',
+  'rent-help.roadsurfer.com': 'Travel',
+  'booking.roadsurfer.com': 'Travel',
+  'yescapa.com': 'Travel',
+  'siestacampers.com': 'Travel',
+  'howcampers.com': 'Travel',
+  'indiecampers.com': 'Travel',
+  'zestcarrental.com': 'Travel',
+
+  // Entertainment
+  'youtube_entertainment': 'Entertainment',
+  'netflix.com': 'Entertainment',
+  'spotify.com': 'Entertainment',
+  'twitch.tv': 'Entertainment',
+  'reddit.com': 'Entertainment',
+  'x.com': 'Entertainment',
+  '127.0.0.1:32400': 'Entertainment',
+  'plex.tv': 'Entertainment',
+  'app.plex.tv': 'Entertainment',
+  'support.plex.tv': 'Entertainment',
 
   // Communication
   'Messages': 'Communication',
@@ -41,6 +70,8 @@ const appCategories: { [key: string]: string } = {
   'zoom.us': 'Communication',
   'gmail.com': 'Communication',
   'outlook.com': 'Communication',
+  'mail.google.com': 'Communication',
+  'wetransfer.com': 'Communication',
 
   // Education
   'coursera.org': 'Education',
@@ -49,14 +80,6 @@ const appCategories: { [key: string]: string } = {
   'wikipedia.org': 'Education',
   'medium.com': 'Education',
   'dev.to': 'Education',
-
-  // Entertainment
-  'youtube_entertainment': 'Entertainment',
-  'netflix.com': 'Entertainment',
-  'spotify.com': 'Entertainment',
-  'twitch.tv': 'Entertainment',
-  'reddit.com': 'Entertainment',
-  'x.com': 'Entertainment',
 
   // Brain Rot
   'youtube_brain_rot': 'Brain Rot',
@@ -80,7 +103,10 @@ const appCategories: { [key: string]: string } = {
   'TextEdit': 'System',
   'Photos': 'System',
   'Numbers': 'System',
-  'VLC': 'System'
+  'VLC': 'System',
+  'Calendar': 'System',
+  'newtab': 'System',
+  'google.com': 'System'
 };
 
 // Default category for unknown apps
