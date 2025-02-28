@@ -78,8 +78,17 @@ const processGanttData = (data: GanttChartData[]) => {
   return processed;
 }
 
+interface ProcessedGanttData extends GanttChartData {
+  startHour: number;
+  endHour: number;
+  duration: number;
+  startTimeFormatted: string;
+  endTimeFormatted: string;
+  durationFormatted: string;
+}
+
 // New function to merge overlapping time blocks
-const mergeTimeBlocks = (blocks: any[]) => {
+const mergeTimeBlocks = (blocks: ProcessedGanttData[]) => {
   if (blocks.length === 0) return [];
   
   // Sort blocks by start hour
@@ -124,7 +133,7 @@ export default function GanttChartVisualization() {
     yesterday.setDate(yesterday.getDate() - 1);
     return yesterday;
   });
-  const [days, _setDays] = useState(1); // Keep this for potential future use with weekly view
+  const [_days, _setDays] = useState(1); // Keep this for potential future use with weekly view
   const [expandedCategories, setExpandedCategories] = useState<Set<string>>(new Set());
 
   // Add zoom state
@@ -223,7 +232,7 @@ export default function GanttChartVisualization() {
   }, {});
 
   // Calculate day start and end times (for the timeline)
-  const calculateTimeRange = (data: any[]) => {
+  const calculateTimeRange = (data: ProcessedGanttData[]) => {
     if (data.length === 0) {
       // Default range from 6 AM to 1 AM next day
       return { dayStart: 6, dayEnd: 25 };
@@ -435,7 +444,7 @@ export default function GanttChartVisualization() {
 
                 // Show individual apps when expanded
                 const apps = categoryApps[category];
-                const appHeight = rowHeight / apps.length;
+                const _appHeight = rowHeight / apps.length;
                 
                 return (
                   <div
@@ -443,7 +452,7 @@ export default function GanttChartVisualization() {
                     className="relative border-b border-gray-200"
                     style={{ height: `${rowHeight}%` }}
                   >
-                    {apps.map((app, appIndex) => {
+                    {apps.map((app, _appIndex) => {
                       const appData = categoryData.filter(item => item.app === app);
                       return (
                         <div
