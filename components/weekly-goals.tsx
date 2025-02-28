@@ -6,7 +6,10 @@ import { Target } from 'lucide-react';
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Tooltip, ReferenceLine } from 'recharts';
 import { processWeeklyGoalsData } from '../dataProcessor';
 
-interface CustomBarProps {
+// Import the proper types from recharts
+import { BarProps } from 'recharts';
+
+interface CustomBarProps extends Omit<BarProps, 'fill'> {
   x: number;
   y: number;
   width: number;
@@ -116,7 +119,7 @@ export function WeeklyGoals() {
             />
             <Bar 
               dataKey="achieved" 
-              shape={(props: CustomBarProps) => <CustomBar {...props} />}
+              shape={CustomBar}
               radius={[4, 4, 0, 0]}
             />
           </BarChart>
