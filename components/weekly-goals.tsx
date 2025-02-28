@@ -6,16 +6,20 @@ import { Target } from 'lucide-react';
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Tooltip, ReferenceLine } from 'recharts';
 import { processWeeklyGoalsData } from '../dataProcessor';
 
-// Import the proper types from recharts
-import { BarProps } from 'recharts';
+interface WeeklyGoalData {
+  week: string;
+  achieved: number;
+}
 
-interface CustomBarProps extends Omit<BarProps, 'fill'> {
+type RectangleProps = {
   x: number;
   y: number;
   width: number;
   height: number;
-  value: number;
-}
+  background?: string;
+  radius?: number[];
+  payload?: WeeklyGoalData;
+};
 
 export function WeeklyGoals() {
   const weeklyGoals = processWeeklyGoalsData();
@@ -41,8 +45,10 @@ export function WeeklyGoals() {
   };
 
   // Custom bar component to apply dynamic colors
-  const CustomBar = (props: CustomBarProps) => {
-    const { x, y, width, height, value } = props;
+  const CustomBar: React.FC<RectangleProps> = (props) => {
+    const { x, y, width, height, payload } = props;
+    const value = payload?.achieved ?? 0;
+
     return (
       <g>
         <rect
@@ -119,7 +125,7 @@ export function WeeklyGoals() {
             />
             <Bar 
               dataKey="achieved" 
-              shape={CustomBar}
+              shape={(props) => <CustomBar {...props} />}
               radius={[4, 4, 0, 0]}
             />
           </BarChart>
