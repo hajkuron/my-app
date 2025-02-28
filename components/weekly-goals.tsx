@@ -116,7 +116,7 @@ export function WeeklyGoals() {
             />
             <Bar 
               dataKey="achieved" 
-              shape={(props) => <CustomBar {...props} />}
+              shape={(props: CustomBarProps) => <CustomBar {...props} />}
               radius={[4, 4, 0, 0]}
             />
           </BarChart>
