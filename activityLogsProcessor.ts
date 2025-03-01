@@ -39,6 +39,14 @@ const appCategories: { [key: string]: string } = {
   'supabase.com': 'Productivity',
   'ui.shadcn.com': 'Productivity',
   'chatgpt.com': 'Productivity',
+  'ChatGPT': 'Productivity',
+  'AppCleaner': 'Productivity',
+  'Folx': 'Productivity',
+  'Passwords': 'Productivity',
+  'Microsoft Authenticator': 'Productivity',
+  'Authentication': 'Productivity',
+  'Chrome': 'Productivity',
+  'DuckDuckGo': 'Productivity',
 
   // Travel
   'myvanportugal.com': 'Travel',
@@ -49,6 +57,7 @@ const appCategories: { [key: string]: string } = {
   'howcampers.com': 'Travel',
   'indiecampers.com': 'Travel',
   'zestcarrental.com': 'Travel',
+  'AutoScout24': 'Travel',
 
   // Entertainment
   'youtube_entertainment': 'Entertainment',
@@ -61,6 +70,11 @@ const appCategories: { [key: string]: string } = {
   'plex.tv': 'Entertainment',
   'app.plex.tv': 'Entertainment',
   'support.plex.tv': 'Entertainment',
+  'Chess': 'Entertainment',
+  'Uber Eats': 'Entertainment',
+  'Snapchat': 'Entertainment',
+  'Reddit': 'Entertainment',
+  'One Sec': 'Entertainment',
 
   // Communication
   'Messages': 'Communication',
@@ -72,6 +86,13 @@ const appCategories: { [key: string]: string } = {
   'outlook.com': 'Communication',
   'mail.google.com': 'Communication',
   'wetransfer.com': 'Communication',
+  'WhatsApp': 'Communication',
+  '‎WhatsApp': 'Communication',
+  'Phone Calls': 'Communication',
+  'Phone': 'Communication',
+  'Messenger': 'Communication',
+  'Gmail': 'Communication',
+  'Outlook': 'Communication',
 
   // Education
   'coursera.org': 'Education',
@@ -80,6 +101,8 @@ const appCategories: { [key: string]: string } = {
   'wikipedia.org': 'Education',
   'medium.com': 'Education',
   'dev.to': 'Education',
+  'felixkohlhas.com': 'Education',
+  'ClassPass': 'Education',
 
   // Brain Rot
   'youtube_brain_rot': 'Brain Rot',
@@ -93,6 +116,15 @@ const appCategories: { [key: string]: string } = {
   'sunglassesid.com': 'Shopping',
   'sunglasshut.com': 'Shopping',
   'oliverpeoples.com': 'Shopping',
+  'Vinted': 'Shopping',
+  'offers.hotdeals.com': 'Shopping',
+  'AliExpress': 'Shopping',
+
+  // Finance
+  'Wallet': 'Finance',
+  'N26': 'Finance',
+  'NLB Bank': 'Finance',
+  'CoinMarketCap': 'Finance',
 
   // System
   'Finder': 'System',
@@ -106,7 +138,14 @@ const appCategories: { [key: string]: string } = {
   'VLC': 'System',
   'Calendar': 'System',
   'newtab': 'System',
-  'google.com': 'System'
+  'google.com': 'System',
+  'Dual Camera': 'System',
+  'Settings': 'System',
+  'Clock': 'System',
+  'Screenshots': 'System',
+  'Find My': 'System',
+  'Weather': 'System',
+  'Google B612': 'System'
 };
 
 // Default category for unknown apps
@@ -190,8 +229,7 @@ export function processActivityData(daysOrDate: number | Date = 1): ProcessedAct
         categoryPercentage: (categoryMinutes / totalMinutes) * 100
       };
     })
-    .sort((a, b) => b.minutes - a.minutes) // Sort by minutes in descending order
-    .slice(0, 10); // Take only top 10 apps
+    .sort((a, b) => b.minutes - a.minutes); // Sort by minutes in descending order, but don't limit to top 10
 
   return processedData;
 }
@@ -249,11 +287,11 @@ export function processActivityLogsForGantt(daysOrDate: number | Date = 1): Gant
 
   recentLogs.forEach(log => {
     try {
-      // Clean up the string to remove array brackets
-      const cleanTimeline = log.timeline.slice(1, -1);
+      // Clean up the string to remove array brackets (handle both single and double brackets)
+      const cleanTimeline = log.timeline.replace(/^\[+|\]+$/g, '');
 
-      // Extract timeline entries using regex - updated pattern to handle milliseconds
-      const timelineRegex = /'timestamp': Timestamp\('([^']+\+\d{4})'(?:, tz='UTC')?\), 'duration': Timedelta\('(\d+) days (\d{2}):(\d{2}):(\d{2})(?:\.\d+)?'\)/g;
+      // Extract timeline entries using regex - updated pattern to handle both timestamp formats
+      const timelineRegex = /'timestamp': Timestamp\('([^']+?)(?:\+\d{4})?'(?:, tz='UTC')?\), 'duration': Timedelta\('(\d+) days (\d{2}):(\d{2}):(\d{2})(?:\.\d+)?'\)/g;
       let match;
       
       while ((match = timelineRegex.exec(cleanTimeline)) !== null) {

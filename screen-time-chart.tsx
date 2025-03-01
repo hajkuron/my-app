@@ -128,12 +128,20 @@ export default function ScreenTimeChart() {
   const [activeIndex, setActiveIndex] = useState(0)
   const [expandedCategory, setExpandedCategory] = useState<string | undefined>()
   const [isWeeklyView, setIsWeeklyView] = useState(false)
+  const [showAllApps, setShowAllApps] = useState(true)
   
   // Get the processed activity data based on the view
   const activityData = processActivityData(isWeeklyView ? 7 : 1)
-  const pieData = getPieData(activityData, expandedCategory)
+  
+  // Filter apps with less than 5 minutes of usage
+  const filteredActivityData = activityData.filter(item => item.minutes >= 5);
+  
+  const pieData = getPieData(
+    showAllApps ? filteredActivityData : filteredActivityData.slice(0, 10),
+    expandedCategory
+  );
 
-  // Calculate total screen time
+  // Calculate total screen time using all data (including < 5 min apps)
   const totalScreenTime = activityData.reduce((acc, item) => acc + item.minutes, 0)
 
   const onPieEnter = (_: any, index: number) => {
@@ -145,12 +153,18 @@ export default function ScreenTimeChart() {
     setActiveIndex(0) // Reset active index when switching views
   }
 
-  // Group data by category for the list
-  const categoryGroups = activityData.reduce<{ [key: string]: typeof activityData }>((acc, item) => {
+  // Group filtered data by category for the list
+  const categoryGroups = filteredActivityData.reduce<{ [key: string]: typeof filteredActivityData }>((acc, item) => {
     if (!acc[item.category]) {
       acc[item.category] = [];
     }
     acc[item.category].push(item);
+    return acc;
+  }, {});
+
+  // Calculate category totals including all data
+  const categoryTotals = activityData.reduce<{ [key: string]: number }>((acc, item) => {
+    acc[item.category] = (acc[item.category] || 0) + item.minutes;
     return acc;
   }, {});
 
@@ -175,6 +189,16 @@ export default function ScreenTimeChart() {
               <span className="min-w-[50px]">{isWeeklyView ? "Weekly" : "Daily"}</span>
             </div>
           </div>
+          <div className="flex items-center gap-2">
+            <Switch
+              id="show-all"
+              checked={showAllApps}
+              onCheckedChange={setShowAllApps}
+            />
+            <Label htmlFor="show-all">
+              {showAllApps ? "Show All (≥5m)" : "Top 10 (≥5m)"}
+            </Label>
+          </div>
         </div>
       </div>
 
@@ -186,12 +210,12 @@ export default function ScreenTimeChart() {
       </div>
 
       <CardContent className="p-0">
-        <div className="flex">
+        <div className="flex h-fit">
           {/* Categories and apps list */}
-          <div className="w-1/2 pr-4 border-r">
+          <div className="w-1/2 pr-4 border-r max-h-[500px] overflow-y-auto">
             {Object.entries(categoryGroups).map(([category, apps], index) => {
-              const categoryTime = apps.reduce((acc, app) => acc + app.minutes, 0)
-              const isExpanded = expandedCategory === category
+              const categoryTime = categoryTotals[category] || 0;
+              const isExpanded = expandedCategory === category;
 
               return (
                 <div key={category} className="border-b border-border/5 last:border-none">
@@ -218,7 +242,7 @@ export default function ScreenTimeChart() {
                   </div>
 
                   {isExpanded && (
-                    <div className="pl-8">
+                    <div className="pl-8 overflow-hidden transition-all">
                       {apps.map((app, appIndex) => {
                         const appColor = adjustColor(categoryColors[category] || categoryColors.Other, appIndex);
                         return (
@@ -243,7 +267,7 @@ export default function ScreenTimeChart() {
 
           {/* Pie Chart */}
           <div className="w-1/2 pl-4">
-            <div className="w-full h-full min-h-[300px] flex items-center justify-center">
+            <div className="w-full h-[300px] flex items-center justify-center">
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
                   <Pie
