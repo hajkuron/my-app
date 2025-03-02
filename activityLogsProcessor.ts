@@ -47,6 +47,13 @@ const appCategories: { [key: string]: string } = {
   'Authentication': 'Productivity',
   'Chrome': 'Productivity',
   'DuckDuckGo': 'Productivity',
+  'notion.so': 'Productivity',
+  'my-app-rose-two.vercel.app': 'Productivity',
+  'canva.com': 'Productivity',
+  'canvas.vu.nl': 'Productivity',
+  'eu2.make.com': 'Productivity',
+  'docs.google.com': 'Productivity',
+  'notion.id': 'Productivity',
 
   // Travel
   'myvanportugal.com': 'Travel',
@@ -71,10 +78,12 @@ const appCategories: { [key: string]: string } = {
   'app.plex.tv': 'Entertainment',
   'support.plex.tv': 'Entertainment',
   'Chess': 'Entertainment',
+  'chess.com': 'Entertainment',
   'Uber Eats': 'Entertainment',
   'Snapchat': 'Entertainment',
   'Reddit': 'Entertainment',
   'One Sec': 'Entertainment',
+  'neo.io': 'Entertainment',
 
   // Communication
   'Messages': 'Communication',
@@ -106,6 +115,9 @@ const appCategories: { [key: string]: string } = {
 
   // Brain Rot
   'youtube_brain_rot': 'Brain Rot',
+  'youtube_"brain_rot"': 'Brain Rot',
+  
+  
   'tiktok.com': 'Brain Rot',
 
   // Shopping
