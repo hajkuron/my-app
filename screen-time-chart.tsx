@@ -168,6 +168,10 @@ export default function ScreenTimeChart() {
     return acc;
   }, {});
 
+  // Sort categories by total time
+  const sortedCategories = Object.entries(categoryGroups)
+    .sort(([catA, _], [catB, __]) => (categoryTotals[catB] || 0) - (categoryTotals[catA] || 0));
+
   return (
     <Card className="w-full p-2">
       <div className="flex items-center justify-between mb-1">
@@ -213,7 +217,7 @@ export default function ScreenTimeChart() {
         <div className="flex h-fit">
           {/* Categories and apps list */}
           <div className="w-1/2 pr-4 border-r max-h-[500px] overflow-y-auto">
-            {Object.entries(categoryGroups).map(([category, apps], index) => {
+            {sortedCategories.map(([category, apps], index) => {
               const categoryTime = categoryTotals[category] || 0;
               const isExpanded = expandedCategory === category;
 

@@ -206,7 +206,23 @@ export default function GanttChartVisualization() {
 
   // Get unique categories and their apps
   const categories = Array.from(new Set(data.map((item) => item.category)));
-  const categoryApps = categories.reduce<Record<string, string[]>>((acc, category) => {
+  
+  // Calculate total duration for each category for sorting
+  const categoryDurations = categories.reduce<Record<string, number>>((acc, category) => {
+    acc[category] = data
+      .filter(item => item.category === category)
+      .reduce((sum, item) => {
+        const startTime = parseISO(item.startTime);
+        const endTime = parseISO(item.endTime);
+        return sum + ((endTime.getTime() - startTime.getTime()) / (1000 * 60)); // Convert to minutes
+      }, 0);
+    return acc;
+  }, {});
+
+  // Sort categories by total duration in descending order
+  const sortedCategories = categories.sort((a, b) => categoryDurations[b] - categoryDurations[a]);
+
+  const categoryApps = sortedCategories.reduce<Record<string, string[]>>((acc, category) => {
     acc[category] = Array.from(new Set(data.filter(item => item.category === category).map(item => item.app)))
     return acc
   }, {});
