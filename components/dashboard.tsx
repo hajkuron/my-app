@@ -16,25 +16,31 @@ import { RefreshCw } from 'lucide-react';
 
 export default function Dashboard() {
   const [isRefreshing, setIsRefreshing] = React.useState(false);
+  const [lastRefreshTime, setLastRefreshTime] = React.useState<string | null>(null);
 
   const handleRefresh = async () => {
+    console.log('[Frontend] Starting refresh operation...');
     setIsRefreshing(true);
+    
     try {
+      console.log('[Frontend] Making request to /api/refresh...');
       const response = await fetch('/api/refresh', {
         method: 'POST',
       });
       
+      console.log('[Frontend] Response status:', response.status);
       const data = await response.json();
+      console.log('[Frontend] Response data:', data);
       
       if (!response.ok) {
         throw new Error(data.message || 'Failed to refresh data');
       }
       
-      // Optional: Show success message to user
-      console.log('Data refreshed successfully');
+      setLastRefreshTime(new Date().toLocaleTimeString());
+      console.log('[Frontend] Refresh completed successfully');
+      
     } catch (error) {
-      console.error('Error refreshing data:', error);
-      // Optional: Show error message to user
+      console.error('[Frontend] Error refreshing data:', error);
     } finally {
       setIsRefreshing(false);
     }
@@ -43,16 +49,23 @@ export default function Dashboard() {
   return (
     <div className="p-6 max-w-7xl mx-auto bg-gray-50">
       <div className="absolute top-4 right-16 flex items-center gap-6">
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={handleRefresh}
-          disabled={isRefreshing}
-          className="flex items-center gap-2"
-        >
-          <RefreshCw className={`h-4 w-4 ${isRefreshing ? 'animate-spin' : ''}`} />
-          <span>{isRefreshing ? 'Refreshing...' : 'Refresh Data'}</span>
-        </Button>
+        <div className="flex flex-col items-end gap-1">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={handleRefresh}
+            disabled={isRefreshing}
+            className="flex items-center gap-2"
+          >
+            <RefreshCw className={`h-4 w-4 ${isRefreshing ? 'animate-spin' : ''}`} />
+            <span>{isRefreshing ? 'Refreshing...' : 'Refresh Data'}</span>
+          </Button>
+          {lastRefreshTime && (
+            <span className="text-xs text-gray-500">
+              Last refreshed: {lastRefreshTime}
+            </span>
+          )}
+        </div>
         <span className="text-3xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
           JK
         </span>

@@ -1,30 +1,56 @@
 import { NextResponse } from 'next/server';
 
+async function fetchWithTimeout(url: string, options: RequestInit, timeout = 5000) {
+  const controller = new AbortController();
+  const id = setTimeout(() => controller.abort(), timeout);
+
+  try {
+    const response = await fetch(url, {
+      ...options,
+      signal: controller.signal
+    });
+    clearTimeout(id);
+    return response;
+  } catch (error) {
+    clearTimeout(id);
+    throw error;
+  }
+}
+
 async function triggerGitHubAction(token: string, owner: string, repo: string, workflow_id: string) {
   console.log(`[GitHub Action] Attempting to trigger workflow ${workflow_id} for ${owner}/${repo}`);
   
-  const response = await fetch(
-    `https://api.github.com/repos/${owner}/${repo}/actions/workflows/${workflow_id}/dispatches`,
-    {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/vnd.github.v3+json',
-        'Authorization': `Bearer ${token}`,
-        'Content-Type': 'application/json',
+  try {
+    const response = await fetchWithTimeout(
+      `https://api.github.com/repos/${owner}/${repo}/actions/workflows/${workflow_id}/dispatches`,
+      {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/vnd.github.v3+json',
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ref: 'main'
+        })
       },
-      body: JSON.stringify({
-        ref: 'main'
-      })
+      10000 // 10 second timeout
+    );
+
+    if (!response.ok) {
+      console.error(`[GitHub Action] Failed with status: ${response.status} - ${response.statusText}`);
+      throw new Error(`Failed to trigger GitHub action: ${response.statusText}`);
     }
-  );
 
-  if (!response.ok) {
-    console.error(`[GitHub Action] Failed with status: ${response.status} - ${response.statusText}`);
-    throw new Error(`Failed to trigger GitHub action: ${response.statusText}`);
+    console.log('[GitHub Action] Successfully triggered workflow');
+    return response;
+  } catch (error: any) {
+    if (error?.name === 'AbortError') {
+      console.error('[GitHub Action] Request timed out');
+      throw new Error('GitHub Action request timed out after 10 seconds');
+    }
+    throw error;
   }
-
-  console.log('[GitHub Action] Successfully triggered workflow');
-  return response;
 }
 
 export async function POST() {
@@ -54,19 +80,31 @@ export async function POST() {
 
     // 1. Call your custom URL first with POST method
     console.log('[Custom API] Attempting to call custom API...');
-    const customUrlResponse = await fetch(process.env.CUSTOM_API_URL as string, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
+    try {
+      const customUrlResponse = await fetchWithTimeout(
+        process.env.CUSTOM_API_URL as string,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          }
+        },
+        10000 // 10 second timeout
+      );
+      
+      if (!customUrlResponse.ok) {
+        console.error('[Custom API] Failed with status:', customUrlResponse.status);
+        throw new Error(`Failed to fetch data from custom URL: ${customUrlResponse.statusText}`);
       }
-    });
-    
-    if (!customUrlResponse.ok) {
-      console.error('[Custom API] Failed with status:', customUrlResponse.status);
-      throw new Error('Failed to fetch data from custom URL');
-    }
 
-    console.log('[Custom API] Successfully called custom API');
+      console.log('[Custom API] Successfully called custom API');
+    } catch (error: any) {
+      if (error?.name === 'AbortError') {
+        console.error('[Custom API] Request timed out');
+        throw new Error('Custom API request timed out after 10 seconds');
+      }
+      throw error;
+    }
 
     // 2. Trigger GitHub Action
     console.log('[GitHub Action] Starting GitHub Action trigger...');
@@ -85,8 +123,15 @@ export async function POST() {
 
   } catch (error) {
     console.error('[Refresh] Error in refresh operation:', error);
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
+    console.error('[Refresh] Detailed error message:', errorMessage);
+    
     return NextResponse.json(
-      { success: false, message: error instanceof Error ? error.message : 'Unknown error occurred' },
+      { 
+        success: false, 
+        message: errorMessage,
+        timestamp: new Date().toISOString()
+      },
       { status: 500 }
     );
   }
