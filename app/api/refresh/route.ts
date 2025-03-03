@@ -34,7 +34,7 @@ async function triggerGitHubAction(token: string, owner: string, repo: string, w
           ref: 'main'
         })
       },
-      60000 // 1 minute timeout for GitHub Action
+      25000 // 25 second timeout for GitHub Action
     );
 
     if (!response.ok) {
@@ -47,13 +47,13 @@ async function triggerGitHubAction(token: string, owner: string, repo: string, w
   } catch (error: any) {
     if (error?.name === 'AbortError') {
       console.error('[GitHub Action] Request timed out');
-      throw new Error('GitHub Action request timed out after 60 seconds');
+      throw new Error('GitHub Action request timed out after 25 seconds');
     }
     throw error;
   }
 }
 
-export const maxDuration = 300; // Set maximum duration to 5 minutes
+export const maxDuration = 60; // Set maximum duration to 1 minute (Hobby plan limit)
 
 export async function POST() {
   console.log('[Refresh] Starting refresh operation...');
@@ -91,7 +91,7 @@ export async function POST() {
             'Content-Type': 'application/json',
           }
         },
-        180000 // 3 minute timeout for custom API
+        25000 // 25 second timeout for custom API
       );
       
       if (!customUrlResponse.ok) {
@@ -103,7 +103,7 @@ export async function POST() {
     } catch (error: any) {
       if (error?.name === 'AbortError') {
         console.error('[Custom API] Request timed out');
-        throw new Error('Custom API request timed out after 180 seconds');
+        throw new Error('Custom API request timed out after 25 seconds');
       }
       throw error;
     }
