@@ -1,6 +1,7 @@
 'use client';
 
 import activityLogsData from './data/activityLogs.json';
+import { formatInTimeZone } from 'date-fns-tz';
 
 interface ActivityLog {
   id: number;
@@ -318,8 +319,9 @@ export function processActivityLogsForGantt(daysOrDate: number | Date = 1): Gant
         
         if (totalSeconds < 30) continue;
 
-        // Create start time
-        const startTime = new Date(timestamp);
+        // Create start time and convert to Amsterdam time
+        const startTimeUTC = new Date(timestamp);
+        const startTime = new Date(formatInTimeZone(startTimeUTC, 'Europe/Amsterdam', "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"));
         
         // Calculate end time by adding duration
         const endTime = new Date(startTime);

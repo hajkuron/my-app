@@ -2,6 +2,7 @@
 
 import { useState, useRef } from "react"
 import { format, parseISO } from "date-fns"
+import { formatInTimeZone } from 'date-fns-tz'
 import { ChevronLeft, ChevronRight, ChevronDown, ChevronRight as ChevronRightIcon } from "lucide-react"
 import { processActivityLogsForGantt, GanttChartData } from "../activityLogsProcessor"
 
@@ -70,8 +71,8 @@ const processGanttData = (data: GanttChartData[]) => {
       startHour,
       endHour,
       duration,
-      startTimeFormatted: format(startTime, "h:mm a"),
-      endTimeFormatted: format(endTime, "h:mm a"),
+      startTimeFormatted: formatInTimeZone(startTime, 'Europe/Amsterdam', 'HH:mm'),
+      endTimeFormatted: formatInTimeZone(endTime, 'Europe/Amsterdam', 'HH:mm'),
       durationFormatted: `${Math.floor(duration)}h ${Math.round((duration % 1) * 60)}m`,
     }
   })
