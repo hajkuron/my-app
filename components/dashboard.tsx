@@ -12,37 +12,56 @@ import { PerfectDays } from './perfect-days';
 import ScreenTimeChart from '../screen-time-chart';
 import GanttChartVisualization from './GanttChartVisualization';
 import { Button } from '@/components/ui/button';
-import { RefreshCw } from 'lucide-react';
+import { RefreshCw, Database, Github } from 'lucide-react';
 
 export default function Dashboard() {
-  const [isRefreshing, setIsRefreshing] = React.useState(false);
+  const [isCustomRefreshing, setIsCustomRefreshing] = React.useState(false);
+  const [isGithubRefreshing, setIsGithubRefreshing] = React.useState(false);
   const [lastRefreshTime, setLastRefreshTime] = React.useState<string | null>(null);
 
-  const handleRefresh = async () => {
-    console.log('[Frontend] Starting refresh operation...');
-    setIsRefreshing(true);
+  // Handle the long-running custom API call
+  const handleCustomRefresh = async () => {
+    console.log('[Frontend] Starting custom API refresh...');
+    setIsCustomRefreshing(true);
     
     try {
-      console.log('[Frontend] Making request to /api/refresh...');
-      const response = await fetch('/api/refresh', {
+      const response = await fetch('/api/refresh-custom', {
         method: 'POST',
       });
       
-      console.log('[Frontend] Response status:', response.status);
-      const data = await response.json();
-      console.log('[Frontend] Response data:', data);
-      
-      if (!response.ok) {
-        throw new Error(data.message || 'Failed to refresh data');
-      }
-      
+      console.log('[Frontend] Custom API triggered');
       setLastRefreshTime(new Date().toLocaleTimeString());
-      console.log('[Frontend] Refresh completed successfully');
+      
+      // Now trigger the GitHub action
+      handleGithubRefresh();
       
     } catch (error) {
-      console.error('[Frontend] Error refreshing data:', error);
+      console.error('[Frontend] Error triggering custom API:', error);
     } finally {
-      setIsRefreshing(false);
+      setIsCustomRefreshing(false);
+    }
+  };
+
+  // Handle the GitHub Action trigger
+  const handleGithubRefresh = async () => {
+    console.log('[Frontend] Starting GitHub Action trigger...');
+    setIsGithubRefreshing(true);
+    
+    try {
+      const response = await fetch('/api/refresh-github', {
+        method: 'POST',
+      });
+      
+      if (!response.ok) {
+        throw new Error('Failed to trigger GitHub action');
+      }
+      
+      console.log('[Frontend] GitHub Action triggered successfully');
+      
+    } catch (error) {
+      console.error('[Frontend] Error triggering GitHub Action:', error);
+    } finally {
+      setIsGithubRefreshing(false);
     }
   };
 
@@ -50,16 +69,31 @@ export default function Dashboard() {
     <div className="p-6 max-w-7xl mx-auto bg-gray-50">
       <div className="absolute top-4 right-16 flex items-center gap-6">
         <div className="flex flex-col items-end gap-1">
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={handleRefresh}
-            disabled={isRefreshing}
-            className="flex items-center gap-2"
-          >
-            <RefreshCw className={`h-4 w-4 ${isRefreshing ? 'animate-spin' : ''}`} />
-            <span>{isRefreshing ? 'Refreshing...' : 'Refresh Data'}</span>
-          </Button>
+          <div className="flex gap-2">
+            {/* Button for Custom API */}
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={handleCustomRefresh}
+              disabled={isCustomRefreshing || isGithubRefreshing}
+              className="flex items-center gap-2"
+            >
+              <Database className={`h-4 w-4 ${isCustomRefreshing ? 'animate-spin' : ''}`} />
+              <span>{isCustomRefreshing ? 'Refreshing Data...' : 'Refresh Data'}</span>
+            </Button>
+
+            {/* Button for GitHub Action (for testing) */}
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={handleGithubRefresh}
+              disabled={isCustomRefreshing || isGithubRefreshing}
+              className="flex items-center gap-2"
+            >
+              <Github className={`h-4 w-4 ${isGithubRefreshing ? 'animate-spin' : ''}`} />
+              <span>{isGithubRefreshing ? 'Triggering...' : 'Trigger GitHub'}</span>
+            </Button>
+          </div>
           {lastRefreshTime && (
             <span className="text-xs text-gray-500">
               Last refreshed: {lastRefreshTime}
