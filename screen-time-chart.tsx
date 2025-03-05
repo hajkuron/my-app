@@ -1,14 +1,16 @@
 "use client"
 
 import { useState } from "react"
+import { format } from "date-fns"
 import { Cell, Pie, PieChart, ResponsiveContainer, Sector } from "recharts"
-import { Clock, Laptop } from "lucide-react"
+import { Clock, Laptop, ChevronLeft, ChevronRight } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { Switch } from "@/components/ui/switch"
+import { Label } from "@/components/ui/label"
 import { cn } from "@/lib/utils"
 import { ChevronDownIcon, ChevronRightIcon } from "@radix-ui/react-icons"
 import { processActivityData, formatDuration } from "./activityLogsProcessor"
-import { Switch } from "@/components/ui/switch"
-import { Label } from "@/components/ui/label"
 
 // Category colors
 const categoryColors: { [key: string]: string } = {
@@ -129,9 +131,30 @@ export default function ScreenTimeChart() {
   const [expandedCategory, setExpandedCategory] = useState<string | undefined>()
   const [isWeeklyView, setIsWeeklyView] = useState(false)
   const [showAllApps, setShowAllApps] = useState(true)
+  const [selectedDate, setSelectedDate] = useState(() => {
+    const yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1);
+    return yesterday;
+  });
+
+  // Format the date for display
+  const formattedDate = format(selectedDate, "MMM d, yyyy");
+
+  // Handle date navigation
+  const handlePreviousDay = () => {
+    const newDate = new Date(selectedDate);
+    newDate.setDate(newDate.getDate() - 1);
+    setSelectedDate(newDate);
+  };
+
+  const handleNextDay = () => {
+    const newDate = new Date(selectedDate);
+    newDate.setDate(newDate.getDate() + 1);
+    setSelectedDate(newDate);
+  };
   
-  // Get the processed activity data based on the view
-  const activityData = processActivityData(isWeeklyView ? 7 : 1)
+  // Get the processed activity data based on the view and selected date
+  const activityData = processActivityData(isWeeklyView ? 7 : selectedDate)
   
   // Filter apps with less than 5 minutes of usage
   const filteredActivityData = activityData.filter(item => item.minutes >= 5);
@@ -177,6 +200,16 @@ export default function ScreenTimeChart() {
       <div className="flex items-center justify-between mb-1">
         <h2 className="text-2xl font-bold">Screen Time</h2>
         <div className="flex items-center gap-4">
+          {/* Date controls */}
+          <div className="flex items-center space-x-2">
+            <Button variant="outline" size="icon" onClick={handlePreviousDay}>
+              <ChevronLeft className="h-4 w-4" />
+            </Button>
+            <span className="text-sm font-medium">{formattedDate}</span>
+            <Button variant="outline" size="icon" onClick={handleNextDay}>
+              <ChevronRight className="h-4 w-4" />
+            </Button>
+          </div>
           <div className="flex items-center min-w-[200px]">
             <div className="flex items-center gap-2">
               <Switch
@@ -185,7 +218,7 @@ export default function ScreenTimeChart() {
                 onCheckedChange={setIsWeeklyView}
               />
               <Label htmlFor="view-mode" className="min-w-[100px]">
-                {isWeeklyView ? "Last 7 Days" : "Yesterday"}
+                {isWeeklyView ? "Last 7 Days" : "Daily"}
               </Label>
             </div>
             <div className="flex items-center text-muted-foreground ml-4">

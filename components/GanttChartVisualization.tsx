@@ -24,38 +24,38 @@ import {
 // Update categoryPalettes to have a main color for the category
 const categoryPalettes: Record<string, { main: string; shades: string[] }> = {
   Productivity: {
-    main: "#22c55e",
+    main: "#22C55E", // green-500
     shades: ["#4ade80", "#22c55e", "#16a34a", "#15803d", "#166534", "#14532d"]
   },
-  Entertainment: {
-    main: "#14b8a6",
-    shades: ["#2dd4bf", "#14b8a6", "#0d9488", "#0f766e", "#115e59", "#134e4a"]
-  },
-  "Brain Rot": {
-    main: "#ef4444",
-    shades: ["#f87171", "#ef4444", "#dc2626", "#b91c1c", "#991b1b", "#7f1d1d"]
-  },
   Communication: {
-    main: "#3b82f6",
-    shades: ["#60a5fa", "#3b82f6", "#2563eb", "#1d4ed8", "#1e40af", "#1e3a8a"]
-  },
-  Education: {
-    main: "#a855f7",
+    main: "#A855F7", // purple-500
     shades: ["#c084fc", "#a855f7", "#9333ea", "#7e22ce", "#6b21a8", "#581c87"]
   },
+  Education: {
+    main: "#3B82F6", // blue-500
+    shades: ["#60a5fa", "#3b82f6", "#2563eb", "#1d4ed8", "#1e40af", "#1e3a8a"]
+  },
+  Entertainment: {
+    main: "#EF4444", // red-500
+    shades: ["#f87171", "#ef4444", "#dc2626", "#b91c1c", "#991b1b", "#7f1d1d"]
+  },
   Shopping: {
-    main: "#f97316",
+    main: "#F97316", // orange-500
     shades: ["#fb923c", "#f97316", "#ea580c", "#c2410c", "#9a3412", "#7c2d12"]
   },
   System: {
-    main: "#64748b",
-    shades: ["#94a3b8", "#64748b", "#475569", "#334155", "#1e293b", "#0f172a"]
+    main: "#6B7280", // gray-500
+    shades: ["#94a3b8", "#6b7280", "#4b5563", "#374151", "#1f2937", "#111827"]
+  },
+  "Brain Rot": {
+    main: "#DC2626", // red-600
+    shades: ["#ef4444", "#dc2626", "#b91c1c", "#991b1b", "#7f1d1d", "#450a0a"]
   },
   Other: {
-    main: "#78716c",
-    shades: ["#a8a29e", "#78716c", "#57534e", "#44403c", "#292524", "#1c1917"]
-  },
-}
+    main: "#94A3B8", // slate-400
+    shades: ["#cbd5e1", "#94a3b8", "#64748b", "#475569", "#334155", "#1e293b"]
+  }
+};
 
 // Process data for Gantt chart
 const processGanttData = (data: GanttChartData[]) => {
