@@ -55,6 +55,7 @@ const appCategories: { [key: string]: string } = {
   'eu2.make.com': 'Productivity',
   'docs.google.com': 'Productivity',
   'notion.id': 'Productivity',
+  'jointakeoff.com': 'Productivity',
 
   // Travel
   'myvanportugal.com': 'Travel',
@@ -85,7 +86,7 @@ const appCategories: { [key: string]: string } = {
   'Reddit': 'Entertainment',
   'One Sec': 'Entertainment',
   'neo.io': 'Entertainment',
-
+  'com.atebits.Tweetie2': 'Entertainment',
   // Communication
   'Messages': 'Communication',
   'Slack': 'Communication',
