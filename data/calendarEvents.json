@@ -22304,23 +22304,6 @@
     "deleted": false
   },
   {
-    "id": "b646ecf231c29e6cdcdb1e9e58b0cc9a620b4783ffd7c308e2f0694c98e4f1cf",
-    "version_id": "33bd5362203eef106eee120237968faa3246bc65ddd17a8f7c7408017c14f4d6",
-    "date": "2025-03-05T00:00:00+00:00",
-    "start": "2025-03-05T10:15:00+00:00",
-    "end": "2025-03-05T13:45:00+00:00",
-    "value": 1,
-    "summary": "create another agent",
-    "description": "Create another agent a little bit more complicated because this will be the you will learn a lot for later doing the agent for the Sass app \n",
-    "calendar_name": "Projects",
-    "new_date": "2025-03-05T00:00:00+00:00",
-    "new_start": "2025-03-05T10:15:00+00:00",
-    "new_end": "2025-03-05T13:45:00+00:00",
-    "status": "deleted",
-    "duration": 210,
-    "deleted": false
-  },
-  {
     "id": "db5750720871922631e29aefcee3faf21237da448360e848d521899507d7a103",
     "version_id": "19ddf2693710eef199f3dbfeb3f4977623728e5b3f5809bd201da19210c233fb",
     "date": "2025-03-05T00:00:00+00:00",
