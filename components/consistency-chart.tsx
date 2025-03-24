@@ -25,7 +25,17 @@ export function ConsistencyChart() {
           <LineChart data={consistencyData}>
             <XAxis dataKey="day" />
             <YAxis domain={[50, 100]} />
-            <Tooltip />
+            <Tooltip 
+              formatter={(value: number) => value.toFixed(2)}
+              labelFormatter={(day: number) => {
+                const dataPoint = consistencyData.find(d => d.day === day);
+                return dataPoint ? new Date(dataPoint.date).toLocaleDateString('en-US', { 
+                  month: 'short',
+                  day: 'numeric',
+                  year: 'numeric'
+                }) : '';
+              }}
+            />
             <Legend />
             <Line type="monotone" dataKey="completion" stroke="#4f46e5" name="Daily" dot={false} />
             <Line type="monotone" dataKey="sevenDayAvg" stroke="#94a3b8" name="7-Day Avg" dot={false} />

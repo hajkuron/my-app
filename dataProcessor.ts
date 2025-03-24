@@ -199,6 +199,7 @@ export function processTaskDistribution(timeframe: 'weekly' | 'monthly' = 'weekl
 
 interface DailyConsistency {
   day: number;
+  date: string;
   completion: number;
   sevenDayAvg: number;
   thirtyDayAvg: number;
@@ -301,9 +302,10 @@ export function processConsistencyData(): DailyConsistency[] {
 
     return {
       day: index + 1,
-      completion: dayScore.score,
-      sevenDayAvg: sevenDayAvg,
-      thirtyDayAvg: thirtyDayAvg
+      date: dayScore.date,
+      completion: Number(dayScore.score.toFixed(2)),
+      sevenDayAvg: Number(sevenDayAvg.toFixed(2)),
+      thirtyDayAvg: Number(thirtyDayAvg.toFixed(2))
     };
   });
 }
