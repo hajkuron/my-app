@@ -34,6 +34,23 @@
     "deleted": false
   },
   {
+    "id": "12e924651cb705f0977f5f6cfb596f68e13a565c3cbb5f91dd27328c788c5af0",
+    "version_id": "95d48a6c83d768cc81691ba5061c30ed650c948598e2828c6ced33512b8034f1",
+    "date": "2025-03-25T00:00:00+00:00",
+    "start": "2025-03-25T17:45:00+00:00",
+    "end": "2025-03-25T20:00:00+00:00",
+    "value": 1,
+    "summary": "International Entrepreneurship (DT)",
+    "description": "",
+    "calendar_name": "VU Amsterdam - Personal timetable: Kuhar, J. (Jon)",
+    "new_date": "2025-03-25T00:00:00+00:00",
+    "new_start": "2025-03-25T17:45:00+00:00",
+    "new_end": "2025-03-25T20:00:00+00:00",
+    "status": "new",
+    "duration": 135,
+    "deleted": false
+  },
+  {
     "id": "feaab2d8911ee611c60bc77c62f6efd25ff6cd8485551eb27ee17b2c2408bcf6",
     "version_id": "5b1dd30185bf6d4da1ca112e8742b51be126ee32f63a61b2a8155ae168430a99",
     "date": "2025-03-23T00:00:00+00:00",
@@ -80,7 +97,7 @@
     "new_date": "2025-03-25T00:00:00+00:00",
     "new_start": "2025-03-25T18:40:00+00:00",
     "new_end": "2025-03-25T20:55:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 135,
     "deleted": false
   },
@@ -30889,23 +30906,6 @@
     "deleted": false
   },
   {
-    "id": "790a450ce2be9487eea8a233d6b73993778fb3a75710f75eaf4ea17dcd1294f7",
-    "version_id": "8b869b68291661a108d4bdadbb4253dbc3215c4b8d6c5618c49989d76aec158f",
-    "date": "2025-03-23T00:00:00+00:00",
-    "start": "2025-03-23T03:30:00+00:00",
-    "end": "2025-03-23T03:45:00+00:00",
-    "value": 1,
-    "summary": "Weekly check up of goals NOTION",
-    "description": "(No description)",
-    "calendar_name": "jonkuhar11@gmail.com",
-    "new_date": "2025-03-23T00:00:00+00:00",
-    "new_start": "2025-03-23T03:30:00+00:00",
-    "new_end": "2025-03-23T03:45:00+00:00",
-    "status": "unchanged",
-    "duration": 15,
-    "deleted": false
-  },
-  {
     "id": "c174ce178a4b856ff1652c08c65ce93ec3e3abbb711cb43a1e3f6e919126be55",
     "version_id": "8e3b4510a573161a6eda1a301ea227f49113cf5bb85d6e6563cba7d84224b03a",
     "date": "2025-02-28T00:00:00+00:00",
@@ -31021,6 +31021,23 @@
     "new_start": "2025-03-03T01:45:00+00:00",
     "new_end": "2025-03-03T02:00:00+00:00",
     "status": "deleted",
+    "duration": 15,
+    "deleted": false
+  },
+  {
+    "id": "790a450ce2be9487eea8a233d6b73993778fb3a75710f75eaf4ea17dcd1294f7",
+    "version_id": "8b869b68291661a108d4bdadbb4253dbc3215c4b8d6c5618c49989d76aec158f",
+    "date": "2025-03-23T00:00:00+00:00",
+    "start": "2025-03-23T03:30:00+00:00",
+    "end": "2025-03-23T03:45:00+00:00",
+    "value": 1,
+    "summary": "Weekly check up of goals NOTION",
+    "description": "(No description)",
+    "calendar_name": "jonkuhar11@gmail.com",
+    "new_date": "2025-03-23T00:00:00+00:00",
+    "new_start": "2025-03-23T03:30:00+00:00",
+    "new_end": "2025-03-23T03:45:00+00:00",
+    "status": "unchanged",
     "duration": 15,
     "deleted": false
   },
