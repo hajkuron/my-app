@@ -30991,6 +30991,23 @@
     "deleted": false
   },
   {
+    "id": "6140b2a3db223d7700e7d04483aec10a8ce6f4c4b069dfe4a03221c1d8961409",
+    "version_id": "5d493008cc2640ee5dd8821f50670d954bffe0a23dc9163b91c3f10a974f6e35",
+    "date": "2025-05-22T00:00:00+00:00",
+    "start": "2025-05-22T10:15:00+00:00",
+    "end": "2025-05-22T12:30:00+00:00",
+    "value": 1,
+    "summary": "International Entrepreneurship (DHT)",
+    "description": "",
+    "calendar_name": "VU Amsterdam - Personal timetable: Kuhar, J. (Jon)",
+    "new_date": "2025-05-22T00:00:00+00:00",
+    "new_start": "2025-05-22T10:15:00+00:00",
+    "new_end": "2025-05-22T12:30:00+00:00",
+    "status": "new",
+    "duration": 135,
+    "deleted": false
+  },
+  {
     "id": "081e9e992c60e60695234066977835c8c57611110bfbb93a5d94fba3af48d726",
     "version_id": "fdc1d29ffa2350ce0f40d99b3173f81a09567d8ee5f3f877df833ac8526c9840",
     "date": "2025-01-06T00:00:00+00:00",
