@@ -31377,8 +31377,25 @@
     "new_date": "2025-06-02T00:00:00+00:00",
     "new_start": "2025-06-02T16:20:00+00:00",
     "new_end": "2025-06-02T19:05:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 165,
+    "deleted": false
+  },
+  {
+    "id": "c8d8ee9f3aed35335b10a97f0f83acf30ae00bedb60e8957447087b848e19391",
+    "version_id": "8b51dc7d495f655b819bb68141664dcb66ea1f369814628b06e8b5fafd5fb445",
+    "date": "2025-05-30T00:00:00+00:00",
+    "start": "2025-05-30T06:00:00+00:00",
+    "end": "2025-05-30T07:00:00+00:00",
+    "value": 1,
+    "summary": "Entrepreneurial Finance",
+    "description": "",
+    "calendar_name": "University of Amsterdam - Personal timetable: 13597698@uva.nl",
+    "new_date": "2025-05-30T00:00:00+00:00",
+    "new_start": "2025-05-30T06:00:00+00:00",
+    "new_end": "2025-05-30T07:00:00+00:00",
+    "status": "new",
+    "duration": 60,
     "deleted": false
   },
   {
