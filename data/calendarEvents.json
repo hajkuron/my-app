@@ -31445,8 +31445,25 @@
     "new_date": "2025-06-04T00:00:00+00:00",
     "new_start": "2025-06-04T23:00:00+00:00",
     "new_end": "2025-06-05T23:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 1440,
+    "deleted": false
+  },
+  {
+    "id": "550ae7a912ae6dbec6753dfeaa698a0dffb4f9efc376a51d149c6917768ac7d7",
+    "version_id": "42a0ff358040c6c5d9635fde6df5b96eb9b97cb75099ff98b4e0f23a6228ca8f",
+    "date": "2025-06-08T00:00:00+00:00",
+    "start": "2025-06-08T02:30:00+00:00",
+    "end": "2025-06-08T02:45:00+00:00",
+    "value": 1,
+    "summary": "Weekly check up of goals NOTION",
+    "description": "(No description)",
+    "calendar_name": "jonkuhar11@gmail.com",
+    "new_date": "2025-06-08T00:00:00+00:00",
+    "new_start": "2025-06-08T02:30:00+00:00",
+    "new_end": "2025-06-08T02:45:00+00:00",
+    "status": "new",
+    "duration": 15,
     "deleted": false
   },
   {
