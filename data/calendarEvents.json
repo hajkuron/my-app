@@ -31462,8 +31462,25 @@
     "new_date": "2025-06-08T00:00:00+00:00",
     "new_start": "2025-06-08T02:30:00+00:00",
     "new_end": "2025-06-08T02:45:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 15,
+    "deleted": false
+  },
+  {
+    "id": "a5d1dd3047e1e042b8aa6e66f256766e3ada14cd6c37402333a637f0574cb561",
+    "version_id": "342c89663a0494839198816c181298cccfb5fa4ac373e24e83fba23967393e5e",
+    "date": "2025-06-08T00:00:00+00:00",
+    "start": "2025-06-08T11:00:00+00:00",
+    "end": "2025-06-08T13:00:00+00:00",
+    "value": 1,
+    "summary": "football",
+    "description": "(No description)",
+    "calendar_name": "Fitness",
+    "new_date": "2025-06-08T00:00:00+00:00",
+    "new_start": "2025-06-08T11:00:00+00:00",
+    "new_end": "2025-06-08T13:00:00+00:00",
+    "status": "new",
+    "duration": 120,
     "deleted": false
   },
   {
