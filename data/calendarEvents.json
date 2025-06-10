@@ -31496,7 +31496,7 @@
     "new_date": "2025-06-09T00:00:00+00:00",
     "new_start": "2025-06-09T16:25:00+00:00",
     "new_end": "2025-06-09T18:15:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 110,
     "deleted": false
   },
@@ -31513,7 +31513,7 @@
     "new_date": "2025-06-09T00:00:00+00:00",
     "new_start": "2025-06-09T19:55:00+00:00",
     "new_end": "2025-06-09T22:30:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 155,
     "deleted": false
   },
