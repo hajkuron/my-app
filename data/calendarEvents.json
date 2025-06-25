@@ -31921,7 +31921,7 @@
     "new_date": "2025-06-24T00:00:00+00:00",
     "new_start": "2025-06-24T09:00:00+00:00",
     "new_end": "2025-06-24T09:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 0,
     "deleted": false
   },
