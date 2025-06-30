@@ -31955,8 +31955,25 @@
     "new_date": "2025-06-29T00:00:00+00:00",
     "new_start": "2025-06-29T11:00:00+00:00",
     "new_end": "2025-06-29T13:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 120,
+    "deleted": false
+  },
+  {
+    "id": "285e809d12157ebe7424aaff0fb87918cae70dec0a5d81fecd29f5542a575fe1",
+    "version_id": "0edc70efdb3ffef739b22ea9b2d6fe9c04f29129f93cb68d212f860dae6fd7c9",
+    "date": "2025-07-01T00:00:00+00:00",
+    "start": "2025-07-01T00:00:00+00:00",
+    "end": "2025-07-02T00:00:00+00:00",
+    "value": 1,
+    "summary": "Upload your thesis [6314MA011Y]",
+    "description": "",
+    "calendar_name": "University of Amsterdam - Personal timetable: 13597698@uva.nl",
+    "new_date": "2025-07-01T00:00:00+00:00",
+    "new_start": "2025-07-01T00:00:00+00:00",
+    "new_end": "2025-07-02T00:00:00+00:00",
+    "status": "new",
+    "duration": 1440,
     "deleted": false
   },
   {
