@@ -32278,7 +32278,7 @@
     "new_date": "2025-07-13T00:00:00+00:00",
     "new_start": "2025-07-13T11:00:00+00:00",
     "new_end": "2025-07-13T13:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 120,
     "deleted": false
   },
