@@ -32295,7 +32295,7 @@
     "new_date": "2025-07-15T00:00:00+00:00",
     "new_start": "2025-07-15T07:00:00+00:00",
     "new_end": "2025-07-15T09:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 120,
     "deleted": false
   },
@@ -32312,7 +32312,7 @@
     "new_date": "2025-07-16T00:00:00+00:00",
     "new_start": "2025-07-16T07:00:00+00:00",
     "new_end": "2025-07-16T10:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 180,
     "deleted": false
   },
@@ -32329,7 +32329,7 @@
     "new_date": "2025-07-15T00:00:00+00:00",
     "new_start": "2025-07-15T12:00:00+00:00",
     "new_end": "2025-07-15T13:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 60,
     "deleted": false
   },
@@ -32346,7 +32346,7 @@
     "new_date": "2025-07-16T00:00:00+00:00",
     "new_start": "2025-07-16T06:00:00+00:00",
     "new_end": "2025-07-16T07:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 60,
     "deleted": false
   },
@@ -32363,7 +32363,7 @@
     "new_date": "2025-07-15T00:00:00+00:00",
     "new_start": "2025-07-15T09:00:00+00:00",
     "new_end": "2025-07-15T11:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 120,
     "deleted": false
   },
@@ -32380,7 +32380,7 @@
     "new_date": "2025-07-16T00:00:00+00:00",
     "new_start": "2025-07-16T10:00:00+00:00",
     "new_end": "2025-07-16T12:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 120,
     "deleted": false
   },
@@ -32397,7 +32397,7 @@
     "new_date": "2025-07-15T00:00:00+00:00",
     "new_start": "2025-07-15T14:00:00+00:00",
     "new_end": "2025-07-15T16:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 120,
     "deleted": false
   },
