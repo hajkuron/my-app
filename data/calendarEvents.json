@@ -32436,6 +32436,23 @@
     "deleted": false
   },
   {
+    "id": "8f153878cb85637260866de8a4f75dc05bd405f5a59ecc203dc1f0338cffbc29",
+    "version_id": "23338d75162ba5c5a866be5f86ffa56e26946fefce7226b9befd7753f16b50e6",
+    "date": "2025-07-24T00:00:00+00:00",
+    "start": "2025-07-24T09:00:00+00:00",
+    "end": "2025-07-24T09:00:00+00:00",
+    "value": 1,
+    "summary": "Hanci❤️",
+    "description": "(No description)",
+    "calendar_name": "Home",
+    "new_date": "2025-07-24T00:00:00+00:00",
+    "new_start": "2025-07-24T09:00:00+00:00",
+    "new_end": "2025-07-24T09:00:00+00:00",
+    "status": "new",
+    "duration": 0,
+    "deleted": false
+  },
+  {
     "id": "ff86cff4c3ed66e50a27db4e500d0799556ee2e11cad31918c6e462bcae3a241",
     "version_id": "91352121b2ec92e2469502e1a157bbc2e3fd2bb955c5e9ba6dfd4bbd3d49cef6",
     "date": "2025-01-20T00:00:00+00:00",
