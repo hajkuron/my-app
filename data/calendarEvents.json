@@ -32499,7 +32499,7 @@
     "new_date": "2025-08-02T00:00:00+00:00",
     "new_start": "2025-08-02T00:40:00+00:00",
     "new_end": "2025-08-02T02:55:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 135,
     "deleted": false
   },
@@ -32516,7 +32516,7 @@
     "new_date": "2025-08-03T00:00:00+00:00",
     "new_start": "2025-08-03T00:00:00+00:00",
     "new_end": "2025-08-04T00:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 1440,
     "deleted": false
   },
@@ -32533,8 +32533,25 @@
     "new_date": "2025-08-03T00:00:00+00:00",
     "new_start": "2025-08-03T02:30:00+00:00",
     "new_end": "2025-08-03T02:45:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 15,
+    "deleted": false
+  },
+  {
+    "id": "4e12fe716b4351ce9f4f1b8e6f3bf5d1a5315432c02073e9b3d45326229cd1ea",
+    "version_id": "1321d25b7efd615e416eda4f8b5d8b9b09739d21b441f75c7d87bbcd74890cee",
+    "date": "2025-08-03T00:00:00+00:00",
+    "start": "2025-08-03T11:00:00+00:00",
+    "end": "2025-08-03T13:00:00+00:00",
+    "value": 1,
+    "summary": "football",
+    "description": "(No description)",
+    "calendar_name": "Fitness",
+    "new_date": "2025-08-03T00:00:00+00:00",
+    "new_start": "2025-08-03T11:00:00+00:00",
+    "new_end": "2025-08-03T13:00:00+00:00",
+    "status": "new",
+    "duration": 120,
     "deleted": false
   },
   {
