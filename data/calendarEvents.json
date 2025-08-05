@@ -32572,6 +32572,23 @@
     "deleted": false
   },
   {
+    "id": "277a343797e0ddcb1bbb1ce6544171a0f70331018e4750238c2e7e04965192ba",
+    "version_id": "5952060c7b4b941a20a3c5c8d631d849f059065a0351b7d2c09ff9208c5dc36b",
+    "date": "2025-08-04T00:00:00+00:00",
+    "start": "2025-08-04T00:00:00+00:00",
+    "end": "2025-08-06T00:00:00+00:00",
+    "value": 1,
+    "summary": "Stay at Nordestina Loft",
+    "description": "To see detailed information for automatically created events like this one, use the official Google Calendar app. https://g.co/calendar\n\nThis event was created from an email you received in Gmail. https://mail.google.com/mail?extsrc=cal&plid=ACUX6DPTKrRyuaYFwUea8LHKBxJzUILz5CvYZlM\n",
+    "calendar_name": "jonkuhar11@gmail.com",
+    "new_date": "2025-08-04T00:00:00+00:00",
+    "new_start": "2025-08-04T00:00:00+00:00",
+    "new_end": "2025-08-06T00:00:00+00:00",
+    "status": "new",
+    "duration": 2880,
+    "deleted": false
+  },
+  {
     "id": "b628334bfff6f4d523d721af70fb05f944d99c1459f7c836ad41f51937d51434",
     "version_id": "32c02a44ca3cd39831ba44812a705745d1b1bd7373a2db012bb2dc43c70c3f03",
     "date": "2025-01-13T00:00:00+00:00",
