@@ -32584,7 +32584,7 @@
     "new_date": "2025-08-04T00:00:00+00:00",
     "new_start": "2025-08-04T00:00:00+00:00",
     "new_end": "2025-08-06T00:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 2880,
     "deleted": false
   },
