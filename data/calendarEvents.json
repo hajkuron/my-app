@@ -32487,6 +32487,23 @@
     "deleted": false
   },
   {
+    "id": "48577bf07f637aa0f18fd97cce415572cd5585e886ce467e95840116cec6204f",
+    "version_id": "527b26507820d98f621c328474159767beddf342190729d9432d7c8f12166a9d",
+    "date": "2025-08-03T00:00:00+00:00",
+    "start": "2025-08-03T02:30:00+00:00",
+    "end": "2025-08-03T02:45:00+00:00",
+    "value": 1,
+    "summary": "Weekly check up of goals NOTION",
+    "description": "(No description)",
+    "calendar_name": "jonkuhar11@gmail.com",
+    "new_date": "2025-08-03T00:00:00+00:00",
+    "new_start": "2025-08-03T02:30:00+00:00",
+    "new_end": "2025-08-03T02:45:00+00:00",
+    "status": "unchanged",
+    "duration": 15,
+    "deleted": false
+  },
+  {
     "id": "365c8c199239f242f5fff926e4688a44838b0894582fab3f673ba6fa72accfed",
     "version_id": "5088c01f4aa0717e55a30ab8271b2709728e6134240f2a33ad083fb9516704a4",
     "date": "2025-08-02T00:00:00+00:00",
@@ -32518,23 +32535,6 @@
     "new_end": "2025-08-04T00:00:00+00:00",
     "status": "unchanged",
     "duration": 1440,
-    "deleted": false
-  },
-  {
-    "id": "48577bf07f637aa0f18fd97cce415572cd5585e886ce467e95840116cec6204f",
-    "version_id": "527b26507820d98f621c328474159767beddf342190729d9432d7c8f12166a9d",
-    "date": "2025-08-03T00:00:00+00:00",
-    "start": "2025-08-03T02:30:00+00:00",
-    "end": "2025-08-03T02:45:00+00:00",
-    "value": 1,
-    "summary": "Weekly check up of goals NOTION",
-    "description": "(No description)",
-    "calendar_name": "jonkuhar11@gmail.com",
-    "new_date": "2025-08-03T00:00:00+00:00",
-    "new_start": "2025-08-03T02:30:00+00:00",
-    "new_end": "2025-08-03T02:45:00+00:00",
-    "status": "unchanged",
-    "duration": 15,
     "deleted": false
   },
   {
