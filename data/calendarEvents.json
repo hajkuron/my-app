@@ -32810,6 +32810,23 @@
     "deleted": false
   },
   {
+    "id": "8616c48ec5cf449885d0652a5a57571e3c42050e871e3e7e07397b39088d5a09",
+    "version_id": "4d1f929ebec5187497fce53df6f596e0b78c33d422d0e5a401046f37f436bc78",
+    "date": "2025-08-18T00:00:00+00:00",
+    "start": "2025-08-18T00:00:00+00:00",
+    "end": "2025-08-19T00:00:00+00:00",
+    "value": 1,
+    "summary": "RESIT: Upload your thesis [6314MA011Y]",
+    "description": "",
+    "calendar_name": "University of Amsterdam - Personal timetable: 13597698@uva.nl",
+    "new_date": "2025-08-18T00:00:00+00:00",
+    "new_start": "2025-08-18T00:00:00+00:00",
+    "new_end": "2025-08-19T00:00:00+00:00",
+    "status": "new",
+    "duration": 1440,
+    "deleted": false
+  },
+  {
     "id": "ee6fcd8d184e795e6760ffa2ffaae0c8ad03e59465c427d54260babc0e07cf32",
     "version_id": "f757513d061aad2137b911a2c8278f82fac9ee81753ce757e938bb3584b7c419",
     "date": "2025-01-14T00:00:00+00:00",
