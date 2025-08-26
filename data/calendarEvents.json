@@ -32907,7 +32907,7 @@
     "new_date": "2025-08-25T00:00:00+00:00",
     "new_start": "2025-08-25T11:00:00+00:00",
     "new_end": "2025-08-25T12:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 60,
     "deleted": false
   },
@@ -32924,7 +32924,7 @@
     "new_date": "2025-08-25T00:00:00+00:00",
     "new_start": "2025-08-25T06:00:00+00:00",
     "new_end": "2025-08-25T06:15:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 15,
     "deleted": false
   },
@@ -32960,6 +32960,40 @@
     "new_end": "2025-01-31T08:00:00+00:00",
     "status": "new",
     "duration": 60,
+    "deleted": false
+  },
+  {
+    "id": "3e24a45300592e55479a00ecddf07984496c7c5f4fa7fa369288cb6a1389c830",
+    "version_id": "d6fa04ce6fa4103391119983e25b50838bcb28a714f1f2de56a3a0cba70c1271",
+    "date": "2025-08-26T00:00:00+00:00",
+    "start": "2025-08-26T11:00:00+00:00",
+    "end": "2025-08-26T12:00:00+00:00",
+    "value": 1,
+    "summary": "gym",
+    "description": "(No description)",
+    "calendar_name": "Fitness",
+    "new_date": "2025-08-26T00:00:00+00:00",
+    "new_start": "2025-08-26T11:00:00+00:00",
+    "new_end": "2025-08-26T12:00:00+00:00",
+    "status": "new",
+    "duration": 60,
+    "deleted": false
+  },
+  {
+    "id": "8fa8df66a75b6379610d58f38456a266ae30faa91d03e16e723f7ff21582b710",
+    "version_id": "df2f844c6073e5a05fb4baf19e49cfa8f8a3feeb443362ad9bffedeaf11f937f",
+    "date": "2025-08-26T00:00:00+00:00",
+    "start": "2025-08-26T06:00:00+00:00",
+    "end": "2025-08-26T06:15:00+00:00",
+    "value": 1,
+    "summary": "supplements",
+    "description": "(No description)",
+    "calendar_name": "jonkuhar11@gmail.com",
+    "new_date": "2025-08-26T00:00:00+00:00",
+    "new_start": "2025-08-26T06:00:00+00:00",
+    "new_end": "2025-08-26T06:15:00+00:00",
+    "status": "new",
+    "duration": 15,
     "deleted": false
   },
   {
