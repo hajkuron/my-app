@@ -33077,7 +33077,7 @@
     "new_date": "2025-08-29T00:00:00+00:00",
     "new_start": "2025-08-29T11:00:00+00:00",
     "new_end": "2025-08-29T12:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 60,
     "deleted": false
   },
@@ -33094,7 +33094,7 @@
     "new_date": "2025-08-29T00:00:00+00:00",
     "new_start": "2025-08-29T06:00:00+00:00",
     "new_end": "2025-08-29T06:15:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 15,
     "deleted": false
   },
@@ -33113,6 +33113,40 @@
     "new_end": "2025-01-27T16:00:00+00:00",
     "status": "new",
     "duration": 480,
+    "deleted": false
+  },
+  {
+    "id": "e49c95d137a8356bf4d953fec1b0f003a7980b3bdf4d88efe2d2b98db2e0b93b",
+    "version_id": "c7b9f40db5c1a8874ecc36c49a80cfe2b8c68d76a8702e2c43e4d76da7ba6f1d",
+    "date": "2025-08-30T00:00:00+00:00",
+    "start": "2025-08-30T06:00:00+00:00",
+    "end": "2025-08-30T06:15:00+00:00",
+    "value": 1,
+    "summary": "supplements",
+    "description": "(No description)",
+    "calendar_name": "jonkuhar11@gmail.com",
+    "new_date": "2025-08-30T00:00:00+00:00",
+    "new_start": "2025-08-30T06:00:00+00:00",
+    "new_end": "2025-08-30T06:15:00+00:00",
+    "status": "new",
+    "duration": 15,
+    "deleted": false
+  },
+  {
+    "id": "27e17976baac2ae8ec83c509b91d5414d97d695ad6f627bb69c4b7df7cc51a78",
+    "version_id": "6162bb43ec914cf1c37cf70f6cb3ed073a6319e99f663c8d4a8190990a233110",
+    "date": "2025-08-31T00:00:00+00:00",
+    "start": "2025-08-31T02:30:00+00:00",
+    "end": "2025-08-31T02:45:00+00:00",
+    "value": 1,
+    "summary": "Weekly check up of goals NOTION",
+    "description": "(No description)",
+    "calendar_name": "jonkuhar11@gmail.com",
+    "new_date": "2025-08-31T00:00:00+00:00",
+    "new_start": "2025-08-31T02:30:00+00:00",
+    "new_end": "2025-08-31T02:45:00+00:00",
+    "status": "new",
+    "duration": 15,
     "deleted": false
   },
   {
