@@ -33218,6 +33218,23 @@
     "deleted": false
   },
   {
+    "id": "cec564f8e1ef7e66d2e8785d90c445fbb5d6f17e7aa280b00c808e8ecbc58e5c",
+    "version_id": "2d936fa340c722af841744661d7ca7fbc7f6b772027a6a0b3a15aa91b2e9260a",
+    "date": "2025-09-02T00:00:00+00:00",
+    "start": "2025-09-02T07:00:00+00:00",
+    "end": "2025-09-02T08:00:00+00:00",
+    "value": 1,
+    "summary": "Data, odprtje sp",
+    "description": "(No description)",
+    "calendar_name": "jonkuhar11@gmail.com",
+    "new_date": "2025-09-02T00:00:00+00:00",
+    "new_start": "2025-09-02T07:00:00+00:00",
+    "new_end": "2025-09-02T08:00:00+00:00",
+    "status": "new",
+    "duration": 60,
+    "deleted": false
+  },
+  {
     "id": "3ee72a51109b09ef87111586628420f541c583c51630d91ed6a655d102ee5907",
     "version_id": "5225a0c1175c1ab32846c4d5a3e22f71b9ee952faef90d9ff5f2f5acc50f28f4",
     "date": "2025-01-20T00:00:00+00:00",
