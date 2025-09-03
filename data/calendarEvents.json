@@ -33230,7 +33230,7 @@
     "new_date": "2025-09-02T00:00:00+00:00",
     "new_start": "2025-09-02T07:00:00+00:00",
     "new_end": "2025-09-02T08:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 60,
     "deleted": false
   },
