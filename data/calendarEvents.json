@@ -33298,7 +33298,7 @@
     "new_date": "2025-09-09T00:00:00+00:00",
     "new_start": "2025-09-09T17:00:00+00:00",
     "new_end": "2025-09-09T19:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 120,
     "deleted": false
   },
@@ -33334,6 +33334,23 @@
     "new_end": "2025-01-21T16:00:00+00:00",
     "status": "new",
     "duration": 480,
+    "deleted": false
+  },
+  {
+    "id": "40eb9691a4d987ff2daead535746c30aec2ba80f590ca25190844930e7608231",
+    "version_id": "5b629dbe8bd3fe815f23de48aed15b712c4b2cb6ce724ac11a75429417d4b003",
+    "date": "2025-09-11T00:00:00+00:00",
+    "start": "2025-09-11T09:00:00+00:00",
+    "end": "2025-09-11T10:45:00+00:00",
+    "value": 1,
+    "summary": "RITUAL pri Tanji with Tanja",
+    "description": "Event Name: RITUAL pri Tanji\nEvent Description: Tanja je že vrsto let nepogrešljiv del naše ekipe. Njena umirjena energija, strokovno znanje in čut za posameznika ustvarjajo izjemno izkušnjo, ki presega klasične lepotne tretmaje. Pri njej ne gre zgolj za nego kože – gre za celosten pristop, kjer se prepletajo strokovnost in pristna skrb za dobro počutje vsakega posameznika.Tanjin čarobni ritual z masažo(cena: 110 eur, trajanje: 1h 45 min. rituala, 15 min. čas za integracijo in pitje čaja, skupaj 2h)To ni le nega obraza – to je popolna sprostitev za telo in duha. Tanjin čarobni ritual vključuje masažo obraza, dekolteja in lasišča, ki sprosti napetosti, izboljša prekrvavitev in prebudi naravni sijaj kože. Vsak dotik je premišljen in namenjen globinski sprostitvi. Ritual je zasnovan tako, da vas popelje v stanje globokega miru in harmonije, medtem ko Tanja vaši koži podari nego, ki si jo zasluži. Prava izbira za vse, ki si želite več kot le klasične nege – trenutek samo za vas.Poglobljena čistilna nega(cena: 80 eur, trajanje: 1,5-2h)Tanjina specialnost je tudi izredno natančna in učinkovita poglobljena čistilna nega. Gre za temeljit tretma, namenjen globinskemu čiščenju por, odstranjevanju nečistoč in uravnavanju stanja kože. S prefinjenim pristopom in izbranimi tehnikami Tanja poskrbi, da koža ponovno zaživi – čista, uravnotežena in osvežena. Ta nega je idealna za tiste, ki se spopadajo z nečistočami, mašenjem por ali potrebujejo temeljito obnovo kože.** Opomba: v primeru če se odločite za tretma s spikulami za akne, je cena dveh neg 100 eur. Ena nega se izvede teden dni pred spikulami in druga teden dni po zadnjem tretmaju s spikulami. **Ne glede na to, kateri tretma izberete, boste ob Tanji v varnih rokah. Njena nega ni zgolj lepotna storitev – je izkušnja ki seže globlje. \nDate & Time: 11:00 - 12:45 (Central European Time) on Thursday, September 11, 2025\nV navigacijo odtipkajte kavarna Lira in vas pripelje do nas. Ko boste pred vrati Rituali (stranska vrata na levi strani) POTRKAJTE in vam bomo odprli. Če se kakorkoli izgubite, kličite Tanjo na 041 216 597. \nParkirišče je ZASTONJ pred ali okrog stavbe.\n\nS potrditvijo naročila na storitev se strinjam s pogoji poslovanja. \nVaše osebne podatke skrbno varujemo in jih uporabljamo izključno za namen obdelave vaše rezervacije, v skladu z veljavno zakonodajo o varstvu podatkov. : Tanjin čarobni ritual z masažo\n\nCancellation Policy: Želela bi vas obvestiti, da v primeru odpovedi manj kot 24 ur pred tretmajem zaračunamo 50% vrednost storitve. Račun boste dobili na mail in ga poravnate v istem dnevu. Ker smo majhno podjetje s tem ohranjamo stabilnost našega podjetja. Hvala za razumevanje in solidarnost!\n\n\nNeed to make changes to this event?\nCancel: https://calendly.com/cancellations/112cc69d-594f-4779-a85d-de95d12c8d05\nReschedule: https://calendly.com/reschedulings/112cc69d-594f-4779-a85d-de95d12c8d05\n",
+    "calendar_name": "jonkuhar11@gmail.com",
+    "new_date": "2025-09-11T00:00:00+00:00",
+    "new_start": "2025-09-11T09:00:00+00:00",
+    "new_end": "2025-09-11T10:45:00+00:00",
+    "status": "new",
+    "duration": 105,
     "deleted": false
   },
   {
