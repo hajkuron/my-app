@@ -33587,7 +33587,7 @@
     "new_date": "2025-09-18T00:00:00+00:00",
     "new_start": "2025-09-18T14:00:00+00:00",
     "new_end": "2025-09-18T15:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 60,
     "deleted": false
   },
@@ -33604,7 +33604,7 @@
     "new_date": "2025-09-18T00:00:00+00:00",
     "new_start": "2025-09-18T05:00:00+00:00",
     "new_end": "2025-09-18T13:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 480,
     "deleted": false
   },
@@ -33621,7 +33621,7 @@
     "new_date": "2025-09-18T00:00:00+00:00",
     "new_start": "2025-09-18T14:00:00+00:00",
     "new_end": "2025-09-18T15:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 60,
     "deleted": false
   },
@@ -33657,6 +33657,23 @@
     "new_end": "2025-01-31T09:00:00+00:00",
     "status": "new",
     "duration": 60,
+    "deleted": false
+  },
+  {
+    "id": "217eb67c583ea0c3544fa6a054edfb0059734402dcf40030858e59f40076e2c5",
+    "version_id": "2d74cc3a02659cf28f828b031caad472b7ab0f88564019d4c24426c063b3077d",
+    "date": "2025-09-19T00:00:00+00:00",
+    "start": "2025-09-19T05:00:00+00:00",
+    "end": "2025-09-19T13:00:00+00:00",
+    "value": 1,
+    "summary": "work",
+    "description": "(No description)",
+    "calendar_name": "Work creative clicks",
+    "new_date": "2025-09-19T00:00:00+00:00",
+    "new_start": "2025-09-19T05:00:00+00:00",
+    "new_end": "2025-09-19T13:00:00+00:00",
+    "status": "new",
+    "duration": 480,
     "deleted": false
   },
   {
