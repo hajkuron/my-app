@@ -33842,7 +33842,7 @@
     "new_date": "2025-10-09T00:00:00+00:00",
     "new_start": "2025-10-09T16:00:00+00:00",
     "new_end": "2025-10-09T18:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 120,
     "deleted": false
   },
