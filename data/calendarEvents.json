@@ -34522,7 +34522,7 @@
     "new_date": "2025-11-11T00:00:00+00:00",
     "new_start": "2025-11-11T12:00:00+00:00",
     "new_end": "2025-11-11T13:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 60,
     "deleted": false
   },
@@ -34539,7 +34539,7 @@
     "new_date": "2025-11-11T00:00:00+00:00",
     "new_start": "2025-11-11T07:00:00+00:00",
     "new_end": "2025-11-11T11:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 240,
     "deleted": false
   },
@@ -34556,7 +34556,7 @@
     "new_date": "2025-11-12T00:00:00+00:00",
     "new_start": "2025-11-12T09:30:00+00:00",
     "new_end": "2025-11-12T11:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 90,
     "deleted": false
   },
@@ -34573,8 +34573,25 @@
     "new_date": "2025-11-12T00:00:00+00:00",
     "new_start": "2025-11-12T07:00:00+00:00",
     "new_end": "2025-11-12T09:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 120,
+    "deleted": false
+  },
+  {
+    "id": "f56daecaea5af2fe05d58035911c8cf10c043a8b4217cd2778f2350a97e551c7",
+    "version_id": "570dc6aaf09aea3ba7a09867d84f7c4db46d7da070113373dc266c398d12489d",
+    "date": "2025-11-13T00:00:00+00:00",
+    "start": "2025-11-13T07:00:00+00:00",
+    "end": "2025-11-13T13:00:00+00:00",
+    "value": 1,
+    "summary": "work",
+    "description": "(No description)",
+    "calendar_name": "Work creative clicks",
+    "new_date": "2025-11-13T00:00:00+00:00",
+    "new_start": "2025-11-13T07:00:00+00:00",
+    "new_end": "2025-11-13T13:00:00+00:00",
+    "status": "new",
+    "duration": 360,
     "deleted": false
   },
   {
