@@ -34845,7 +34845,7 @@
     "new_date": "2025-11-27T00:00:00+00:00",
     "new_start": "2025-11-27T15:00:00+00:00",
     "new_end": "2025-11-27T17:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 120,
     "deleted": false
   },
@@ -34862,7 +34862,7 @@
     "new_date": "2025-11-27T00:00:00+00:00",
     "new_start": "2025-11-27T05:30:00+00:00",
     "new_end": "2025-11-27T06:30:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 60,
     "deleted": false
   },
@@ -34879,7 +34879,7 @@
     "new_date": "2025-11-27T00:00:00+00:00",
     "new_start": "2025-11-27T07:00:00+00:00",
     "new_end": "2025-11-27T13:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 360,
     "deleted": false
   },
