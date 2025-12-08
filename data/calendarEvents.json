@@ -34930,7 +34930,7 @@
     "new_date": "2025-12-07T00:00:00+00:00",
     "new_start": "2025-12-07T19:00:00+00:00",
     "new_end": "2025-12-07T21:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 120,
     "deleted": false
   },
@@ -34947,7 +34947,7 @@
     "new_date": "2025-12-07T00:00:00+00:00",
     "new_start": "2025-12-07T09:20:00+00:00",
     "new_end": "2025-12-07T11:15:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 115,
     "deleted": false
   },
