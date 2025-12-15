@@ -34981,7 +34981,7 @@
     "new_date": "2025-12-14T00:00:00+00:00",
     "new_start": "2025-12-14T19:00:00+00:00",
     "new_end": "2025-12-14T21:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 120,
     "deleted": false
   },
