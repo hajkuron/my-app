@@ -8789,6 +8789,23 @@
     "deleted": false
   },
   {
+    "id": "c0eb28a4b5101dc36431621286fbdc199a1c5c6aecbf6f02e95e75c04ed4b544",
+    "version_id": "41bded43efa7773ae6023fea52e2bfa6da727ca26d8b8c7cd64ca1454bef9098",
+    "date": "2026-01-18T00:00:00+00:00",
+    "start": "2026-01-18T19:00:00+00:00",
+    "end": "2026-01-18T21:00:00+00:00",
+    "value": 1,
+    "summary": "football",
+    "description": "(No description)",
+    "calendar_name": "Fitness",
+    "new_date": "2026-01-18T00:00:00+00:00",
+    "new_start": "2026-01-18T19:00:00+00:00",
+    "new_end": "2026-01-18T21:00:00+00:00",
+    "status": "new",
+    "duration": 120,
+    "deleted": false
+  },
+  {
     "id": "180b7ea519df94672a0f05a2382cb3e8be8b46eb43f15fd0e2a285ab6b6b8bab",
     "version_id": "211b7c73e83a99cb1aa623b07d6dac71f6aa3bcc76bc9acf25160a4eefea422f",
     "date": "2025-01-13T00:00:00+00:00",
