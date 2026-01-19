@@ -8801,7 +8801,7 @@
     "new_date": "2026-01-18T00:00:00+00:00",
     "new_start": "2026-01-18T19:00:00+00:00",
     "new_end": "2026-01-18T21:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 120,
     "deleted": false
   },
