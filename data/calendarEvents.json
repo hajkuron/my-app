@@ -27778,23 +27778,6 @@
     "deleted": false
   },
   {
-    "id": "4d48cd8487e4e07819640dffbc434bab4f6b0cefdaa5fe49c8e09e40e5681078",
-    "version_id": "283f3c61490fb523d8a9b5577d3385947d66fcd549cfd92f7e16de7233c77190",
-    "date": "2026-01-23T00:00:00+00:00",
-    "start": "2026-01-23T06:00:00+00:00",
-    "end": "2026-01-23T07:00:00+00:00",
-    "value": 1,
-    "summary": "gym",
-    "description": "(No description)",
-    "calendar_name": "Fitness",
-    "new_date": "2026-01-23T00:00:00+00:00",
-    "new_start": "2026-01-23T06:00:00+00:00",
-    "new_end": "2026-01-23T07:00:00+00:00",
-    "status": "unchanged",
-    "duration": 60,
-    "deleted": false
-  },
-  {
     "id": "cc388636537435e89685ca6ee9060ddc703d36625022c4b29c9fc8a8e80bee77",
     "version_id": "ee38d699363bd2302b113503fcfc1b2bc27497a8fa76b78ba712201400758d84",
     "date": "2026-01-22T00:00:00+00:00",
@@ -27809,6 +27792,23 @@
     "new_end": "2026-01-22T11:00:00+00:00",
     "status": "unchanged",
     "duration": 240,
+    "deleted": false
+  },
+  {
+    "id": "4d48cd8487e4e07819640dffbc434bab4f6b0cefdaa5fe49c8e09e40e5681078",
+    "version_id": "283f3c61490fb523d8a9b5577d3385947d66fcd549cfd92f7e16de7233c77190",
+    "date": "2026-01-23T00:00:00+00:00",
+    "start": "2026-01-23T06:00:00+00:00",
+    "end": "2026-01-23T07:00:00+00:00",
+    "value": 1,
+    "summary": "gym",
+    "description": "(No description)",
+    "calendar_name": "Fitness",
+    "new_date": "2026-01-23T00:00:00+00:00",
+    "new_start": "2026-01-23T06:00:00+00:00",
+    "new_end": "2026-01-23T07:00:00+00:00",
+    "status": "unchanged",
+    "duration": 60,
     "deleted": false
   },
   {
@@ -27965,23 +27965,6 @@
     "deleted": false
   },
   {
-    "id": "8eee59e96504c55007f29771a260a7b8a5ff2fe3c5c290ca79b6a82f2d19ec15",
-    "version_id": "ea8517de1a72dba01f2d3a47137d499c68eb9af8163684edb61527796f02c865",
-    "date": "2026-01-24T00:00:00+00:00",
-    "start": "2026-01-24T10:00:00+00:00",
-    "end": "2026-01-24T10:00:00+00:00",
-    "value": 1,
-    "summary": "Hanci❤️",
-    "description": "(No description)",
-    "calendar_name": "Home",
-    "new_date": "2026-01-24T00:00:00+00:00",
-    "new_start": "2026-01-24T10:00:00+00:00",
-    "new_end": "2026-01-24T10:00:00+00:00",
-    "status": "unchanged",
-    "duration": 0,
-    "deleted": false
-  },
-  {
     "id": "3d05aace0ba1cafa338190152dd824e45d8ba9b0e8703f02655512d6dd85e3b7",
     "version_id": "55a411f1d703e70af10b42e89f88e39662233b203af657cd38101ac7597fb05c",
     "date": "2025-03-28T00:00:00+00:00",
@@ -27996,6 +27979,23 @@
     "new_end": "2025-03-28T01:15:00+00:00",
     "status": "unchanged",
     "duration": 60,
+    "deleted": false
+  },
+  {
+    "id": "8eee59e96504c55007f29771a260a7b8a5ff2fe3c5c290ca79b6a82f2d19ec15",
+    "version_id": "ea8517de1a72dba01f2d3a47137d499c68eb9af8163684edb61527796f02c865",
+    "date": "2026-01-24T00:00:00+00:00",
+    "start": "2026-01-24T10:00:00+00:00",
+    "end": "2026-01-24T10:00:00+00:00",
+    "value": 1,
+    "summary": "Hanci❤️",
+    "description": "(No description)",
+    "calendar_name": "Home",
+    "new_date": "2026-01-24T00:00:00+00:00",
+    "new_start": "2026-01-24T10:00:00+00:00",
+    "new_end": "2026-01-24T10:00:00+00:00",
+    "status": "unchanged",
+    "duration": 0,
     "deleted": false
   },
   {
@@ -28147,7 +28147,7 @@
     "new_date": "2026-01-26T00:00:00+00:00",
     "new_start": "2026-01-26T07:00:00+00:00",
     "new_end": "2026-01-26T11:00:00+00:00",
-    "status": "unchanged",
+    "status": "deleted",
     "duration": 240,
     "deleted": false
   },
@@ -28181,7 +28181,7 @@
     "new_date": "2026-01-27T00:00:00+00:00",
     "new_start": "2026-01-27T07:00:00+00:00",
     "new_end": "2026-01-27T11:00:00+00:00",
-    "status": "new",
+    "status": "deleted",
     "duration": 240,
     "deleted": false
   },
@@ -28302,6 +28302,23 @@
     "new_end": "2025-03-31T09:00:00+00:00",
     "status": "new",
     "duration": 120,
+    "deleted": false
+  },
+  {
+    "id": "e01f2e39f0d3cb7c803ea67333a4cb6e1d24f7d6f70f130264c1bcfb15486a72",
+    "version_id": "263ecadf9b8ca8ecc3f4afddf4f6ab4853febd4d0e99185715bf556cb62caa92",
+    "date": "2026-01-28T00:00:00+00:00",
+    "start": "2026-01-28T07:00:00+00:00",
+    "end": "2026-01-28T11:00:00+00:00",
+    "value": 1,
+    "summary": "creative clicks",
+    "description": "(No description)",
+    "calendar_name": "Work creative clicks",
+    "new_date": "2026-01-28T00:00:00+00:00",
+    "new_start": "2026-01-28T07:00:00+00:00",
+    "new_end": "2026-01-28T11:00:00+00:00",
+    "status": "new",
+    "duration": 240,
     "deleted": false
   },
   {
