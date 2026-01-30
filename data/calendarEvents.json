@@ -28135,23 +28135,6 @@
     "deleted": false
   },
   {
-    "id": "5c27f566e71e0466303136f7ce4b84e60fef690807d0f6b4c22a1acd54657750",
-    "version_id": "6052dcdba2641bf62cd3dada9c9d735b78a7bdf9ffc3b7896b2160d2f9661342",
-    "date": "2026-01-26T00:00:00+00:00",
-    "start": "2026-01-26T07:00:00+00:00",
-    "end": "2026-01-26T11:00:00+00:00",
-    "value": 1,
-    "summary": "creative clicks",
-    "description": "(No description)",
-    "calendar_name": "Work creative clicks",
-    "new_date": "2026-01-26T00:00:00+00:00",
-    "new_start": "2026-01-26T07:00:00+00:00",
-    "new_end": "2026-01-26T11:00:00+00:00",
-    "status": "deleted",
-    "duration": 240,
-    "deleted": false
-  },
-  {
     "id": "62c60851234a7a33792bd36709bf10c7cd6cc5a8744a78005d6f4d5595a4efca",
     "version_id": "608122bff018e51ee4213692c79d6ab88be64cb835d1da3be01f1fa14dbb4c56",
     "date": "2025-04-03T00:00:00+00:00",
@@ -28166,6 +28149,23 @@
     "new_end": "2025-04-03T18:45:00+00:00",
     "status": "unchanged",
     "duration": 105,
+    "deleted": false
+  },
+  {
+    "id": "5c27f566e71e0466303136f7ce4b84e60fef690807d0f6b4c22a1acd54657750",
+    "version_id": "6052dcdba2641bf62cd3dada9c9d735b78a7bdf9ffc3b7896b2160d2f9661342",
+    "date": "2026-01-26T00:00:00+00:00",
+    "start": "2026-01-26T07:00:00+00:00",
+    "end": "2026-01-26T11:00:00+00:00",
+    "value": 1,
+    "summary": "creative clicks",
+    "description": "(No description)",
+    "calendar_name": "Work creative clicks",
+    "new_date": "2026-01-26T00:00:00+00:00",
+    "new_start": "2026-01-26T07:00:00+00:00",
+    "new_end": "2026-01-26T11:00:00+00:00",
+    "status": "deleted",
+    "duration": 240,
     "deleted": false
   },
   {
@@ -28322,23 +28322,6 @@
     "deleted": false
   },
   {
-    "id": "e01f2e39f0d3cb7c803ea67333a4cb6e1d24f7d6f70f130264c1bcfb15486a72",
-    "version_id": "1bafbeba2fc857b166480b59289eef8f52330401568668fc95815ecfe24b69a7",
-    "date": "2026-01-28T00:00:00+00:00",
-    "start": "2026-01-28T07:00:00+00:00",
-    "end": "2026-01-28T11:00:00+00:00",
-    "value": 1,
-    "summary": "creative clicks",
-    "description": "(No description)",
-    "calendar_name": "Work creative clicks",
-    "new_date": "2026-01-28T00:00:00+00:00",
-    "new_start": "2026-01-28T07:00:00+00:00",
-    "new_end": "2026-01-28T12:00:00+00:00",
-    "status": "modified",
-    "duration": 240,
-    "deleted": false
-  },
-  {
     "id": "a961c38ef8ddb72397002c34bcfa9894b1574b94f6cd92ee100caaa430e4f798",
     "version_id": "4fdf9cf812f8e7eab7690fa15535f2e78ccb389a35e162cc6ba4587b52c34cc8",
     "date": "2025-03-31T00:00:00+00:00",
@@ -28353,6 +28336,23 @@
     "new_end": "2025-03-31T09:00:00+00:00",
     "status": "new",
     "duration": 120,
+    "deleted": false
+  },
+  {
+    "id": "e01f2e39f0d3cb7c803ea67333a4cb6e1d24f7d6f70f130264c1bcfb15486a72",
+    "version_id": "1bafbeba2fc857b166480b59289eef8f52330401568668fc95815ecfe24b69a7",
+    "date": "2026-01-28T00:00:00+00:00",
+    "start": "2026-01-28T07:00:00+00:00",
+    "end": "2026-01-28T11:00:00+00:00",
+    "value": 1,
+    "summary": "creative clicks",
+    "description": "(No description)",
+    "calendar_name": "Work creative clicks",
+    "new_date": "2026-01-28T00:00:00+00:00",
+    "new_start": "2026-01-28T07:00:00+00:00",
+    "new_end": "2026-01-28T12:00:00+00:00",
+    "status": "modified",
+    "duration": 240,
     "deleted": false
   },
   {
@@ -28504,7 +28504,7 @@
     "new_date": "2026-01-29T00:00:00+00:00",
     "new_start": "2026-01-29T07:00:00+00:00",
     "new_end": "2026-01-29T12:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 300,
     "deleted": false
   },
@@ -28693,6 +28693,23 @@
     "new_end": "2025-04-02T18:30:00+00:00",
     "status": "unchanged",
     "duration": 105,
+    "deleted": false
+  },
+  {
+    "id": "2e3fcf26d40317ad00642cbb8a533c7a6d3eecd82c02335b43a30cdf1bbc22d7",
+    "version_id": "73f4967d087d94d38796455ebae0a4c14ca5dfbfde8b6cbe22ce729a50376f7d",
+    "date": "2026-01-30T00:00:00+00:00",
+    "start": "2026-01-30T07:00:00+00:00",
+    "end": "2026-01-30T12:00:00+00:00",
+    "value": 1,
+    "summary": "creative clicks",
+    "description": "(No description)",
+    "calendar_name": "Work creative clicks",
+    "new_date": "2026-01-30T00:00:00+00:00",
+    "new_start": "2026-01-30T07:00:00+00:00",
+    "new_end": "2026-01-30T12:00:00+00:00",
+    "status": "new",
+    "duration": 300,
     "deleted": false
   },
   {
