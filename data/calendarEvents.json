@@ -29410,23 +29410,6 @@
     "deleted": false
   },
   {
-    "id": "56b0591b1cf0d82b5714af3e7defa967c2289000ffd012b41ddb4c9b6ad4428e",
-    "version_id": "7f30b84ff3ec7c1691cfd131cd3346e2206864d8a24e0c09b2e96bcdb2aaf9f3",
-    "date": "2026-02-15T00:00:00+00:00",
-    "start": "2026-02-15T19:00:00+00:00",
-    "end": "2026-02-15T21:00:00+00:00",
-    "value": 1,
-    "summary": "football",
-    "description": "(No description)",
-    "calendar_name": "Fitness",
-    "new_date": "2026-02-15T00:00:00+00:00",
-    "new_start": "2026-02-15T19:00:00+00:00",
-    "new_end": "2026-02-15T21:00:00+00:00",
-    "status": "unchanged",
-    "duration": 120,
-    "deleted": false
-  },
-  {
     "id": "e6df0c9e4035147073b778632bd112ccc57da2653e96d2bb264bdd0755bbaee4",
     "version_id": "ef495a58b210facbdb96ed6e5caefba8c8a1259967fa41306615df2f8f1472d1",
     "date": "2025-04-09T00:00:00+00:00",
@@ -29441,6 +29424,23 @@
     "new_end": "2025-04-09T10:00:00+00:00",
     "status": "new",
     "duration": 180,
+    "deleted": false
+  },
+  {
+    "id": "56b0591b1cf0d82b5714af3e7defa967c2289000ffd012b41ddb4c9b6ad4428e",
+    "version_id": "7f30b84ff3ec7c1691cfd131cd3346e2206864d8a24e0c09b2e96bcdb2aaf9f3",
+    "date": "2026-02-15T00:00:00+00:00",
+    "start": "2026-02-15T19:00:00+00:00",
+    "end": "2026-02-15T21:00:00+00:00",
+    "value": 1,
+    "summary": "football",
+    "description": "(No description)",
+    "calendar_name": "Fitness",
+    "new_date": "2026-02-15T00:00:00+00:00",
+    "new_start": "2026-02-15T19:00:00+00:00",
+    "new_end": "2026-02-15T21:00:00+00:00",
+    "status": "unchanged",
+    "duration": 120,
     "deleted": false
   },
   {
