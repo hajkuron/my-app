@@ -29524,7 +29524,7 @@
     "new_date": "2026-02-22T00:00:00+00:00",
     "new_start": "2026-02-22T19:00:00+00:00",
     "new_end": "2026-02-22T21:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 120,
     "deleted": false
   },
