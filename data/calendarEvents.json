@@ -29988,6 +29988,23 @@
     "deleted": false
   },
   {
+    "id": "3d5b28eb8ab3a5c4d9ab695401c4c53b746a224d8021122016e9d9aff6a9ba6c",
+    "version_id": "2ca8cea45253784996f104bd0e4759f333982bc5baca698c4feff374753590ac",
+    "date": "2026-03-12T00:00:00+00:00",
+    "start": "2026-03-12T06:00:00+00:00",
+    "end": "2026-03-12T07:00:00+00:00",
+    "value": 1,
+    "summary": "Gym — Upper B",
+    "description": "Shoulder Press · Pull-Ups · Incline DB Press · T-Bar Row · Lateral Raise · Hammer Curl · Tricep Pushdown · Chest Dips",
+    "calendar_name": "Fitness",
+    "new_date": "2026-03-12T00:00:00+00:00",
+    "new_start": "2026-03-12T06:00:00+00:00",
+    "new_end": "2026-03-12T07:00:00+00:00",
+    "status": "unchanged",
+    "duration": 60,
+    "deleted": false
+  },
+  {
     "id": "1c2b42ce7df835ac287985de6b210903ceb7f9bef9ec2fbfddb4cc9b5caa7a5a",
     "version_id": "fe6ccd18545e9c99f5fad12f6ebe13e95e9e9ac34711dff610d5e239d6e02124",
     "date": "2026-03-11T00:00:00+00:00",
@@ -30070,23 +30087,6 @@
     "new_end": "2026-03-09T07:15:00+00:00",
     "status": "unchanged",
     "duration": 15,
-    "deleted": false
-  },
-  {
-    "id": "3d5b28eb8ab3a5c4d9ab695401c4c53b746a224d8021122016e9d9aff6a9ba6c",
-    "version_id": "2ca8cea45253784996f104bd0e4759f333982bc5baca698c4feff374753590ac",
-    "date": "2026-03-12T00:00:00+00:00",
-    "start": "2026-03-12T06:00:00+00:00",
-    "end": "2026-03-12T07:00:00+00:00",
-    "value": 1,
-    "summary": "Gym — Upper B",
-    "description": "Shoulder Press · Pull-Ups · Incline DB Press · T-Bar Row · Lateral Raise · Hammer Curl · Tricep Pushdown · Chest Dips",
-    "calendar_name": "Fitness",
-    "new_date": "2026-03-12T00:00:00+00:00",
-    "new_start": "2026-03-12T06:00:00+00:00",
-    "new_end": "2026-03-12T07:00:00+00:00",
-    "status": "unchanged",
-    "duration": 60,
     "deleted": false
   },
   {
@@ -30255,7 +30255,7 @@
     "new_date": "2026-03-15T00:00:00+00:00",
     "new_start": "2026-03-15T09:00:00+00:00",
     "new_end": "2026-03-15T11:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 120,
     "deleted": false
   },
@@ -30272,7 +30272,7 @@
     "new_date": "2026-03-15T00:00:00+00:00",
     "new_start": "2026-03-15T12:00:00+00:00",
     "new_end": "2026-03-15T16:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 240,
     "deleted": false
   },
@@ -30291,6 +30291,40 @@
     "new_end": "2025-04-22T09:00:00+00:00",
     "status": "new",
     "duration": 120,
+    "deleted": false
+  },
+  {
+    "id": "7acf9884f820280c8d2e9a3d1d1d61aeb665267a6af1cbece72b22798bec0fab",
+    "version_id": "0213c704f27534c47285435bead304b48c31003f72c1f7b9ae21b93e002e2103",
+    "date": "2026-03-16T00:00:00+00:00",
+    "start": "2026-03-16T08:00:00+00:00",
+    "end": "2026-03-16T11:00:00+00:00",
+    "value": 1,
+    "summary": "CC — Publish agent UI + share with team",
+    "description": "Publish the AI agent UI so co-workers can use it. Share with the team.",
+    "calendar_name": "Work creative clicks",
+    "new_date": "2026-03-16T00:00:00+00:00",
+    "new_start": "2026-03-16T08:00:00+00:00",
+    "new_end": "2026-03-16T11:00:00+00:00",
+    "status": "new",
+    "duration": 180,
+    "deleted": false
+  },
+  {
+    "id": "5efa8ee58a06b179c3d85c6bdccafed2284cde3ca1c902ad6f8e85117ad1d408",
+    "version_id": "1e3d04edff6102896cae6534d51ea5cd0d291284ba2c0b3b4d5a2220b0d31aac",
+    "date": "2026-03-16T00:00:00+00:00",
+    "start": "2026-03-16T12:00:00+00:00",
+    "end": "2026-03-16T18:00:00+00:00",
+    "value": 1,
+    "summary": "LM#2 — Visual + Post",
+    "description": "Finish LM#2 visual. Write post copy. Publish on LinkedIn. Move immediately to LM#3 when done.",
+    "calendar_name": "Business",
+    "new_date": "2026-03-16T00:00:00+00:00",
+    "new_start": "2026-03-16T12:00:00+00:00",
+    "new_end": "2026-03-16T18:00:00+00:00",
+    "status": "new",
+    "duration": 360,
     "deleted": false
   },
   {
