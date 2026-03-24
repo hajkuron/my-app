@@ -30600,23 +30600,6 @@
     "deleted": false
   },
   {
-    "id": "a5f0e61557187de74a0f34fae61c9ba2671cf29a9b00a5842936ff5656793659",
-    "version_id": "b4d4e1f9cfb457da6c7b323351cd110d47d1c7fd7602ac3379edb6753fa88d78",
-    "date": "2025-04-27T00:00:00+00:00",
-    "start": "2025-04-27T02:30:00+00:00",
-    "end": "2025-04-27T02:45:00+00:00",
-    "value": 1,
-    "summary": "Weekly check up of goals NOTION",
-    "description": "(No description)",
-    "calendar_name": "jonkuhar11@gmail.com",
-    "new_date": "2025-04-27T00:00:00+00:00",
-    "new_start": "2025-04-27T02:30:00+00:00",
-    "new_end": "2025-04-27T02:45:00+00:00",
-    "status": "unchanged",
-    "duration": 15,
-    "deleted": false
-  },
-  {
     "id": "79b7293507e717a0aa07949e85d3a348b1558576de10d5e744100482d680509c",
     "version_id": "1ca9ab3d4a0d845396b85fdd74df4a6bdd3e007e01914d20d5e41464a7e8a36b",
     "date": "2026-03-19T00:00:00+00:00",
@@ -30648,6 +30631,23 @@
     "new_end": "2026-03-19T17:00:00+00:00",
     "status": "unchanged",
     "duration": 60,
+    "deleted": false
+  },
+  {
+    "id": "a5f0e61557187de74a0f34fae61c9ba2671cf29a9b00a5842936ff5656793659",
+    "version_id": "b4d4e1f9cfb457da6c7b323351cd110d47d1c7fd7602ac3379edb6753fa88d78",
+    "date": "2025-04-27T00:00:00+00:00",
+    "start": "2025-04-27T02:30:00+00:00",
+    "end": "2025-04-27T02:45:00+00:00",
+    "value": 1,
+    "summary": "Weekly check up of goals NOTION",
+    "description": "(No description)",
+    "calendar_name": "jonkuhar11@gmail.com",
+    "new_date": "2025-04-27T00:00:00+00:00",
+    "new_start": "2025-04-27T02:30:00+00:00",
+    "new_end": "2025-04-27T02:45:00+00:00",
+    "status": "unchanged",
+    "duration": 15,
     "deleted": false
   },
   {
@@ -30957,23 +30957,6 @@
     "deleted": false
   },
   {
-    "id": "18229b1db03292a5498c36914edd4290ab3170d9633343638a7d1e0559bceb17",
-    "version_id": "8795380940ebd984601570f34a3f9f486f31b42f6fc0aef09611db2eafda7470",
-    "date": "2026-03-22T00:00:00+00:00",
-    "start": "2026-03-22T09:00:00+00:00",
-    "end": "2026-03-22T16:00:00+00:00",
-    "value": 1,
-    "summary": "Week Review + Next Week Prep",
-    "description": "Review what shipped this week. Update Memory.md and Roadmap. Plan final push week to March 25 deadline.",
-    "calendar_name": "Business",
-    "new_date": "2026-03-22T00:00:00+00:00",
-    "new_start": "2026-03-22T09:00:00+00:00",
-    "new_end": "2026-03-22T16:00:00+00:00",
-    "status": "unchanged",
-    "duration": 420,
-    "deleted": false
-  },
-  {
     "id": "d1c76a2c88dcd4b582b36b81b3363e57972efde0a48dfba54eaa6c171b928fb1",
     "version_id": "9ec33822f38f9bf08e7b794b5549b7661a6c35623946167ba9c384352070a2ad",
     "date": "2025-04-28T00:00:00+00:00",
@@ -30988,6 +30971,23 @@
     "new_end": "2025-04-28T19:00:00+00:00",
     "status": "unchanged",
     "duration": 240,
+    "deleted": false
+  },
+  {
+    "id": "18229b1db03292a5498c36914edd4290ab3170d9633343638a7d1e0559bceb17",
+    "version_id": "8795380940ebd984601570f34a3f9f486f31b42f6fc0aef09611db2eafda7470",
+    "date": "2026-03-22T00:00:00+00:00",
+    "start": "2026-03-22T09:00:00+00:00",
+    "end": "2026-03-22T16:00:00+00:00",
+    "value": 1,
+    "summary": "Week Review + Next Week Prep",
+    "description": "Review what shipped this week. Update Memory.md and Roadmap. Plan final push week to March 25 deadline.",
+    "calendar_name": "Business",
+    "new_date": "2026-03-22T00:00:00+00:00",
+    "new_start": "2026-03-22T09:00:00+00:00",
+    "new_end": "2026-03-22T16:00:00+00:00",
+    "status": "unchanged",
+    "duration": 420,
     "deleted": false
   },
   {
@@ -31141,6 +31141,23 @@
     "new_end": "2025-04-30T18:30:00+00:00",
     "status": "deleted",
     "duration": 150,
+    "deleted": false
+  },
+  {
+    "id": "db4afd65f6b2626d00ad604d404b2c84675c1baf113f328f8dc92d7d9141c4ce",
+    "version_id": "7797900742ba691e6cd1a8ff427eaecaa39c3becca27ea9c055f8a29f776e6cd",
+    "date": "2026-03-24T00:00:00+00:00",
+    "start": "2026-03-24T10:00:00+00:00",
+    "end": "2026-03-24T10:00:00+00:00",
+    "value": 1,
+    "summary": "Hanci❤️",
+    "description": "(No description)",
+    "calendar_name": "Home",
+    "new_date": "2026-03-24T00:00:00+00:00",
+    "new_start": "2026-03-24T10:00:00+00:00",
+    "new_end": "2026-03-24T10:00:00+00:00",
+    "status": "new",
+    "duration": 0,
     "deleted": false
   },
   {
