@@ -30821,23 +30821,6 @@
     "deleted": false
   },
   {
-    "id": "bc314ffc99b405942ef69ed620e725926baf9ecc4b9e2d31a0fb9fd35efd3a34",
-    "version_id": "91cfbf45bea5300b4661c568ff1ba6638deff0d5708a7393111047285e2bdb95",
-    "date": "2026-03-21T00:00:00+00:00",
-    "start": "2026-03-21T08:00:00+00:00",
-    "end": "2026-03-21T16:00:00+00:00",
-    "value": 1,
-    "summary": "Business — Overflow / Buffer",
-    "description": "Overflow day. Finish anything incomplete. If everything is done — start Step 7 (offer page).",
-    "calendar_name": "Business",
-    "new_date": "2026-03-21T00:00:00+00:00",
-    "new_start": "2026-03-21T08:00:00+00:00",
-    "new_end": "2026-03-21T16:00:00+00:00",
-    "status": "unchanged",
-    "duration": 480,
-    "deleted": false
-  },
-  {
     "id": "683199e26fbdd4b8b616eaae9f0e31cf3b2afc75f03a3ddf4bf99229f43f19a6",
     "version_id": "ee3ace2ac652312d4e03120677e8276de1d8a82988f59ddff95bca2a46ae043a",
     "date": "2025-04-28T00:00:00+00:00",
@@ -30923,6 +30906,23 @@
     "deleted": false
   },
   {
+    "id": "bc314ffc99b405942ef69ed620e725926baf9ecc4b9e2d31a0fb9fd35efd3a34",
+    "version_id": "91cfbf45bea5300b4661c568ff1ba6638deff0d5708a7393111047285e2bdb95",
+    "date": "2026-03-21T00:00:00+00:00",
+    "start": "2026-03-21T08:00:00+00:00",
+    "end": "2026-03-21T16:00:00+00:00",
+    "value": 1,
+    "summary": "Business — Overflow / Buffer",
+    "description": "Overflow day. Finish anything incomplete. If everything is done — start Step 7 (offer page).",
+    "calendar_name": "Business",
+    "new_date": "2026-03-21T00:00:00+00:00",
+    "new_start": "2026-03-21T08:00:00+00:00",
+    "new_end": "2026-03-21T16:00:00+00:00",
+    "status": "unchanged",
+    "duration": 480,
+    "deleted": false
+  },
+  {
     "id": "3aeb5e73c2d9057c7f8cbdbff18dd201a16ad9c578bb1a202153fa2177fb51af",
     "version_id": "d5ab3d4cb6dca79a9c4f314bf4af08b9f17b0950330b53255090b7d6bfb1be64",
     "date": "2025-04-26T00:00:00+00:00",
@@ -30940,23 +30940,6 @@
     "deleted": false
   },
   {
-    "id": "ec310cc2f1fbc065420285c35da63a6ecb823c289521977583e52e3d6f7efbd0",
-    "version_id": "2b8f3106cda14425ff58341380061870186c134fd79b2ffaffbd65698916d777",
-    "date": "2026-03-22T00:00:00+00:00",
-    "start": "2026-03-22T19:00:00+00:00",
-    "end": "2026-03-22T21:00:00+00:00",
-    "value": 1,
-    "summary": "football",
-    "description": "(No description)",
-    "calendar_name": "Fitness",
-    "new_date": "2026-03-22T00:00:00+00:00",
-    "new_start": "2026-03-22T19:00:00+00:00",
-    "new_end": "2026-03-22T21:00:00+00:00",
-    "status": "unchanged",
-    "duration": 120,
-    "deleted": false
-  },
-  {
     "id": "d1c76a2c88dcd4b582b36b81b3363e57972efde0a48dfba54eaa6c171b928fb1",
     "version_id": "9ec33822f38f9bf08e7b794b5549b7661a6c35623946167ba9c384352070a2ad",
     "date": "2025-04-28T00:00:00+00:00",
@@ -30971,6 +30954,23 @@
     "new_end": "2025-04-28T19:00:00+00:00",
     "status": "unchanged",
     "duration": 240,
+    "deleted": false
+  },
+  {
+    "id": "ec310cc2f1fbc065420285c35da63a6ecb823c289521977583e52e3d6f7efbd0",
+    "version_id": "2b8f3106cda14425ff58341380061870186c134fd79b2ffaffbd65698916d777",
+    "date": "2026-03-22T00:00:00+00:00",
+    "start": "2026-03-22T19:00:00+00:00",
+    "end": "2026-03-22T21:00:00+00:00",
+    "value": 1,
+    "summary": "football",
+    "description": "(No description)",
+    "calendar_name": "Fitness",
+    "new_date": "2026-03-22T00:00:00+00:00",
+    "new_start": "2026-03-22T19:00:00+00:00",
+    "new_end": "2026-03-22T21:00:00+00:00",
+    "status": "unchanged",
+    "duration": 120,
     "deleted": false
   },
   {
@@ -31156,7 +31156,7 @@
     "new_date": "2026-03-24T00:00:00+00:00",
     "new_start": "2026-03-24T10:00:00+00:00",
     "new_end": "2026-03-24T10:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 0,
     "deleted": false
   },
@@ -31209,6 +31209,23 @@
     "new_end": "2025-04-30T15:00:00+00:00",
     "status": "unchanged",
     "duration": 180,
+    "deleted": false
+  },
+  {
+    "id": "744941e367b83d5bd4cef39eec5f5ad512464dadda5a4cb30de975ea933eb38d",
+    "version_id": "3b956deb8a118157a61776f05523c3eeabde9692cc62c8bd27e186b0820d02ca",
+    "date": "2026-03-25T00:00:00+00:00",
+    "start": "2026-03-25T06:00:00+00:00",
+    "end": "2026-03-25T07:30:00+00:00",
+    "value": 1,
+    "summary": "Gym",
+    "description": "(No description)",
+    "calendar_name": "Fitness",
+    "new_date": "2026-03-25T00:00:00+00:00",
+    "new_start": "2026-03-25T06:00:00+00:00",
+    "new_end": "2026-03-25T07:30:00+00:00",
+    "status": "new",
+    "duration": 90,
     "deleted": false
   },
   {
@@ -31294,6 +31311,40 @@
     "new_end": "2025-05-01T13:00:00+00:00",
     "status": "deleted",
     "duration": 60,
+    "deleted": false
+  },
+  {
+    "id": "2e92240994afbb6d735b8bf946f9796f6bb2024fecaf1c76364e398ff5e12cd7",
+    "version_id": "e959868ca1b967bb97a28eb90d27c108ed67555597d566f5f5e5d603f0e3c226",
+    "date": "2026-03-25T00:00:00+00:00",
+    "start": "2026-03-25T16:00:00+00:00",
+    "end": "2026-03-25T18:00:00+00:00",
+    "value": 1,
+    "summary": "Creative Clicks",
+    "description": "(No description)",
+    "calendar_name": "Work creative clicks",
+    "new_date": "2026-03-25T00:00:00+00:00",
+    "new_start": "2026-03-25T16:00:00+00:00",
+    "new_end": "2026-03-25T18:00:00+00:00",
+    "status": "new",
+    "duration": 120,
+    "deleted": false
+  },
+  {
+    "id": "dd06cc0721d76f8285ae15808b7cd6b5ac92377afadb6e9fac528ea4e0f27061",
+    "version_id": "62ee319212df0461e2fc06eadff94e254045d232556f79ab5a19571a9a0e9736",
+    "date": "2026-03-25T00:00:00+00:00",
+    "start": "2026-03-25T08:00:00+00:00",
+    "end": "2026-03-25T15:00:00+00:00",
+    "value": 1,
+    "summary": "Business — Post LM#2 + Build Ideation System",
+    "description": "1. Post LM#2 on LinkedIn (30 min)\n2. Build ideation system: scrape trending → research → ranked idea output → feeds workflow generator (6h)",
+    "calendar_name": "Business",
+    "new_date": "2026-03-25T00:00:00+00:00",
+    "new_start": "2026-03-25T08:00:00+00:00",
+    "new_end": "2026-03-25T15:00:00+00:00",
+    "status": "new",
+    "duration": 420,
     "deleted": false
   },
   {
