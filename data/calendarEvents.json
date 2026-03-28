@@ -31496,7 +31496,7 @@
     "new_date": "2026-03-27T00:00:00+00:00",
     "new_start": "2026-03-27T06:00:00+00:00",
     "new_end": "2026-03-27T07:30:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 90,
     "deleted": false
   },
@@ -31513,25 +31513,8 @@
     "new_date": "2026-03-27T00:00:00+00:00",
     "new_start": "2026-03-27T16:00:00+00:00",
     "new_end": "2026-03-27T18:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 120,
-    "deleted": false
-  },
-  {
-    "id": "a5b598ec3c10596ff47e4a7a9c7ec8f6e0e04c2910f217767416249b6765fff4",
-    "version_id": "854d44c60bc9343fab71d9d8724ca20e1f9367d591837f082da9c46f36f96b88",
-    "date": "2026-03-27T00:00:00+00:00",
-    "start": "2026-03-27T08:00:00+00:00",
-    "end": "2026-03-27T15:00:00+00:00",
-    "value": 1,
-    "summary": "Business — Auto-DM + Phase 1 Complete",
-    "description": "09:00–11:00 Auto-DM setup + test (comment → DM → Gumroad)\n11:00–13:00 Connect ideation → generator → posting pipeline\n13:00–14:00 Phase 1 full review — confirm all checkboxes done\nPHASE 1 COMPLETE BY EOD",
-    "calendar_name": "Business",
-    "new_date": "2026-03-27T00:00:00+00:00",
-    "new_start": "2026-03-27T08:00:00+00:00",
-    "new_end": "2026-03-27T15:00:00+00:00",
-    "status": "new",
-    "duration": 420,
     "deleted": false
   },
   {
@@ -31549,6 +31532,23 @@
     "new_end": "2025-05-04T02:45:00+00:00",
     "status": "unchanged",
     "duration": 15,
+    "deleted": false
+  },
+  {
+    "id": "a5b598ec3c10596ff47e4a7a9c7ec8f6e0e04c2910f217767416249b6765fff4",
+    "version_id": "854d44c60bc9343fab71d9d8724ca20e1f9367d591837f082da9c46f36f96b88",
+    "date": "2026-03-27T00:00:00+00:00",
+    "start": "2026-03-27T08:00:00+00:00",
+    "end": "2026-03-27T15:00:00+00:00",
+    "value": 1,
+    "summary": "Business — Auto-DM + Phase 1 Complete",
+    "description": "09:00–11:00 Auto-DM setup + test (comment → DM → Gumroad)\n11:00–13:00 Connect ideation → generator → posting pipeline\n13:00–14:00 Phase 1 full review — confirm all checkboxes done\nPHASE 1 COMPLETE BY EOD",
+    "calendar_name": "Business",
+    "new_date": "2026-03-27T00:00:00+00:00",
+    "new_start": "2026-03-27T08:00:00+00:00",
+    "new_end": "2026-03-27T15:00:00+00:00",
+    "status": "unchanged",
+    "duration": 420,
     "deleted": false
   },
   {
