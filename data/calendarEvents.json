@@ -31433,6 +31433,23 @@
     "deleted": false
   },
   {
+    "id": "491923ce6933d3c933613f516cb323b0fd98080c9a8b16ff49d90fb77cc0105d",
+    "version_id": "d0f159f0509465631afb523bb16ce34d6b2ddd836d5037478b25674ffe91d7c3",
+    "date": "2025-05-02T00:00:00+00:00",
+    "start": "2025-05-02T08:00:00+00:00",
+    "end": "2025-05-02T11:00:00+00:00",
+    "value": 1,
+    "summary": "work",
+    "description": "(No description)",
+    "calendar_name": "Work creative clicks",
+    "new_date": "2025-05-02T00:00:00+00:00",
+    "new_start": "2025-05-02T08:00:00+00:00",
+    "new_end": "2025-05-02T11:00:00+00:00",
+    "status": "unchanged",
+    "duration": 180,
+    "deleted": false
+  },
+  {
     "id": "ace66f5d6b3db96cbddb7bf71277b100ccba28f8f67bbea00e8b6b60c84c5c74",
     "version_id": "56e46d7541541314da305f1d4a3abdac80dc2748ec2a75892035e3cb80837f2a",
     "date": "2026-03-26T00:00:00+00:00",
@@ -31464,23 +31481,6 @@
     "new_end": "2026-03-26T16:00:00+00:00",
     "status": "unchanged",
     "duration": 480,
-    "deleted": false
-  },
-  {
-    "id": "491923ce6933d3c933613f516cb323b0fd98080c9a8b16ff49d90fb77cc0105d",
-    "version_id": "d0f159f0509465631afb523bb16ce34d6b2ddd836d5037478b25674ffe91d7c3",
-    "date": "2025-05-02T00:00:00+00:00",
-    "start": "2025-05-02T08:00:00+00:00",
-    "end": "2025-05-02T11:00:00+00:00",
-    "value": 1,
-    "summary": "work",
-    "description": "(No description)",
-    "calendar_name": "Work creative clicks",
-    "new_date": "2025-05-02T00:00:00+00:00",
-    "new_start": "2025-05-02T08:00:00+00:00",
-    "new_end": "2025-05-02T11:00:00+00:00",
-    "status": "unchanged",
-    "duration": 180,
     "deleted": false
   },
   {
@@ -31634,6 +31634,40 @@
     "new_end": "2025-05-05T18:00:00+00:00",
     "status": "unchanged",
     "duration": 180,
+    "deleted": false
+  },
+  {
+    "id": "ea234b02cd29a5d53232ac5e0bcc7b58c1d010b77c21e86cfc1374f497796447",
+    "version_id": "597f28eb86e6404c421e3f8c5a88ffb342570c58a7b9f05bea4257c29c58afbd",
+    "date": "2026-03-30T00:00:00+00:00",
+    "start": "2026-03-30T07:00:00+00:00",
+    "end": "2026-03-30T10:00:00+00:00",
+    "value": 1,
+    "summary": "CC Work",
+    "description": "Creative Clicks freelance work — morning block",
+    "calendar_name": "jonkuhar11@gmail.com",
+    "new_date": "2026-03-30T00:00:00+00:00",
+    "new_start": "2026-03-30T07:00:00+00:00",
+    "new_end": "2026-03-30T10:00:00+00:00",
+    "status": "new",
+    "duration": 180,
+    "deleted": false
+  },
+  {
+    "id": "0de00fafe45efb0d24bb5813028aee1efa0eaae4d42d8aad54e6cb7700923a95",
+    "version_id": "c1e3f2cbc919a3c9daee90284f9bc8da2ff9fa798f1c04d3ad70194f3c0df7c4",
+    "date": "2026-03-30T00:00:00+00:00",
+    "start": "2026-03-30T10:00:00+00:00",
+    "end": "2026-03-30T16:00:00+00:00",
+    "value": 1,
+    "summary": "Finalize Ideation System",
+    "description": "Go through ideation system, tweak to liking, finalize end-to-end. Phase 1 Step 3.",
+    "calendar_name": "jonkuhar11@gmail.com",
+    "new_date": "2026-03-30T00:00:00+00:00",
+    "new_start": "2026-03-30T10:00:00+00:00",
+    "new_end": "2026-03-30T16:00:00+00:00",
+    "status": "new",
+    "duration": 360,
     "deleted": false
   },
   {
