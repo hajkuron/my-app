@@ -31785,7 +31785,7 @@
     "new_date": "2026-04-01T00:00:00+00:00",
     "new_start": "2026-04-01T05:00:00+00:00",
     "new_end": "2026-04-01T06:30:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 90,
     "deleted": false
   },
@@ -31802,7 +31802,7 @@
     "new_date": "2026-04-01T00:00:00+00:00",
     "new_start": "2026-04-01T07:00:00+00:00",
     "new_end": "2026-04-01T14:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 420,
     "deleted": false
   },
@@ -31819,7 +31819,7 @@
     "new_date": "2026-04-01T00:00:00+00:00",
     "new_start": "2026-04-01T15:00:00+00:00",
     "new_end": "2026-04-01T17:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 120,
     "deleted": false
   },
@@ -31838,23 +31838,6 @@
     "new_end": "2025-05-06T09:00:00+00:00",
     "status": "new",
     "duration": 120,
-    "deleted": false
-  },
-  {
-    "id": "1b64fd7f3b907ab607e9fbf42e2b1176c55936b177a9bf5256e894862f820f60",
-    "version_id": "aca018c6b6d54c7d18bb0e8fd951b2472b844915bae0d78d47787aaa069c64e4",
-    "date": "2026-04-02T00:00:00+00:00",
-    "start": "2026-04-02T05:00:00+00:00",
-    "end": "2026-04-02T06:30:00+00:00",
-    "value": 1,
-    "summary": "Gym",
-    "description": "(No description)",
-    "calendar_name": "jonkuhar11@gmail.com",
-    "new_date": "2026-04-02T00:00:00+00:00",
-    "new_start": "2026-04-02T05:00:00+00:00",
-    "new_end": "2026-04-02T06:30:00+00:00",
-    "status": "new",
-    "duration": 90,
     "deleted": false
   },
   {
@@ -31926,6 +31909,23 @@
     "deleted": false
   },
   {
+    "id": "1b64fd7f3b907ab607e9fbf42e2b1176c55936b177a9bf5256e894862f820f60",
+    "version_id": "aca018c6b6d54c7d18bb0e8fd951b2472b844915bae0d78d47787aaa069c64e4",
+    "date": "2026-04-02T00:00:00+00:00",
+    "start": "2026-04-02T05:00:00+00:00",
+    "end": "2026-04-02T06:30:00+00:00",
+    "value": 1,
+    "summary": "Gym",
+    "description": "(No description)",
+    "calendar_name": "jonkuhar11@gmail.com",
+    "new_date": "2026-04-02T00:00:00+00:00",
+    "new_start": "2026-04-02T05:00:00+00:00",
+    "new_end": "2026-04-02T06:30:00+00:00",
+    "status": "unchanged",
+    "duration": 90,
+    "deleted": false
+  },
+  {
     "id": "b96d2c18ef778c5db182cfc141f407c392b76f510b67aea368f2385bcd061e6b",
     "version_id": "a9b66b74c84a743f71d31abd8d9c3aec812665ddd5ad665ee24b9e3f05bf30c2",
     "date": "2026-04-02T00:00:00+00:00",
@@ -31938,7 +31938,7 @@
     "new_date": "2026-04-02T00:00:00+00:00",
     "new_start": "2026-04-02T07:00:00+00:00",
     "new_end": "2026-04-02T14:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 420,
     "deleted": false
   },
@@ -31955,7 +31955,7 @@
     "new_date": "2026-04-02T00:00:00+00:00",
     "new_start": "2026-04-02T15:00:00+00:00",
     "new_end": "2026-04-02T17:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 120,
     "deleted": false
   },
@@ -32008,6 +32008,40 @@
     "new_end": "2025-05-08T18:00:00+00:00",
     "status": "unchanged",
     "duration": 180,
+    "deleted": false
+  },
+  {
+    "id": "89aa134ef3600f84e33e7923b5199201a6cc2e283b06f3a9722d860c1e5d7fdb",
+    "version_id": "dea5ecb4253ee37884a3c6118604c85e238f3994deb025878dc3afdfb88dac62",
+    "date": "2026-04-03T00:00:00+00:00",
+    "start": "2026-04-03T07:00:00+00:00",
+    "end": "2026-04-03T10:00:00+00:00",
+    "value": 1,
+    "summary": "Phase 1 Complete — Connect Pipeline + Review",
+    "description": "Connect ideation → generator → posting pipeline (2h). Phase 1 full review — confirm every checkbox done (1h). Phase 1 COMPLETE.",
+    "calendar_name": "jonkuhar11@gmail.com",
+    "new_date": "2026-04-03T00:00:00+00:00",
+    "new_start": "2026-04-03T07:00:00+00:00",
+    "new_end": "2026-04-03T10:00:00+00:00",
+    "status": "new",
+    "duration": 180,
+    "deleted": false
+  },
+  {
+    "id": "b7a3f638552b9d51e63584a643a654061186e945b25a50564759287fa73cd1da",
+    "version_id": "6df70e4020212c6f5b4cb1e4889871b10d1e4db712134cdd94bc08015de85658",
+    "date": "2026-04-03T00:00:00+00:00",
+    "start": "2026-04-03T15:00:00+00:00",
+    "end": "2026-04-03T17:00:00+00:00",
+    "value": 1,
+    "summary": "CC Work",
+    "description": "(No description)",
+    "calendar_name": "jonkuhar11@gmail.com",
+    "new_date": "2026-04-03T00:00:00+00:00",
+    "new_start": "2026-04-03T15:00:00+00:00",
+    "new_end": "2026-04-03T17:00:00+00:00",
+    "status": "new",
+    "duration": 120,
     "deleted": false
   },
   {
