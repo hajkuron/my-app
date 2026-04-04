@@ -32023,7 +32023,7 @@
     "new_date": "2026-04-03T00:00:00+00:00",
     "new_start": "2026-04-03T07:00:00+00:00",
     "new_end": "2026-04-03T10:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 180,
     "deleted": false
   },
@@ -32040,7 +32040,7 @@
     "new_date": "2026-04-03T00:00:00+00:00",
     "new_start": "2026-04-03T15:00:00+00:00",
     "new_end": "2026-04-03T17:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 120,
     "deleted": false
   },
@@ -32093,6 +32093,23 @@
     "new_end": "2025-05-08T14:00:00+00:00",
     "status": "unchanged",
     "duration": 420,
+    "deleted": false
+  },
+  {
+    "id": "2d9bded59c17d0b431cbbf1714f040c7e2510a4f61bf01bdf23b395ac363f18f",
+    "version_id": "139b4ee0ea5ba20fcec494bdd9532d3cec6a6a939581e898e087ef246bf44913",
+    "date": "2026-04-04T00:00:00+00:00",
+    "start": "2026-04-04T05:00:00+00:00",
+    "end": "2026-04-04T06:30:00+00:00",
+    "value": 1,
+    "summary": "Gym",
+    "description": "(No description)",
+    "calendar_name": "jonkuhar11@gmail.com",
+    "new_date": "2026-04-04T00:00:00+00:00",
+    "new_start": "2026-04-04T05:00:00+00:00",
+    "new_end": "2026-04-04T06:30:00+00:00",
+    "status": "new",
+    "duration": 90,
     "deleted": false
   },
   {
