@@ -32788,7 +32788,7 @@
     "new_date": "2026-04-24T00:00:00+00:00",
     "new_start": "2026-04-24T09:00:00+00:00",
     "new_end": "2026-04-24T09:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 0,
     "deleted": false
   },
