@@ -33218,23 +33218,6 @@
     "deleted": false
   },
   {
-    "id": "1c8d967572d4506ca7a4485d630da7c36b8c879909759182043cc5ead32ff25c",
-    "version_id": "da30c77261afe290f59b7969bac1624d53b8e7a8e295bca6b6daa578bf77d964",
-    "date": "2026-05-05T00:00:00+00:00",
-    "start": "2026-05-05T06:30:00+00:00",
-    "end": "2026-05-05T10:00:00+00:00",
-    "value": 1,
-    "summary": "CC",
-    "description": "(No description)",
-    "calendar_name": "Work creative clicks",
-    "new_date": "2026-05-05T00:00:00+00:00",
-    "new_start": "2026-05-05T06:30:00+00:00",
-    "new_end": "2026-05-05T10:00:00+00:00",
-    "status": "unchanged",
-    "duration": 210,
-    "deleted": false
-  },
-  {
     "id": "67baee2c11520776577e4f771c569a1d1fffe0dcfe96ab8caa1a506e5baef7ff",
     "version_id": "21cb739d22df6939bd4c673fdebd0be69a7a6bb98081d3deba419197877349c0",
     "date": "2026-05-04T00:00:00+00:00",
@@ -33266,6 +33249,23 @@
     "new_end": "2026-05-04T14:30:00+00:00",
     "status": "unchanged",
     "duration": 75,
+    "deleted": false
+  },
+  {
+    "id": "1c8d967572d4506ca7a4485d630da7c36b8c879909759182043cc5ead32ff25c",
+    "version_id": "da30c77261afe290f59b7969bac1624d53b8e7a8e295bca6b6daa578bf77d964",
+    "date": "2026-05-05T00:00:00+00:00",
+    "start": "2026-05-05T06:30:00+00:00",
+    "end": "2026-05-05T10:00:00+00:00",
+    "value": 1,
+    "summary": "CC",
+    "description": "(No description)",
+    "calendar_name": "Work creative clicks",
+    "new_date": "2026-05-05T00:00:00+00:00",
+    "new_start": "2026-05-05T06:30:00+00:00",
+    "new_end": "2026-05-05T10:00:00+00:00",
+    "status": "unchanged",
+    "duration": 210,
     "deleted": false
   },
   {
@@ -33572,6 +33572,23 @@
     "new_end": "2025-05-22T12:30:00+00:00",
     "status": "new",
     "duration": 135,
+    "deleted": false
+  },
+  {
+    "id": "985323979454ed7a0f7f1ddba0742b160f783673bf656ea4b20b1151a936f1e9",
+    "version_id": "338af118f4454883c0f8072cc8915e1b359e2c64bf0f2bd22d481c4c654dec46",
+    "date": "2026-05-10T00:00:00+00:00",
+    "start": "2026-05-10T18:00:00+00:00",
+    "end": "2026-05-10T20:00:00+00:00",
+    "value": 1,
+    "summary": "football",
+    "description": "(No description)",
+    "calendar_name": "Fitness",
+    "new_date": "2026-05-10T00:00:00+00:00",
+    "new_start": "2026-05-10T18:00:00+00:00",
+    "new_end": "2026-05-10T20:00:00+00:00",
+    "status": "new",
+    "duration": 120,
     "deleted": false
   },
   {
