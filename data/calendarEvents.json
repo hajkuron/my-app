@@ -33825,7 +33825,7 @@
     "new_date": "2026-05-14T00:00:00+00:00",
     "new_start": "2026-05-14T06:00:00+00:00",
     "new_end": "2026-05-14T10:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 240,
     "deleted": false
   },
@@ -33842,7 +33842,7 @@
     "new_date": "2026-05-15T00:00:00+00:00",
     "new_start": "2026-05-15T04:30:00+00:00",
     "new_end": "2026-05-15T05:30:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 60,
     "deleted": false
   },
