@@ -34561,23 +34561,6 @@
     "deleted": false
   },
   {
-    "id": "13b9df3cf0a30d66ec268ed5fe3ad00057b3455cde3560e5ba21b196e7623b63",
-    "version_id": "5a40e6927e03cf1af542ceb4e57530d103283d9efcf657c99df6439f37590bed",
-    "date": "2026-05-29T00:00:00+00:00",
-    "start": "2026-05-29T12:00:00+00:00",
-    "end": "2026-05-29T13:00:00+00:00",
-    "value": 1,
-    "summary": "alja letalisce",
-    "description": "(No description)",
-    "calendar_name": "jonkuhar11@gmail.com",
-    "new_date": "2026-05-29T00:00:00+00:00",
-    "new_start": "2026-05-29T12:00:00+00:00",
-    "new_end": "2026-05-29T13:00:00+00:00",
-    "status": "unchanged",
-    "duration": 60,
-    "deleted": false
-  },
-  {
     "id": "d005fbe13549ab5db390f1054f8a4a3cf3c403bab094ef977b1b8fbb53d94c07",
     "version_id": "0b5a59d3b4bdb0f695029d5d4a1e5a2c7a26c8cce379fb661451c7325cc59967",
     "date": "2025-05-30T00:00:00+00:00",
@@ -34591,6 +34574,23 @@
     "new_start": "2025-05-30T06:00:00+00:00",
     "new_end": "2025-05-30T07:00:00+00:00",
     "status": "new",
+    "duration": 60,
+    "deleted": false
+  },
+  {
+    "id": "13b9df3cf0a30d66ec268ed5fe3ad00057b3455cde3560e5ba21b196e7623b63",
+    "version_id": "5a40e6927e03cf1af542ceb4e57530d103283d9efcf657c99df6439f37590bed",
+    "date": "2026-05-29T00:00:00+00:00",
+    "start": "2026-05-29T12:00:00+00:00",
+    "end": "2026-05-29T13:00:00+00:00",
+    "value": 1,
+    "summary": "alja letalisce",
+    "description": "(No description)",
+    "calendar_name": "jonkuhar11@gmail.com",
+    "new_date": "2026-05-29T00:00:00+00:00",
+    "new_start": "2026-05-29T12:00:00+00:00",
+    "new_end": "2026-05-29T13:00:00+00:00",
+    "status": "unchanged",
     "duration": 60,
     "deleted": false
   },
@@ -34626,6 +34626,23 @@
     "new_end": "2025-05-30T07:00:00+00:00",
     "status": "new",
     "duration": 60,
+    "deleted": false
+  },
+  {
+    "id": "da964d4d3e1b26e7cb3836c5a814e7ffac99d3e11f5ff48d75d68e58b1f822b1",
+    "version_id": "c231f93e945f98665ad363521c140eac9abffdbb3ef9d9ce413534dc773fc809",
+    "date": "2026-05-31T00:00:00+00:00",
+    "start": "2026-05-31T14:00:00+00:00",
+    "end": "2026-05-31T15:30:00+00:00",
+    "value": 1,
+    "summary": "football",
+    "description": "(No description)",
+    "calendar_name": "Fitness",
+    "new_date": "2026-05-31T00:00:00+00:00",
+    "new_start": "2026-05-31T14:00:00+00:00",
+    "new_end": "2026-05-31T15:30:00+00:00",
+    "status": "new",
+    "duration": 90,
     "deleted": false
   },
   {
