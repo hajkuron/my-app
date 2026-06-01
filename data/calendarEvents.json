@@ -34323,6 +34323,23 @@
     "deleted": false
   },
   {
+    "id": "2f383e80451d4c4f533e156241c3c72f0b8e07a8123840645f7918a29018eb00",
+    "version_id": "d9d9085b1e2fd67a3fd6c369f76fa1138711dc32d7197dd963e2cdfd01f206c6",
+    "date": "2026-05-27T00:00:00+00:00",
+    "start": "2026-05-27T07:30:00+00:00",
+    "end": "2026-05-27T09:00:00+00:00",
+    "value": 1,
+    "summary": "cc",
+    "description": "(No description)",
+    "calendar_name": "Work creative clicks",
+    "new_date": "2026-05-27T00:00:00+00:00",
+    "new_start": "2026-05-27T07:30:00+00:00",
+    "new_end": "2026-05-27T09:00:00+00:00",
+    "status": "unchanged",
+    "duration": 90,
+    "deleted": false
+  },
+  {
     "id": "6f5929e2465676170e1f21c88bb60c85424904a73a10c6c16e173c0d42701d28",
     "version_id": "6573c367ccaf63c06357b0b356d6c5b2b8eb64a9cef7bf5b551e9d850677141c",
     "date": "2025-05-30T00:00:00+00:00",
@@ -34388,23 +34405,6 @@
     "new_end": "2026-05-26T10:30:00+00:00",
     "status": "unchanged",
     "duration": 165,
-    "deleted": false
-  },
-  {
-    "id": "2f383e80451d4c4f533e156241c3c72f0b8e07a8123840645f7918a29018eb00",
-    "version_id": "d9d9085b1e2fd67a3fd6c369f76fa1138711dc32d7197dd963e2cdfd01f206c6",
-    "date": "2026-05-27T00:00:00+00:00",
-    "start": "2026-05-27T07:30:00+00:00",
-    "end": "2026-05-27T09:00:00+00:00",
-    "value": 1,
-    "summary": "cc",
-    "description": "(No description)",
-    "calendar_name": "Work creative clicks",
-    "new_date": "2026-05-27T00:00:00+00:00",
-    "new_start": "2026-05-27T07:30:00+00:00",
-    "new_end": "2026-05-27T09:00:00+00:00",
-    "status": "unchanged",
-    "duration": 90,
     "deleted": false
   },
   {
@@ -34641,7 +34641,7 @@
     "new_date": "2026-05-31T00:00:00+00:00",
     "new_start": "2026-05-31T14:00:00+00:00",
     "new_end": "2026-05-31T15:30:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 90,
     "deleted": false
   },
