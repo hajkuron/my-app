@@ -34459,6 +34459,23 @@
     "deleted": false
   },
   {
+    "id": "6c0ce68f7454e2895305da1b5428319429eb06d78084981a6e7bffdc03ae5b2f",
+    "version_id": "d9adc44eda9203c61da12073d3f01d748682c36112811002104a0b8dd19d0096",
+    "date": "2026-05-28T00:00:00+00:00",
+    "start": "2026-05-28T07:00:00+00:00",
+    "end": "2026-05-28T11:55:00+00:00",
+    "value": 1,
+    "summary": "cc",
+    "description": "(No description)",
+    "calendar_name": "Work creative clicks",
+    "new_date": "2026-05-28T00:00:00+00:00",
+    "new_start": "2026-05-28T07:00:00+00:00",
+    "new_end": "2026-05-28T11:55:00+00:00",
+    "status": "unchanged",
+    "duration": 295,
+    "deleted": false
+  },
+  {
     "id": "847e25ed442a1e592d1e1353f0447c7abbaffd5812c366ec930a1a19ac5b84e2",
     "version_id": "7fc2d94ae41c780c7f357c2f3734828a5510b2df16febf8080c209c317b9bdcd",
     "date": "2025-06-01T00:00:00+00:00",
@@ -34493,40 +34510,6 @@
     "deleted": false
   },
   {
-    "id": "e4f7f9653afe254dbb8afe0eafb14c4017f9850dc169b35b9073329824fd7790",
-    "version_id": "4cdcfd884b9442e8f2a6f48521930e64d3ddaf9111ce83d2b91bea74095befe2",
-    "date": "2026-05-28T00:00:00+00:00",
-    "start": "2026-05-28T05:00:00+00:00",
-    "end": "2026-05-28T06:30:00+00:00",
-    "value": 1,
-    "summary": "gym",
-    "description": "(No description)",
-    "calendar_name": "Fitness",
-    "new_date": "2026-05-28T00:00:00+00:00",
-    "new_start": "2026-05-28T05:00:00+00:00",
-    "new_end": "2026-05-28T06:30:00+00:00",
-    "status": "unchanged",
-    "duration": 90,
-    "deleted": false
-  },
-  {
-    "id": "6c0ce68f7454e2895305da1b5428319429eb06d78084981a6e7bffdc03ae5b2f",
-    "version_id": "d9adc44eda9203c61da12073d3f01d748682c36112811002104a0b8dd19d0096",
-    "date": "2026-05-28T00:00:00+00:00",
-    "start": "2026-05-28T07:00:00+00:00",
-    "end": "2026-05-28T11:55:00+00:00",
-    "value": 1,
-    "summary": "cc",
-    "description": "(No description)",
-    "calendar_name": "Work creative clicks",
-    "new_date": "2026-05-28T00:00:00+00:00",
-    "new_start": "2026-05-28T07:00:00+00:00",
-    "new_end": "2026-05-28T11:55:00+00:00",
-    "status": "unchanged",
-    "duration": 295,
-    "deleted": false
-  },
-  {
     "id": "9fb1a4cb2ddf173652f023961c326bac90d0d68464004ffa954c9bdebf11893f",
     "version_id": "7804cbecfb601356ff184f2f811a24edfe985e046fa4418e4dea0c3ba46749ff",
     "date": "2026-05-27T00:00:00+00:00",
@@ -34558,6 +34541,23 @@
     "new_end": "2026-05-27T12:00:00+00:00",
     "status": "unchanged",
     "duration": 60,
+    "deleted": false
+  },
+  {
+    "id": "e4f7f9653afe254dbb8afe0eafb14c4017f9850dc169b35b9073329824fd7790",
+    "version_id": "4cdcfd884b9442e8f2a6f48521930e64d3ddaf9111ce83d2b91bea74095befe2",
+    "date": "2026-05-28T00:00:00+00:00",
+    "start": "2026-05-28T05:00:00+00:00",
+    "end": "2026-05-28T06:30:00+00:00",
+    "value": 1,
+    "summary": "gym",
+    "description": "(No description)",
+    "calendar_name": "Fitness",
+    "new_date": "2026-05-28T00:00:00+00:00",
+    "new_start": "2026-05-28T05:00:00+00:00",
+    "new_end": "2026-05-28T06:30:00+00:00",
+    "status": "unchanged",
+    "duration": 90,
     "deleted": false
   },
   {
