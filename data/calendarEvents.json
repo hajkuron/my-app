@@ -34663,6 +34663,23 @@
     "deleted": false
   },
   {
+    "id": "ebaa9708b3341affaeaad929af122b3dc58640d1e4a8c8932462fe9b60aba76c",
+    "version_id": "b2f2159142e23d772673e9b1412aa97538ff35fae3065de099f418453d364e4f",
+    "date": "2025-06-04T00:00:00+00:00",
+    "start": "2025-06-04T06:00:00+00:00",
+    "end": "2025-06-04T06:30:00+00:00",
+    "value": 1,
+    "summary": "Forough Zarea's Zoom Meeting",
+    "description": "Hi Jon,\nPlease check if this time/date works for.you.\n\n Hi there,\nForough Zarea is inviting you to a scheduled Zoom meeting.\n\nJoin Zoom Meeting\nhttps://qut.zoom.us/j/84971330382?pwd=6tXvzIPMSouWJldV3VJLhT77580izT.1&from=addon\n\nMeeting ID: 849 7133 0382\nPasscode: 270357\n\n---\n\nOne tap mobile\n+61861193900,,84971330382#,,,,*270357# Australia\n+61871501149,,84971330382#,,,,*270357# Australia\n\n---\n\nDial by your location\n• +61 8 6119 3900 Australia\n• +61 8 7150 1149 Australia\n• +61 2 8015 6011 Australia\n• +61 3 7018 2005 Australia\n• +61 7 3185 3730 Australia\n\nMeeting ID: 849 7133 0382\nPasscode: 270357\n\nFind your local number: https://qut.zoom.us/u/kFZRgaNou\n\n---\n\nJoin by SIP or H.323\n84971330382@global.zoomcrc.com\n\nMeeting ID: 849 7133 0382\nPasscode: 270357\n",
+    "calendar_name": "jonkuhar11@gmail.com",
+    "new_date": "2025-06-04T00:00:00+00:00",
+    "new_start": "2025-06-04T06:00:00+00:00",
+    "new_end": "2025-06-04T06:30:00+00:00",
+    "status": "unchanged",
+    "duration": 30,
+    "deleted": false
+  },
+  {
     "id": "ec81b6495bad55864864c7f7edf5b0c5627a0d7d5fb9376fd575cca9e9ebd11c",
     "version_id": "fffd55da9f36d19f875807a0829c6867c48dd42d7bdcaf98015ffb846d9583d2",
     "date": "2026-06-02T00:00:00+00:00",
@@ -34675,7 +34692,7 @@
     "new_date": "2026-06-02T00:00:00+00:00",
     "new_start": "2026-06-02T07:30:00+00:00",
     "new_end": "2026-06-02T13:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 330,
     "deleted": false
   },
@@ -34692,7 +34709,7 @@
     "new_date": "2026-06-02T00:00:00+00:00",
     "new_start": "2026-06-02T13:00:00+00:00",
     "new_end": "2026-06-02T14:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 60,
     "deleted": false
   },
@@ -34709,7 +34726,7 @@
     "new_date": "2026-06-02T00:00:00+00:00",
     "new_start": "2026-06-02T14:00:00+00:00",
     "new_end": "2026-06-02T15:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 60,
     "deleted": false
   },
@@ -34726,25 +34743,8 @@
     "new_date": "2026-06-03T00:00:00+00:00",
     "new_start": "2026-06-03T12:30:00+00:00",
     "new_end": "2026-06-03T15:00:00+00:00",
-    "status": "new",
-    "duration": 150,
-    "deleted": false
-  },
-  {
-    "id": "ebaa9708b3341affaeaad929af122b3dc58640d1e4a8c8932462fe9b60aba76c",
-    "version_id": "b2f2159142e23d772673e9b1412aa97538ff35fae3065de099f418453d364e4f",
-    "date": "2025-06-04T00:00:00+00:00",
-    "start": "2025-06-04T06:00:00+00:00",
-    "end": "2025-06-04T06:30:00+00:00",
-    "value": 1,
-    "summary": "Forough Zarea's Zoom Meeting",
-    "description": "Hi Jon,\nPlease check if this time/date works for.you.\n\n Hi there,\nForough Zarea is inviting you to a scheduled Zoom meeting.\n\nJoin Zoom Meeting\nhttps://qut.zoom.us/j/84971330382?pwd=6tXvzIPMSouWJldV3VJLhT77580izT.1&from=addon\n\nMeeting ID: 849 7133 0382\nPasscode: 270357\n\n---\n\nOne tap mobile\n+61861193900,,84971330382#,,,,*270357# Australia\n+61871501149,,84971330382#,,,,*270357# Australia\n\n---\n\nDial by your location\n• +61 8 6119 3900 Australia\n• +61 8 7150 1149 Australia\n• +61 2 8015 6011 Australia\n• +61 3 7018 2005 Australia\n• +61 7 3185 3730 Australia\n\nMeeting ID: 849 7133 0382\nPasscode: 270357\n\nFind your local number: https://qut.zoom.us/u/kFZRgaNou\n\n---\n\nJoin by SIP or H.323\n84971330382@global.zoomcrc.com\n\nMeeting ID: 849 7133 0382\nPasscode: 270357\n",
-    "calendar_name": "jonkuhar11@gmail.com",
-    "new_date": "2025-06-04T00:00:00+00:00",
-    "new_start": "2025-06-04T06:00:00+00:00",
-    "new_end": "2025-06-04T06:30:00+00:00",
     "status": "unchanged",
-    "duration": 30,
+    "duration": 150,
     "deleted": false
   },
   {
