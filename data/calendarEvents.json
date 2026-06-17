@@ -34760,7 +34760,7 @@
     "new_date": "2026-06-16T00:00:00+00:00",
     "new_start": "2026-06-16T06:00:00+00:00",
     "new_end": "2026-06-16T07:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 60,
     "deleted": false
   },
