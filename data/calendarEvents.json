@@ -34782,23 +34782,6 @@
     "deleted": false
   },
   {
-    "id": "353d8d07eda5fc9c040a964e45173389d644bf1782d86ce53eab514941ffdc89",
-    "version_id": "ab5cb4be921e7dc1f18b765aa20eed04f25b3baa92408d30252bfbd682ed64b5",
-    "date": "2026-06-18T00:00:00+00:00",
-    "start": "2026-06-18T16:00:00+00:00",
-    "end": "2026-06-18T19:00:00+00:00",
-    "value": 1,
-    "summary": "SLOAI x Google: Search & Reasoning - Damir Sabol & Dr. Marko Velić",
-    "description": "To see detailed information for automatically created events like this one, use the official Google Calendar app. https://g.co/calendar\n\nThis event was created from an email you received in Gmail. https://mail.google.com/mail?extsrc=cal&plid=ACUX6DPowmqVigtFIkxwghleFbRWkKy0qScf8cg\n",
-    "calendar_name": "jonkuhar11@gmail.com",
-    "new_date": "2026-06-18T00:00:00+00:00",
-    "new_start": "2026-06-18T16:00:00+00:00",
-    "new_end": "2026-06-18T19:00:00+00:00",
-    "status": "unchanged",
-    "duration": 180,
-    "deleted": false
-  },
-  {
     "id": "550ae7a912ae6dbec6753dfeaa698a0dffb4f9efc376a51d149c6917768ac7d7",
     "version_id": "42a0ff358040c6c5d9635fde6df5b96eb9b97cb75099ff98b4e0f23a6228ca8f",
     "date": "2025-06-08T00:00:00+00:00",
@@ -34813,6 +34796,23 @@
     "new_end": "2025-06-08T02:45:00+00:00",
     "status": "unchanged",
     "duration": 15,
+    "deleted": false
+  },
+  {
+    "id": "353d8d07eda5fc9c040a964e45173389d644bf1782d86ce53eab514941ffdc89",
+    "version_id": "ab5cb4be921e7dc1f18b765aa20eed04f25b3baa92408d30252bfbd682ed64b5",
+    "date": "2026-06-18T00:00:00+00:00",
+    "start": "2026-06-18T16:00:00+00:00",
+    "end": "2026-06-18T19:00:00+00:00",
+    "value": 1,
+    "summary": "SLOAI x Google: Search & Reasoning - Damir Sabol & Dr. Marko Velić",
+    "description": "To see detailed information for automatically created events like this one, use the official Google Calendar app. https://g.co/calendar\n\nThis event was created from an email you received in Gmail. https://mail.google.com/mail?extsrc=cal&plid=ACUX6DPowmqVigtFIkxwghleFbRWkKy0qScf8cg\n",
+    "calendar_name": "jonkuhar11@gmail.com",
+    "new_date": "2026-06-18T00:00:00+00:00",
+    "new_start": "2026-06-18T16:00:00+00:00",
+    "new_end": "2026-06-18T19:00:00+00:00",
+    "status": "unchanged",
+    "duration": 180,
     "deleted": false
   },
   {
