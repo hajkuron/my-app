@@ -34828,7 +34828,7 @@
     "new_date": "2026-06-24T00:00:00+00:00",
     "new_start": "2026-06-24T09:00:00+00:00",
     "new_end": "2026-06-24T09:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 0,
     "deleted": false
   },
@@ -34847,6 +34847,23 @@
     "new_end": "2025-06-08T13:00:00+00:00",
     "status": "unchanged",
     "duration": 120,
+    "deleted": false
+  },
+  {
+    "id": "7888d6c9028e69069e68450bdcee6cb70e9ae32edd798a0c96f3446224cab0aa",
+    "version_id": "628e7e5c1c28dfcc3fd73da675e66180d9b1b59da27e52a69000cfd2d258d942",
+    "date": "2026-06-25T00:00:00+00:00",
+    "start": "2026-06-25T07:00:00+00:00",
+    "end": "2026-06-25T10:00:00+00:00",
+    "value": 1,
+    "summary": "klima",
+    "description": "(No description)",
+    "calendar_name": "jonkuhar11@gmail.com",
+    "new_date": "2026-06-25T00:00:00+00:00",
+    "new_start": "2026-06-25T07:00:00+00:00",
+    "new_end": "2026-06-25T10:00:00+00:00",
+    "status": "new",
+    "duration": 180,
     "deleted": false
   },
   {
