@@ -34918,6 +34918,23 @@
     "deleted": false
   },
   {
+    "id": "e832ebf797486973e02ef9e64b86e99882b330ea1996d4ae2709718786ba11c3",
+    "version_id": "2ffbc5db37e56bd02a435c27797693233dd110b8023af07cdb57bd4848aa3a66",
+    "date": "2025-06-15T00:00:00+00:00",
+    "start": "2025-06-15T02:30:00+00:00",
+    "end": "2025-06-15T02:45:00+00:00",
+    "value": 1,
+    "summary": "Weekly check up of goals NOTION",
+    "description": "(No description)",
+    "calendar_name": "jonkuhar11@gmail.com",
+    "new_date": "2025-06-15T00:00:00+00:00",
+    "new_start": "2025-06-15T02:30:00+00:00",
+    "new_end": "2025-06-15T02:45:00+00:00",
+    "status": "unchanged",
+    "duration": 15,
+    "deleted": false
+  },
+  {
     "id": "ed9810fd5d8e9381ffced755bfccb5bcb668826435898be4063aad1f234c14e9",
     "version_id": "1295db9d6b4ae076edd97bcfb6ff48142150d6092b3dba82e066cbb6a330f91a",
     "date": "2026-07-02T00:00:00+00:00",
@@ -34930,7 +34947,7 @@
     "new_date": "2026-07-02T00:00:00+00:00",
     "new_start": "2026-07-02T08:45:00+00:00",
     "new_end": "2026-07-02T10:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 75,
     "deleted": false
   },
@@ -34947,7 +34964,7 @@
     "new_date": "2026-07-02T00:00:00+00:00",
     "new_start": "2026-07-02T10:00:00+00:00",
     "new_end": "2026-07-02T10:15:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 15,
     "deleted": false
   },
@@ -34964,7 +34981,7 @@
     "new_date": "2026-07-02T00:00:00+00:00",
     "new_start": "2026-07-02T10:15:00+00:00",
     "new_end": "2026-07-02T12:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 105,
     "deleted": false
   },
@@ -34981,7 +34998,7 @@
     "new_date": "2026-07-02T00:00:00+00:00",
     "new_start": "2026-07-02T12:30:00+00:00",
     "new_end": "2026-07-02T17:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 270,
     "deleted": false
   },
@@ -34998,25 +35015,8 @@
     "new_date": "2026-07-02T00:00:00+00:00",
     "new_start": "2026-07-02T17:30:00+00:00",
     "new_end": "2026-07-02T20:00:00+00:00",
-    "status": "new",
-    "duration": 150,
-    "deleted": false
-  },
-  {
-    "id": "e832ebf797486973e02ef9e64b86e99882b330ea1996d4ae2709718786ba11c3",
-    "version_id": "2ffbc5db37e56bd02a435c27797693233dd110b8023af07cdb57bd4848aa3a66",
-    "date": "2025-06-15T00:00:00+00:00",
-    "start": "2025-06-15T02:30:00+00:00",
-    "end": "2025-06-15T02:45:00+00:00",
-    "value": 1,
-    "summary": "Weekly check up of goals NOTION",
-    "description": "(No description)",
-    "calendar_name": "jonkuhar11@gmail.com",
-    "new_date": "2025-06-15T00:00:00+00:00",
-    "new_start": "2025-06-15T02:30:00+00:00",
-    "new_end": "2025-06-15T02:45:00+00:00",
     "status": "unchanged",
-    "duration": 15,
+    "duration": 150,
     "deleted": false
   },
   {
