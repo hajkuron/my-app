@@ -35122,23 +35122,6 @@
     "deleted": false
   },
   {
-    "id": "1553ea3f46568d17de552c70d863346fe6dc86bbebd6e4c243b8a26daeb51648",
-    "version_id": "aee9bbffb170ae5bb5f9046a30329147bb4a189e95e4eb056c783d60a42ad03f",
-    "date": "2026-07-14T00:00:00+00:00",
-    "start": "2026-07-14T11:00:00+00:00",
-    "end": "2026-07-14T12:00:00+00:00",
-    "value": 1,
-    "summary": "pospravljanje, kiwi...",
-    "description": "(No description)",
-    "calendar_name": "jonkuhar11@gmail.com",
-    "new_date": "2026-07-14T00:00:00+00:00",
-    "new_start": "2026-07-14T11:00:00+00:00",
-    "new_end": "2026-07-14T12:00:00+00:00",
-    "status": "unchanged",
-    "duration": 60,
-    "deleted": false
-  },
-  {
     "id": "045c029690490431ab5be3d3e363eacc5729b267471f53834bcd9f7ea0427e7b",
     "version_id": "bf71a03d6e0329705c9083a40b5de329a81c61bbb9bd3cf862d67e4abdb32ad7",
     "date": "2025-06-16T00:00:00+00:00",
@@ -35219,6 +35202,23 @@
     "new_date": "2025-06-16T00:00:00+00:00",
     "new_start": "2025-06-16T15:00:00+00:00",
     "new_end": "2025-06-16T16:00:00+00:00",
+    "status": "unchanged",
+    "duration": 60,
+    "deleted": false
+  },
+  {
+    "id": "1553ea3f46568d17de552c70d863346fe6dc86bbebd6e4c243b8a26daeb51648",
+    "version_id": "aee9bbffb170ae5bb5f9046a30329147bb4a189e95e4eb056c783d60a42ad03f",
+    "date": "2026-07-14T00:00:00+00:00",
+    "start": "2026-07-14T11:00:00+00:00",
+    "end": "2026-07-14T12:00:00+00:00",
+    "value": 1,
+    "summary": "pospravljanje, kiwi...",
+    "description": "(No description)",
+    "calendar_name": "jonkuhar11@gmail.com",
+    "new_date": "2026-07-14T00:00:00+00:00",
+    "new_start": "2026-07-14T11:00:00+00:00",
+    "new_end": "2026-07-14T12:00:00+00:00",
     "status": "unchanged",
     "duration": 60,
     "deleted": false
