@@ -35559,7 +35559,7 @@
     "new_date": "2026-08-24T00:00:00+00:00",
     "new_start": "2026-08-24T09:00:00+00:00",
     "new_end": "2026-08-24T09:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 0,
     "deleted": false
   },
@@ -35576,7 +35576,7 @@
     "new_date": "2026-08-24T00:00:00+00:00",
     "new_start": "2026-08-24T06:00:00+00:00",
     "new_end": "2026-08-24T06:20:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 20,
     "deleted": false
   },
