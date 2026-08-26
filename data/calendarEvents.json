@@ -35547,6 +35547,23 @@
     "deleted": false
   },
   {
+    "id": "77c099499ad4fd0214aba4ffe19801b3b639b4f37159bd9aab600ba43922f365",
+    "version_id": "24d020fad04ac05eb54f25aaac9b99aa76115f36e2e19478d596227fbef1ddb1",
+    "date": "2025-06-20T00:00:00+00:00",
+    "start": "2025-06-20T04:30:00+00:00",
+    "end": "2025-06-20T06:15:00+00:00",
+    "value": 1,
+    "summary": "Flight to Ljubljana (HV 6819)",
+    "description": "To see detailed information for automatically created events like this one, use the official Google Calendar app. https://g.co/calendar\n\nThis event was created from an email you received in Gmail. https://mail.google.com/mail?extsrc=cal&plid=ACUX6DNEuqHADQudHhEIewFlmDRHiUfSM1QiXRg\n",
+    "calendar_name": "jonkuhar11@gmail.com",
+    "new_date": "2025-06-20T00:00:00+00:00",
+    "new_start": "2025-06-20T04:30:00+00:00",
+    "new_end": "2025-06-20T06:15:00+00:00",
+    "status": "unchanged",
+    "duration": 105,
+    "deleted": false
+  },
+  {
     "id": "e78237e6df71d17b2beaf12c09e7e5e1ada380f2f6cabc4a306b777913015b55",
     "version_id": "cf171b880fc8204844aaa3f5427a71949f0a0e57f9ee0019a00cf0bae9b1e43c",
     "date": "2026-08-24T00:00:00+00:00",
@@ -35578,23 +35595,6 @@
     "new_end": "2026-08-24T06:20:00+00:00",
     "status": "unchanged",
     "duration": 20,
-    "deleted": false
-  },
-  {
-    "id": "77c099499ad4fd0214aba4ffe19801b3b639b4f37159bd9aab600ba43922f365",
-    "version_id": "24d020fad04ac05eb54f25aaac9b99aa76115f36e2e19478d596227fbef1ddb1",
-    "date": "2025-06-20T00:00:00+00:00",
-    "start": "2025-06-20T04:30:00+00:00",
-    "end": "2025-06-20T06:15:00+00:00",
-    "value": 1,
-    "summary": "Flight to Ljubljana (HV 6819)",
-    "description": "To see detailed information for automatically created events like this one, use the official Google Calendar app. https://g.co/calendar\n\nThis event was created from an email you received in Gmail. https://mail.google.com/mail?extsrc=cal&plid=ACUX6DNEuqHADQudHhEIewFlmDRHiUfSM1QiXRg\n",
-    "calendar_name": "jonkuhar11@gmail.com",
-    "new_date": "2025-06-20T00:00:00+00:00",
-    "new_start": "2025-06-20T04:30:00+00:00",
-    "new_end": "2025-06-20T06:15:00+00:00",
-    "status": "unchanged",
-    "duration": 105,
     "deleted": false
   },
   {
