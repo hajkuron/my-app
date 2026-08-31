@@ -35598,6 +35598,23 @@
     "deleted": false
   },
   {
+    "id": "39d23758b3ba94910c23ed6ef9bd65f8f5b226906f636007d310353a2bcca59d",
+    "version_id": "b9a6a374d5af8e1dfefe0f92232f820c93eb30237392fea5c3d723ed55c9c8e2",
+    "date": "2026-09-01T00:00:00+00:00",
+    "start": "2026-09-01T04:00:00+00:00",
+    "end": "2026-09-01T06:00:00+00:00",
+    "value": 1,
+    "summary": "Flight to Amsterdam (KL 1988)",
+    "description": "To see detailed information for automatically created events like this one, use the official Google Calendar app. https://g.co/calendar\n\nThis event was created from an email you received in Gmail. https://mail.google.com/mail?extsrc=cal&plid=ACUX6DOD3mr_h8tcMTAiivajKWtys8A4jqdY1iM\n",
+    "calendar_name": "jonkuhar11@gmail.com",
+    "new_date": "2026-09-01T00:00:00+00:00",
+    "new_start": "2026-09-01T04:00:00+00:00",
+    "new_end": "2026-09-01T06:00:00+00:00",
+    "status": "new",
+    "duration": 120,
+    "deleted": false
+  },
+  {
     "id": "25ca297661def32b0bce0a13012a2bec6c8f0d28a26a35ea5b62f8dd646db429",
     "version_id": "8e31aa9e50effc4e3bc9f9a3c3b55fadbaea137c87dec3661eba3ee1d0ae6421",
     "date": "2025-06-22T00:00:00+00:00",
