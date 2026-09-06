@@ -35644,7 +35644,7 @@
     "new_date": "2026-09-05T00:00:00+00:00",
     "new_start": "2026-09-05T19:05:00+00:00",
     "new_end": "2026-09-05T20:55:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 110,
     "deleted": false
   },
