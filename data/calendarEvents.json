@@ -35746,7 +35746,7 @@
     "new_date": "2026-09-30T00:00:00+00:00",
     "new_start": "2026-09-30T12:45:00+00:00",
     "new_end": "2026-10-01T01:45:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 780,
     "deleted": false
   },
