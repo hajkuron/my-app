@@ -35734,23 +35734,6 @@
     "deleted": false
   },
   {
-    "id": "94dacd4fbf94a29fdab5acce3be675e0495a90f43ae1129b06ead61abb2bb973",
-    "version_id": "bb9964a894f3a8d8c622acb2f638296579879478bf375b7432bfa472d1e20a58",
-    "date": "2026-09-30T00:00:00+00:00",
-    "start": "2026-09-30T12:45:00+00:00",
-    "end": "2026-10-01T01:45:00+00:00",
-    "value": 1,
-    "summary": "Flight to İstanbul (TK 67)",
-    "description": "To see detailed information for automatically created events like this one, use the official Google Calendar app. https://g.co/calendar\n\nThis event was created from an email you received in Gmail. https://mail.google.com/mail?extsrc=cal&plid=ACUX6DPyL-1UAslU7yHRMiB_ehAZWHsVfywaSkA\n",
-    "calendar_name": "jonkuhar11@gmail.com",
-    "new_date": "2026-09-30T00:00:00+00:00",
-    "new_start": "2026-09-30T12:45:00+00:00",
-    "new_end": "2026-10-01T01:45:00+00:00",
-    "status": "unchanged",
-    "duration": 780,
-    "deleted": false
-  },
-  {
     "id": "19225065fa99ea2663053648d6cb654e19d968c79c0d624e06959e5a8d33afb1",
     "version_id": "8d3fed386c4d39ba6ecf08797b000efc1f1ffa77e8af9187c17b361e973e87b1",
     "date": "2025-06-29T00:00:00+00:00",
@@ -35765,6 +35748,23 @@
     "new_end": "2025-06-29T02:45:00+00:00",
     "status": "unchanged",
     "duration": 15,
+    "deleted": false
+  },
+  {
+    "id": "94dacd4fbf94a29fdab5acce3be675e0495a90f43ae1129b06ead61abb2bb973",
+    "version_id": "bb9964a894f3a8d8c622acb2f638296579879478bf375b7432bfa472d1e20a58",
+    "date": "2026-09-30T00:00:00+00:00",
+    "start": "2026-09-30T12:45:00+00:00",
+    "end": "2026-10-01T01:45:00+00:00",
+    "value": 1,
+    "summary": "Flight to İstanbul (TK 67)",
+    "description": "To see detailed information for automatically created events like this one, use the official Google Calendar app. https://g.co/calendar\n\nThis event was created from an email you received in Gmail. https://mail.google.com/mail?extsrc=cal&plid=ACUX6DPyL-1UAslU7yHRMiB_ehAZWHsVfywaSkA\n",
+    "calendar_name": "jonkuhar11@gmail.com",
+    "new_date": "2026-09-30T00:00:00+00:00",
+    "new_start": "2026-09-30T12:45:00+00:00",
+    "new_end": "2026-10-01T01:45:00+00:00",
+    "status": "unchanged",
+    "duration": 780,
     "deleted": false
   },
   {
@@ -35904,23 +35904,6 @@
     "deleted": false
   },
   {
-    "id": "67154d666901ebb526fafee49b51eadae769412f1935da82e9ca6f16350160ee",
-    "version_id": "f2af753105e2664758146a187db23214b4186ef172b6f0f9647ef8bc6abf6822",
-    "date": "2026-10-04T00:00:00+00:00",
-    "start": "2026-10-04T05:00:00+00:00",
-    "end": "2026-10-04T06:00:00+00:00",
-    "value": 1,
-    "summary": "gym",
-    "description": "(No description)",
-    "calendar_name": "Fitness",
-    "new_date": "2026-10-04T00:00:00+00:00",
-    "new_start": "2026-10-04T05:00:00+00:00",
-    "new_end": "2026-10-04T06:00:00+00:00",
-    "status": "unchanged",
-    "duration": 60,
-    "deleted": false
-  },
-  {
     "id": "285e809d12157ebe7424aaff0fb87918cae70dec0a5d81fecd29f5542a575fe1",
     "version_id": "0edc70efdb3ffef739b22ea9b2d6fe9c04f29129f93cb68d212f860dae6fd7c9",
     "date": "2025-07-01T00:00:00+00:00",
@@ -35935,6 +35918,23 @@
     "new_end": "2025-07-02T00:00:00+00:00",
     "status": "new",
     "duration": 1440,
+    "deleted": false
+  },
+  {
+    "id": "67154d666901ebb526fafee49b51eadae769412f1935da82e9ca6f16350160ee",
+    "version_id": "f2af753105e2664758146a187db23214b4186ef172b6f0f9647ef8bc6abf6822",
+    "date": "2026-10-04T00:00:00+00:00",
+    "start": "2026-10-04T05:00:00+00:00",
+    "end": "2026-10-04T06:00:00+00:00",
+    "value": 1,
+    "summary": "gym",
+    "description": "(No description)",
+    "calendar_name": "Fitness",
+    "new_date": "2026-10-04T00:00:00+00:00",
+    "new_start": "2026-10-04T05:00:00+00:00",
+    "new_end": "2026-10-04T06:00:00+00:00",
+    "status": "unchanged",
+    "duration": 60,
     "deleted": false
   },
   {
