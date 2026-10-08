@@ -35819,23 +35819,6 @@
     "deleted": false
   },
   {
-    "id": "1a9167e11a7abdbc43b98bdbf8aa8c434ee9be9ae8ffd0f0fcf4772a714ee6ae",
-    "version_id": "1e18d67e81fb290011a9a50b19dab97563f535f6c3ab5232b04e0e6e4ae15cdd",
-    "date": "2026-10-03T00:00:00+00:00",
-    "start": "2026-10-03T05:00:00+00:00",
-    "end": "2026-10-03T06:00:00+00:00",
-    "value": 1,
-    "summary": "gym",
-    "description": "(No description)",
-    "calendar_name": "Fitness",
-    "new_date": "2026-10-03T00:00:00+00:00",
-    "new_start": "2026-10-03T05:00:00+00:00",
-    "new_end": "2026-10-03T06:00:00+00:00",
-    "status": "unchanged",
-    "duration": 60,
-    "deleted": false
-  },
-  {
     "id": "325510a169910c85de1ae78372a83bb18e0c4a482d5016fc6745ab91e457ae3b",
     "version_id": "c1d7076882494e69610d21510a93c8c0080ce7996ac6005bd5c7ce37b381a4ff",
     "date": "2026-10-02T00:00:00+00:00",
@@ -35853,23 +35836,6 @@
     "deleted": false
   },
   {
-    "id": "b6332cc573532a1f7acc29a9ee0f3e8f14cac8105b63dd345a97f3519984c8a8",
-    "version_id": "d7c91d09e576c9e2d1f7d3d7ed10778977a8a92a02aec1741555a9767c1bf788",
-    "date": "2026-10-03T00:00:00+00:00",
-    "start": "2026-10-03T06:30:00+00:00",
-    "end": "2026-10-03T08:30:00+00:00",
-    "value": 1,
-    "summary": "work",
-    "description": "(No description)",
-    "calendar_name": "Work creative clicks",
-    "new_date": "2026-10-03T00:00:00+00:00",
-    "new_start": "2026-10-03T06:30:00+00:00",
-    "new_end": "2026-10-03T08:30:00+00:00",
-    "status": "unchanged",
-    "duration": 120,
-    "deleted": false
-  },
-  {
     "id": "b7c84a6ffbecb8625e1a4319cb010d32a8ba5b5be682bfbcf3ed2029ddcd198c",
     "version_id": "973972e2ad0a23e645843473297566840c0d575ae1510fe05f18f035ff0b3f41",
     "date": "2026-10-02T00:00:00+00:00",
@@ -35884,6 +35850,40 @@
     "new_end": "2026-10-02T16:00:00+00:00",
     "status": "unchanged",
     "duration": 60,
+    "deleted": false
+  },
+  {
+    "id": "1a9167e11a7abdbc43b98bdbf8aa8c434ee9be9ae8ffd0f0fcf4772a714ee6ae",
+    "version_id": "1e18d67e81fb290011a9a50b19dab97563f535f6c3ab5232b04e0e6e4ae15cdd",
+    "date": "2026-10-03T00:00:00+00:00",
+    "start": "2026-10-03T05:00:00+00:00",
+    "end": "2026-10-03T06:00:00+00:00",
+    "value": 1,
+    "summary": "gym",
+    "description": "(No description)",
+    "calendar_name": "Fitness",
+    "new_date": "2026-10-03T00:00:00+00:00",
+    "new_start": "2026-10-03T05:00:00+00:00",
+    "new_end": "2026-10-03T06:00:00+00:00",
+    "status": "unchanged",
+    "duration": 60,
+    "deleted": false
+  },
+  {
+    "id": "b6332cc573532a1f7acc29a9ee0f3e8f14cac8105b63dd345a97f3519984c8a8",
+    "version_id": "d7c91d09e576c9e2d1f7d3d7ed10778977a8a92a02aec1741555a9767c1bf788",
+    "date": "2026-10-03T00:00:00+00:00",
+    "start": "2026-10-03T06:30:00+00:00",
+    "end": "2026-10-03T08:30:00+00:00",
+    "value": 1,
+    "summary": "work",
+    "description": "(No description)",
+    "calendar_name": "Work creative clicks",
+    "new_date": "2026-10-03T00:00:00+00:00",
+    "new_start": "2026-10-03T06:30:00+00:00",
+    "new_end": "2026-10-03T08:30:00+00:00",
+    "status": "unchanged",
+    "duration": 120,
     "deleted": false
   },
   {
@@ -35938,23 +35938,6 @@
     "deleted": false
   },
   {
-    "id": "624815b16393c1bb04c6f336a878b02485ed914ff79e699b33746f33450595d4",
-    "version_id": "5936eb01f20bba77af4380e7358dcf6cd0612f77e66dd73a73be244a8119d515",
-    "date": "2026-10-06T00:00:00+00:00",
-    "start": "2026-10-06T12:30:00+00:00",
-    "end": "2026-10-06T15:00:00+00:00",
-    "value": 1,
-    "summary": "New Event",
-    "description": "(No description)",
-    "calendar_name": "Business",
-    "new_date": "2026-10-06T00:00:00+00:00",
-    "new_start": "2026-10-06T12:30:00+00:00",
-    "new_end": "2026-10-06T15:00:00+00:00",
-    "status": "unchanged",
-    "duration": 150,
-    "deleted": false
-  },
-  {
     "id": "d0d90781a33ae1862e966dda44f44507a564328f35d6cc282d4d495c5f582d11",
     "version_id": "2305bedb648c1a058afb41e2a1eb67a43c65a825fab3db96eeb579e85301f8ba",
     "date": "2025-07-01T00:00:00+00:00",
@@ -35969,6 +35952,23 @@
     "new_end": "2025-07-02T00:00:00+00:00",
     "status": "new",
     "duration": 1440,
+    "deleted": false
+  },
+  {
+    "id": "624815b16393c1bb04c6f336a878b02485ed914ff79e699b33746f33450595d4",
+    "version_id": "5936eb01f20bba77af4380e7358dcf6cd0612f77e66dd73a73be244a8119d515",
+    "date": "2026-10-06T00:00:00+00:00",
+    "start": "2026-10-06T12:30:00+00:00",
+    "end": "2026-10-06T15:00:00+00:00",
+    "value": 1,
+    "summary": "New Event",
+    "description": "(No description)",
+    "calendar_name": "Business",
+    "new_date": "2026-10-06T00:00:00+00:00",
+    "new_start": "2026-10-06T12:30:00+00:00",
+    "new_end": "2026-10-06T15:00:00+00:00",
+    "status": "unchanged",
+    "duration": 150,
     "deleted": false
   },
   {
@@ -36003,6 +36003,23 @@
     "new_end": "2026-10-06T11:00:00+00:00",
     "status": "unchanged",
     "duration": 270,
+    "deleted": false
+  },
+  {
+    "id": "6754a0ed9ce2e0ada9d938b0ee2f86c1379d2f58a7ea08c1650eb6c7c9bbfa9a",
+    "version_id": "f4cc4203a45fbfedc4acf1d0e8b662f13cfe35a6e654892d83a5d17a0b32ca1e",
+    "date": "2026-10-08T00:00:00+00:00",
+    "start": "2026-10-08T09:30:00+00:00",
+    "end": "2026-10-08T10:30:00+00:00",
+    "value": 1,
+    "summary": "Ortoped",
+    "description": "(No description)",
+    "calendar_name": "Home",
+    "new_date": "2026-10-08T00:00:00+00:00",
+    "new_start": "2026-10-08T09:30:00+00:00",
+    "new_end": "2026-10-08T10:30:00+00:00",
+    "status": "new",
+    "duration": 60,
     "deleted": false
   },
   {
