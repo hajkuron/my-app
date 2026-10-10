@@ -36040,6 +36040,23 @@
     "deleted": false
   },
   {
+    "id": "6862818a3343bd28afca1cd19e71ec954437bceff2a79f4f8e88578056859d75",
+    "version_id": "9a804d94a48fb6b9dd782dbafe5f9b406dbbd0391f0f8a623fb2d7537d12463d",
+    "date": "2025-07-01T00:00:00+00:00",
+    "start": "2025-07-01T00:00:00+00:00",
+    "end": "2025-07-02T00:00:00+00:00",
+    "value": 1,
+    "summary": "Upload your thesis [6314MA011Y]",
+    "description": "",
+    "calendar_name": "University of Amsterdam - Personal timetable: 13597698@uva.nl",
+    "new_date": "2025-07-01T00:00:00+00:00",
+    "new_start": "2025-07-01T00:00:00+00:00",
+    "new_end": "2025-07-02T00:00:00+00:00",
+    "status": "new",
+    "duration": 1440,
+    "deleted": false
+  },
+  {
     "id": "33c6b536a8fcbbbc19c5f360276e9d57c282e9f08353434b5ec97069e7d5c200",
     "version_id": "65a05d07d6ab63dd71a66ac4dcce53ee7856420b80714f3297a915dc6db3b24d",
     "date": "2026-10-08T00:00:00+00:00",
@@ -36052,7 +36069,7 @@
     "new_date": "2026-10-08T00:00:00+00:00",
     "new_start": "2026-10-08T04:30:00+00:00",
     "new_end": "2026-10-08T05:30:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 60,
     "deleted": false
   },
@@ -36069,25 +36086,8 @@
     "new_date": "2026-10-09T00:00:00+00:00",
     "new_start": "2026-10-09T06:00:00+00:00",
     "new_end": "2026-10-09T10:00:00+00:00",
-    "status": "new",
+    "status": "unchanged",
     "duration": 240,
-    "deleted": false
-  },
-  {
-    "id": "6862818a3343bd28afca1cd19e71ec954437bceff2a79f4f8e88578056859d75",
-    "version_id": "9a804d94a48fb6b9dd782dbafe5f9b406dbbd0391f0f8a623fb2d7537d12463d",
-    "date": "2025-07-01T00:00:00+00:00",
-    "start": "2025-07-01T00:00:00+00:00",
-    "end": "2025-07-02T00:00:00+00:00",
-    "value": 1,
-    "summary": "Upload your thesis [6314MA011Y]",
-    "description": "",
-    "calendar_name": "University of Amsterdam - Personal timetable: 13597698@uva.nl",
-    "new_date": "2025-07-01T00:00:00+00:00",
-    "new_start": "2025-07-01T00:00:00+00:00",
-    "new_end": "2025-07-02T00:00:00+00:00",
-    "status": "new",
-    "duration": 1440,
     "deleted": false
   },
   {
