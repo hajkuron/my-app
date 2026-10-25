@@ -36380,23 +36380,6 @@
     "deleted": false
   },
   {
-    "id": "aaf2675c697243f7f8a7552406a7d899af9ea86567a11d6941201a2393338335",
-    "version_id": "19e142b764a14fdf7a56f4697cd1c6d37092810982be1458d0fb43a2f56bd309",
-    "date": "2026-10-24T00:00:00+00:00",
-    "start": "2026-10-24T09:00:00+00:00",
-    "end": "2026-10-24T09:00:00+00:00",
-    "value": 1,
-    "summary": "Hanci❤️",
-    "description": "(No description)",
-    "calendar_name": "Home",
-    "new_date": "2026-10-24T00:00:00+00:00",
-    "new_start": "2026-10-24T09:00:00+00:00",
-    "new_end": "2026-10-24T09:00:00+00:00",
-    "status": "new",
-    "duration": 0,
-    "deleted": false
-  },
-  {
     "id": "94fd46b9fd9069befcf0bb795c162e4609a22e8549d77a404b49dc4504fff758",
     "version_id": "a8efe6bb65df728fe0deb99d6253c496cbb4fe2d2fa40a0590aa29dc2849882a",
     "date": "2025-07-04T00:00:00+00:00",
@@ -36411,6 +36394,23 @@
     "new_end": "2025-07-04T07:00:00+00:00",
     "status": "new",
     "duration": 60,
+    "deleted": false
+  },
+  {
+    "id": "aaf2675c697243f7f8a7552406a7d899af9ea86567a11d6941201a2393338335",
+    "version_id": "19e142b764a14fdf7a56f4697cd1c6d37092810982be1458d0fb43a2f56bd309",
+    "date": "2026-10-24T00:00:00+00:00",
+    "start": "2026-10-24T09:00:00+00:00",
+    "end": "2026-10-24T09:00:00+00:00",
+    "value": 1,
+    "summary": "Hanci❤️",
+    "description": "(No description)",
+    "calendar_name": "Home",
+    "new_date": "2026-10-24T00:00:00+00:00",
+    "new_start": "2026-10-24T09:00:00+00:00",
+    "new_end": "2026-10-24T09:00:00+00:00",
+    "status": "unchanged",
+    "duration": 0,
     "deleted": false
   },
   {
